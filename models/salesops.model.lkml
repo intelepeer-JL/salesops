@@ -19,7 +19,7 @@ persist_with: salesops_default_datagroup
 explore: user {
 }
 
-explore: v_cpaa_s_adds {}
+
 explore: v_booking {}
 explore: v_wo_w_analysis {}
 

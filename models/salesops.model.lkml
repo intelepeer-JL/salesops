@@ -22,7 +22,7 @@ explore: user {
 
 explore: v_booking {}
 explore: v_wo_w_analysis {}
-
+explore: v_cpaa_s_adds {}
 
 
 

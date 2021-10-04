@@ -11,7 +11,7 @@ view: stage_group {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Stage Group" in Explore.
 
-  dimension: stage_group {
+  dimension: stagegroup {
     type: string
     sql: ${TABLE}.StageGroup ;;
   }

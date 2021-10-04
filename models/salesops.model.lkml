@@ -24,6 +24,9 @@ explore: v_booking {}
 explore: v_wo_w_analysis {}
 explore: v_cpaa_s_adds {}
 explore: v_opp_vel {}
+explore: opportunityhistory {}
+explore: opportunity_load  {}
+explore: stage_group {}
 
 
 

@@ -20,7 +20,7 @@ explore: user {
 }
 
 explore: customer_pricing_table__c {}
-
+explore: v_current_funnel {}
 explore: v_booking {}
 explore: v_wo_w_analysis {}
 explore: v_cpaa_s_adds {}

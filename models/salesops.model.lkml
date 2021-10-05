@@ -43,6 +43,7 @@ explore: opportunity_load {
     sql_on:
     ${opportunity_load.account_id}=${account.id};;
   }
+
 }
 
 

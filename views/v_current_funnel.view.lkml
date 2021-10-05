@@ -24,7 +24,7 @@ view: v_current_funnel {
   }
 
   dimension: amount {
-    type: string
+    type: number
     sql: ${TABLE}.Amount ;;
   }
 

@@ -19,6 +19,7 @@ persist_with: salesops_default_datagroup
 explore: user {
 }
 
+explore: customer_pricing_table__c {}
 
 explore: v_booking {}
 explore: v_wo_w_analysis {}

@@ -27,10 +27,11 @@ explore: v_wo_w_analysis {}
 explore: v_cpaa_s_adds {}
 explore: v_opp_vel {}
 explore: opportunityhistory {}
-explore: opportunity_loads {view_name:opportunity_load}
+explore: opportunity_load {}
 explore: stage_group {}
 
-explore: opportunity_load {
+explore: Funnel_Analytics{
+  view_name: opportunity_load
   join: user {
     relationship: many_to_one
     sql_on: ${opportunity_load.owner_id}= ${user.id} ;;
@@ -44,6 +45,21 @@ explore: opportunity_load {
     relationship: many_to_one
     sql_on:
     ${opportunity_load.account_id}=${account.id};;
+
+  }
+  join: Partner {
+    relationship: many_to_one
+    sql_on: ${account.sales_partner__c}=${Partner.id} ;;
+
+  }
+  join: Sub_agent {
+    relationship: many_to_one
+    sql_on: ${account.sub_agent__c}=${Sub_agent.id} ;;
+  }
+
+  join: role_hierarchy {
+    relationship: many_to_one
+    sql_on: ${role_hierarchy.id}=${user.user_role_id} ;;
   }
 
 }

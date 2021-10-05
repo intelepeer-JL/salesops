@@ -19,7 +19,7 @@ view: Sub_agent {
 
 
 
-  dimension: name {
+  dimension: Sub_Agent {
     type: string
     sql: ${TABLE}.Name ;;
   }

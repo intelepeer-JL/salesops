@@ -45,16 +45,18 @@ explore: Funnel_Analytics{
     ${opportunity_load.account_id}=${account.id};;
 
   }
-
-
-
-}
-explore: account{
   join: Partner {
     relationship: many_to_one
     sql_on: ${account.sales_partner__c}=${Partner.id} ;;
   }
+  join: Sub_agent {
+    relationship: many_to_one
+    sql_on: ${account.sub_agent__c}=${Sub_agent.id} ;;
+  }
+
+
 }
+
 
 
 

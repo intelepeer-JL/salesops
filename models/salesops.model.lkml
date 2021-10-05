@@ -25,9 +25,17 @@ explore: v_wo_w_analysis {}
 explore: v_cpaa_s_adds {}
 explore: v_opp_vel {}
 explore: opportunityhistory {}
-explore: opportunity_load  {}
+explore: opportunity_loads {view_name:opportunity_load}
 explore: stage_group {}
 
+explore: opportunity_load {
+  join: user {
+    relationship: many_to_one
+    sql_on: ${opportunity_load.owner_id}= ${user.id} ;;
+  }
+
+
+}
 
 
 

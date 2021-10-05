@@ -19,7 +19,7 @@ view: Partner {
 
 
 
-  dimension: name {
+  dimension: Partner {
     type: string
     sql: ${TABLE}.Name ;;
   }

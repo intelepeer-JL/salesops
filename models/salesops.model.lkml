@@ -48,12 +48,17 @@ explore: Funnel_Analytics{
   join: Partner {
     relationship: many_to_one
     sql_on: ${account.sales_partner__c}=${Partner.id} ;;
+
   }
   join: Sub_agent {
     relationship: many_to_one
     sql_on: ${account.sub_agent__c}=${Sub_agent.id} ;;
   }
 
+  join: role_hierarchy {
+    relationship: many_to_one
+    sql_on: ${role_hierarchy.id}=${user.user_role_id} ;;
+  }
 
 }
 

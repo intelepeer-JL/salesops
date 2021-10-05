@@ -65,6 +65,16 @@ view: v_current_funnel {
     sql: ${TABLE}.CurrentExecutionDate ;;
   }
 
+  dimension: id18__c {
+    type: string
+    sql: ${TABLE}.Id18__c ;;
+  }
+
+  dimension: id18__c_1 {
+    type: string
+    sql: ${TABLE}.Id18__c_1 ;;
+  }
+
   dimension: is_closed {
     type: yesno
     sql: ${TABLE}.IsClosed ;;

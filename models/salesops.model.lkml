@@ -20,6 +20,7 @@ explore: user {
 }
 
 explore: customer_pricing_table__c {}
+explore: stage_sequence_sfdc {}
 
 explore: v_booking {}
 explore: v_wo_w_analysis {}

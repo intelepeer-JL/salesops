@@ -70,9 +70,9 @@ view: v_current_funnel {
     sql: ${TABLE}.Id18__c ;;
   }
 
-  dimension: id18__c_1 {
+  dimension: OppName {
     type: string
-    sql: ${TABLE}.Id18__c_1 ;;
+    sql: ${TABLE}.OppName ;;
   }
 
   dimension: is_closed {

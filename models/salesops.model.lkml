@@ -33,8 +33,16 @@ explore: opportunity_load {
     relationship: many_to_one
     sql_on: ${opportunity_load.owner_id}= ${user.id} ;;
   }
+  join: stage_group {
+    relationship: many_to_one
+    sql_on: ${opportunity_load.stage_name}=${stage_group.stage_name} ;;
 
-
+  }
+  join: account {
+    relationship: many_to_one
+    sql_on:
+    ${opportunity_load.account_id}=${account.id};;
+  }
 }
 
 

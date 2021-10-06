@@ -98,9 +98,19 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.Cisco_Product__c ;;
   }
 
-  dimension: close_date {
-    type: string
-    sql: ${TABLE}.CloseDate ;;
+  dimension_group: close_date {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.CurrentExecutionDate ;;
   }
 
   dimension: cloud_routing__c {

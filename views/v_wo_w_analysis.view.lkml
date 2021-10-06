@@ -662,6 +662,16 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.Win_Loss_Data__c ;;
   }
 
+  dimension: OppOwnerName {
+    type: string
+    sql: ${TABLE}.OppOwnerName ;;
+  }
+
+  dimension: salesteam {
+    type: string
+    sql: ${TABLE}.salesteam ;;
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.

@@ -319,7 +319,7 @@ view: v_wo_w_analysis {
   }
 
   dimension: lw_amount {
-    type: string
+    type: number
     sql: ${TABLE}.LW_Amount ;;
   }
 
@@ -608,7 +608,7 @@ view: v_wo_w_analysis {
   }
 
   dimension: tw_amount {
-    type: string
+    type: number
     sql: ${TABLE}.TW_Amount ;;
   }
 

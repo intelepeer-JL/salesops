@@ -194,4 +194,9 @@ view: v_current_funnel {
     hidden: yes
     sql: ${total_amount__c} ;;
   }
+
+  measure: adds {
+
+  }
+
 }

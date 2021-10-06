@@ -279,19 +279,7 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.LastModifiedDate ;;
   }
 
-  dimension_group: last_modified_date_time__c {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.Last_Modified_Date_Time__c ;;
-  }
+
 
   dimension: last_modified_stage_date_time__c {
     type: string

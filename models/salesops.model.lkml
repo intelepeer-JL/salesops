@@ -24,10 +24,21 @@ explore: v_current_funnel {}
 explore: v_booking {}
 explore: v_wo_w_analysis {}
 explore: v_cpaa_s_adds {}
-explore: v_opp_vel {}
+explore: v_opp_vel {
+  join: user {
+    relationship: many_to_one
+    sql_on: ${v_opp_vel.owner_id}=${user.id} ;;
+  }
+  join: role_hierarchy {
+    relationship: many_to_one
+    sql_on: ${user.user_role_id}=${role_hierarchy.id} ;;
+  }
+
+}
 explore: opportunityhistory {}
 explore: opportunity_load {}
 explore: stage_group {}
+
 
 explore: Funnel_Analytics{
   view_name: opportunity_load

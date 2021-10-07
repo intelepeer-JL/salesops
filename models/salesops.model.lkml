@@ -18,7 +18,16 @@ persist_with: salesops_default_datagroup
 
 explore: user {
 }
-explore: opp_velocity {}
+explore: opp_velocity {
+  join: user {
+  relationship: many_to_one
+  sql_on: ${opp_velocity.owner_id}=${user.id} ;;
+  }
+  join: role_hierarchy {
+    relationship: many_to_one
+    sql_on: ${user.user_role_id}=${role_hierarchy.id} ;;
+  }
+}
 explore: customer_pricing_table__c {}
 explore: v_current_funnel {}
 explore: v_booking {}

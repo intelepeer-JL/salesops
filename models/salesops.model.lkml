@@ -18,7 +18,7 @@ persist_with: salesops_default_datagroup
 
 explore: user {
 }
-
+explore: opp_velocity {}
 explore: customer_pricing_table__c {}
 explore: v_current_funnel {}
 explore: v_booking {}

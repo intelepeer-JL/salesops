@@ -14,6 +14,11 @@ view: opportunity_load {
     sql: ${TABLE}.Id ;;
   }
 
+  dimension: AGE {
+    type: number
+    sql: diff_days(${created_date},${close_date_date}) ;;
+  }
+
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Account ID" in Explore.
@@ -93,8 +98,17 @@ view: opportunity_load {
     sql: ${TABLE}.Cisco_Product__c ;;
   }
 
-  dimension: close_date {
-    type: string
+  dimension_group: close_date {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
     sql: ${TABLE}.CloseDate ;;
   }
 

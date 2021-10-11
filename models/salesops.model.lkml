@@ -29,7 +29,12 @@ explore: opp_velocity {
   }
 }
 explore: customer_pricing_table__c {}
+# <<<<<<< HEAD
+explore: stage_sequence_sfdc {}
+
+# =======
 explore: v_current_funnel {}
+# >>>>>>> branch 'master' of git@github.com:intelepeer-JL/salesops.git
 explore: v_booking {}
 explore: v_wo_w_analysis {}
 explore: v_cpaa_s_adds {}

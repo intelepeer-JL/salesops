@@ -164,6 +164,13 @@ view: v_wo_w_analysis {
     sql: ${closedloss} ;;
   }
 
+  measure: Week_Over_Week {
+    type: sum
+    hidden: no
+    sql: ${tw_active}-${lw_active} ;;
+  }
+
+
   measure: average_closedloss {
     type: average
     hidden: yes

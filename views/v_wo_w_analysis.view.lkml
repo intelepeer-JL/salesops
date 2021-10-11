@@ -47,6 +47,11 @@ view: v_wo_w_analysis {
           else end;;
   }
 
+  dimension: Week_Over_Week {
+    type: number
+    sql: ${tw_active}-${lw_active} ;;
+  }
+
 
 
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
@@ -164,11 +169,6 @@ view: v_wo_w_analysis {
     sql: ${closedloss} ;;
   }
 
-  dimension: Week_Over_Week {
-    type: number
-
-    sql: ${tw_active}-${lw_active} ;;
-  }
 
 
   measure: average_closedloss {
@@ -297,11 +297,7 @@ view: v_wo_w_analysis {
     sql: ${value_change} ;;
   }
 
-  measure: total_wo_wchange {
-    type: sum
-    hidden: yes
-    sql: ${wo_wchange} ;;
-  }
+
 
   measure: average_wo_wchange {
     type: average

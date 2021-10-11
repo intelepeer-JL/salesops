@@ -165,6 +165,12 @@ view: v_wo_w_analysis {
   # These sum and average measures are hidden by default.
   # If you want them to show up in your explore, remove hidden: yes.
 
+measure: WoW_Change {
+  type: number
+  sql: ${total_tw_active}-${total_lw_active} ;;
+}
+
+
   measure: total_closedloss {
     type: sum
     hidden: yes

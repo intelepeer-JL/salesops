@@ -47,8 +47,8 @@ view: v_wo_w_analysis {
           else end;;
   }
 
-  dimension: Week_Over_Week {
-    type: number
+  measure: Week_Over_Week {
+    type: sum
     sql: ${tw_active}-${lw_active} ;;
   }
 

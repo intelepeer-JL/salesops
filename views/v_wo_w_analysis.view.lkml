@@ -1,3 +1,5 @@
+
+
 # The name of this view in Looker is "V Wo W Analysis"
 view: v_wo_w_analysis {
   # The sql_table_name parameter indicates the underlying database table
@@ -34,6 +36,22 @@ view: v_wo_w_analysis {
   dimension: closedwon {
     type: number
     sql: ${TABLE}.closedwon ;;
+  }
+
+  dimension: categorysort {
+    type: string
+    sql:  case when ${category}="TW_Active" then "1"
+          when ${category}="LW_Active" then "2"
+          when ${category}="WoWChange" then "3"
+          when ${category}="ValueChange" then "4"
+          when ${category}="removed" then "5"
+          when ${category}="New Funnel Add" then "6"
+          else end;;
+  }
+
+  measure: Week_Over_Week {
+    type: sum
+    sql: ${tw_active}-${lw_active} ;;
   }
 
 
@@ -120,7 +138,6 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.TW_Active ;;
   }
 
-
   dimension: tw_amount {
     type: number
     sql: ${TABLE}.TW_Amount ;;
@@ -131,18 +148,10 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.ValueChange ;;
   }
 
-
-
-  measure: WoW_Change{
-    type:  number
-    sql: ${total_tw_active}-${total_lw_active} ;;
+  dimension: wo_wchange {
+    type: number
+    sql: ${TABLE}.WoWChange ;;
   }
-
-  dimension: Wo_wChange{
-    type:  number
-    sql: ${lw_active} ;;
-  }
-
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.
@@ -292,5 +301,9 @@ view: v_wo_w_analysis {
 
 
 
-
+  measure: average_wo_wchange {
+    type: average
+    hidden: yes
+    sql: ${wo_wchange} ;;
+  }
 }

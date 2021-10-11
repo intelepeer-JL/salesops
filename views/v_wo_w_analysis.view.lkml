@@ -138,21 +138,11 @@ view: v_wo_w_analysis {
     sql: ${total_tw_active}-${total_lw_active} ;;
   }
 
-
-dimension: tw {
-  type: number
-  sql: ${tw_active};;
-}
-
-  dimension: lw {
-    type: number
-    sql: ${lw_active};;
+  measure: Wo_wChange{
+    type:  number
+    sql: ${total_tw_active}-${total_lw_active} ;;
   }
 
-  dimension: var {
-    type: number
-    sql: ${tw}-${lw} ;;
-  }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.

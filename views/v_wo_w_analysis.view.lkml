@@ -106,6 +106,11 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.Rengaged ;;
   }
 
+  dimension: removed {
+    type: number
+    sql: ${TABLE}.removed ;;
+  }
+
   dimension: stalled {
     type: number
     sql: ${TABLE}.Stalled ;;

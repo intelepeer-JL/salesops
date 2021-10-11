@@ -138,9 +138,9 @@ view: v_wo_w_analysis {
     sql: ${total_tw_active}-${total_lw_active} ;;
   }
 
-  measure: Wo_wChange{
+  dimension: Wo_wChange{
     type:  number
-    sql: ${total_tw_active}-${total_lw_active} ;;
+    sql: ${lw_active} ;;
   }
 
 

@@ -36,6 +36,17 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.closedwon ;;
   }
 
+  dimension: categorysort {
+    type: string
+    sql:  case when ${category}="TW_Active" then "1"
+          when ${category}="LW_Active" then "2"
+          when ${category}="WoWChange" then "3"
+          when ${category}="ValueChange" then "4"
+          when ${category}="removed" then "5"
+          when ${category}="New Funnel Add" then "6"
+          else end;;
+  }
+
 
 
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.

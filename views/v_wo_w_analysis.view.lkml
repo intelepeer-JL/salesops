@@ -131,14 +131,27 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.ValueChange ;;
   }
 
-  dimension: wo_wchange {
-    type: number
-    sql: ${TABLE}.WoWChange ;;
-  }
+
 
   measure: WoW_Change{
     type:  number
     sql: ${total_tw_active}-${total_lw_active} ;;
+  }
+
+
+dimension: tw {
+  type: number
+  sql: ${tw_active};;
+}
+
+  dimension: lw {
+    type: number
+    sql: ${lw_active};;
+  }
+
+  dimension: var {
+    type: number
+    sql: ${tw}-${lw} ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
@@ -289,9 +302,5 @@ view: v_wo_w_analysis {
 
 
 
-  measure: average_wo_wchange {
-    type: average
-    hidden: yes
-    sql: ${wo_wchange} ;;
-  }
+
 }

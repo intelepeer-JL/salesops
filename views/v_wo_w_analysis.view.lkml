@@ -164,9 +164,9 @@ view: v_wo_w_analysis {
     sql: ${closedloss} ;;
   }
 
-  measure: Week_Over_Week {
-    type: sum
-    hidden: no
+  dimension: Week_Over_Week {
+    type: number
+
     sql: ${tw_active}-${lw_active} ;;
   }
 

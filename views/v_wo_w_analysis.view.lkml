@@ -136,15 +136,8 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.TW_Active ;;
   }
 
-  dimension: tw {
-    type: number
-    sql: sum(${tw_active}) ;;
-  }
 
-  dimension: lw {
-    type: number
-    sql: sum(${lw_active}) ;;
-  }
+
 
   dimension: tw_amount {
     type: number

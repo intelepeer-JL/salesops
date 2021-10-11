@@ -154,7 +154,7 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.WoWChange ;;
   }
 
-  measure: variance {
+  measure: WoW_Change{
     type:  number
     sql: ${total_tw_active}-${total_lw_active} ;;
   }

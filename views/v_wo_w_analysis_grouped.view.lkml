@@ -16,6 +16,11 @@ view: v_wo_w_analysis_grouped {
     sql: ${TABLE}.closedloss ;;
   }
 
+  dimension: closedloss_a {
+    type: number
+    sql: ${TABLE}.closedloss_a ;;
+  }
+
   dimension: closedloss_c {
     type: number
     sql: ${TABLE}.closedloss_c ;;
@@ -24,6 +29,11 @@ view: v_wo_w_analysis_grouped {
   dimension: closedwon {
     type: number
     sql: ${TABLE}.closedwon ;;
+  }
+
+  dimension: closedwon_a {
+    type: number
+    sql: ${TABLE}.closedwon_a ;;
   }
 
   dimension: closedwon_c {
@@ -36,6 +46,11 @@ view: v_wo_w_analysis_grouped {
     sql: ${TABLE}.inactive ;;
   }
 
+  dimension: inactive_a {
+    type: number
+    sql: ${TABLE}.inactive_a ;;
+  }
+
   dimension: inactive_c {
     type: number
     sql: ${TABLE}.inactive_c ;;
@@ -44,6 +59,11 @@ view: v_wo_w_analysis_grouped {
   dimension: lw_active {
     type: number
     sql: ${TABLE}.LW_Active ;;
+  }
+
+  dimension: lw_active_a {
+    type: number
+    sql: ${TABLE}.LW_Active_a ;;
   }
 
   dimension: lw_active_c {
@@ -56,6 +76,11 @@ view: v_wo_w_analysis_grouped {
     sql: ${TABLE}.newadd ;;
   }
 
+  dimension: newadd_a {
+    type: number
+    sql: ${TABLE}.newadd_a ;;
+  }
+
   dimension: newadd_c {
     type: number
     sql: ${TABLE}.newadd_c ;;
@@ -64,6 +89,11 @@ view: v_wo_w_analysis_grouped {
   dimension: removed {
     type: number
     sql: ${TABLE}.removed ;;
+  }
+
+  dimension: removed_a {
+    type: number
+    sql: ${TABLE}.removed_a ;;
   }
 
   dimension: removed_c {
@@ -76,6 +106,11 @@ view: v_wo_w_analysis_grouped {
     sql: ${TABLE}.Rengaged ;;
   }
 
+  dimension: rengaged_a {
+    type: number
+    sql: ${TABLE}.Rengaged_a ;;
+  }
+
   dimension: rengaged_c {
     type: number
     sql: ${TABLE}.Rengaged_c ;;
@@ -84,6 +119,11 @@ view: v_wo_w_analysis_grouped {
   dimension: stalled {
     type: number
     sql: ${TABLE}.Stalled ;;
+  }
+
+  dimension: stalled_a {
+    type: number
+    sql: ${TABLE}.Stalled_a ;;
   }
 
   dimension: stalled_c {
@@ -101,6 +141,11 @@ view: v_wo_w_analysis_grouped {
     sql: ${TABLE}.TW_Active ;;
   }
 
+  dimension: tw_active_a {
+    type: number
+    sql: ${TABLE}.TW_Active_a ;;
+  }
+
   dimension: tw_active_c {
     type: number
     sql: ${TABLE}.TW_Active_c ;;
@@ -109,6 +154,11 @@ view: v_wo_w_analysis_grouped {
   dimension: value_change {
     type: number
     sql: ${TABLE}.ValueChange ;;
+  }
+
+  dimension: value_change_a {
+    type: number
+    sql: ${TABLE}.ValueChange_a ;;
   }
 
   dimension: value_change_c {
@@ -124,6 +174,11 @@ view: v_wo_w_analysis_grouped {
   dimension: wow {
     type: number
     sql: ${TABLE}.wow ;;
+  }
+
+  dimension: wow_a {
+    type: number
+    sql: ${TABLE}.wow_a ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
@@ -150,6 +205,18 @@ view: v_wo_w_analysis_grouped {
     sql: ${closedloss} ;;
   }
 
+  measure: total_closedloss_a {
+    type: sum
+    hidden: yes
+    sql: ${closedloss_a} ;;
+  }
+
+  measure: average_closedloss_a {
+    type: average
+    hidden: yes
+    sql: ${closedloss_a} ;;
+  }
+
   measure: total_closedloss_c {
     type: sum
     hidden: yes
@@ -172,6 +239,18 @@ view: v_wo_w_analysis_grouped {
     type: average
     hidden: yes
     sql: ${closedwon} ;;
+  }
+
+  measure: total_closedwon_a {
+    type: sum
+    hidden: yes
+    sql: ${closedwon_a} ;;
+  }
+
+  measure: average_closedwon_a {
+    type: average
+    hidden: yes
+    sql: ${closedwon_a} ;;
   }
 
   measure: total_closedwon_c {
@@ -198,6 +277,18 @@ view: v_wo_w_analysis_grouped {
     sql: ${inactive} ;;
   }
 
+  measure: total_inactive_a {
+    type: sum
+    hidden: yes
+    sql: ${inactive_a} ;;
+  }
+
+  measure: average_inactive_a {
+    type: average
+    hidden: yes
+    sql: ${inactive_a} ;;
+  }
+
   measure: total_inactive_c {
     type: sum
     hidden: yes
@@ -220,6 +311,18 @@ view: v_wo_w_analysis_grouped {
     type: average
     hidden: yes
     sql: ${lw_active} ;;
+  }
+
+  measure: total_lw_active_a {
+    type: sum
+    hidden: yes
+    sql: ${lw_active_a} ;;
+  }
+
+  measure: average_lw_active_a {
+    type: average
+    hidden: yes
+    sql: ${lw_active_a} ;;
   }
 
   measure: total_lw_active_c {
@@ -246,6 +349,18 @@ view: v_wo_w_analysis_grouped {
     sql: ${newadd} ;;
   }
 
+  measure: total_newadd_a {
+    type: sum
+    hidden: yes
+    sql: ${newadd_a} ;;
+  }
+
+  measure: average_newadd_a {
+    type: average
+    hidden: yes
+    sql: ${newadd_a} ;;
+  }
+
   measure: total_newadd_c {
     type: sum
     hidden: yes
@@ -268,6 +383,18 @@ view: v_wo_w_analysis_grouped {
     type: average
     hidden: yes
     sql: ${removed} ;;
+  }
+
+  measure: total_removed_a {
+    type: sum
+    hidden: yes
+    sql: ${removed_a} ;;
+  }
+
+  measure: average_removed_a {
+    type: average
+    hidden: yes
+    sql: ${removed_a} ;;
   }
 
   measure: total_removed_c {
@@ -294,6 +421,18 @@ view: v_wo_w_analysis_grouped {
     sql: ${rengaged} ;;
   }
 
+  measure: total_rengaged_a {
+    type: sum
+    hidden: yes
+    sql: ${rengaged_a} ;;
+  }
+
+  measure: average_rengaged_a {
+    type: average
+    hidden: yes
+    sql: ${rengaged_a} ;;
+  }
+
   measure: total_rengaged_c {
     type: sum
     hidden: yes
@@ -316,6 +455,18 @@ view: v_wo_w_analysis_grouped {
     type: average
     hidden: yes
     sql: ${stalled} ;;
+  }
+
+  measure: total_stalled_a {
+    type: sum
+    hidden: yes
+    sql: ${stalled_a} ;;
+  }
+
+  measure: average_stalled_a {
+    type: average
+    hidden: yes
+    sql: ${stalled_a} ;;
   }
 
   measure: total_stalled_c {
@@ -342,6 +493,18 @@ view: v_wo_w_analysis_grouped {
     sql: ${tw_active} ;;
   }
 
+  measure: total_tw_active_a {
+    type: sum
+    hidden: yes
+    sql: ${tw_active_a} ;;
+  }
+
+  measure: average_tw_active_a {
+    type: average
+    hidden: yes
+    sql: ${tw_active_a} ;;
+  }
+
   measure: total_tw_active_c {
     type: sum
     hidden: yes
@@ -364,6 +527,18 @@ view: v_wo_w_analysis_grouped {
     type: average
     hidden: yes
     sql: ${value_change} ;;
+  }
+
+  measure: total_value_change_a {
+    type: sum
+    hidden: yes
+    sql: ${value_change_a} ;;
+  }
+
+  measure: average_value_change_a {
+    type: average
+    hidden: yes
+    sql: ${value_change_a} ;;
   }
 
   measure: total_value_change_c {
@@ -400,5 +575,17 @@ view: v_wo_w_analysis_grouped {
     type: average
     hidden: yes
     sql: ${wow} ;;
+  }
+
+  measure: total_wow_a {
+    type: sum
+    hidden: yes
+    sql: ${wow_a} ;;
+  }
+
+  measure: average_wow_a {
+    type: average
+    hidden: yes
+    sql: ${wow_a} ;;
   }
 }

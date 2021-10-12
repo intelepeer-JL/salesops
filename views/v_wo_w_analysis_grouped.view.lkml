@@ -116,14 +116,14 @@ view: v_wo_w_analysis_grouped {
     sql: ${TABLE}.ValueChange_c ;;
   }
 
+  dimension: wo_wchange_c {
+    type: number
+    sql: ${TABLE}.WoWChange_c ;;
+  }
+
   dimension: wow {
     type: number
     sql: ${TABLE}.wow ;;
-  }
-
-  dimension: WoWChange_c {
-    type: number
-    sql: ${TABLE}.WoWChange_c ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
@@ -376,6 +376,18 @@ view: v_wo_w_analysis_grouped {
     type: average
     hidden: yes
     sql: ${value_change_c} ;;
+  }
+
+  measure: total_wo_wchange_c {
+    type: sum
+    hidden: yes
+    sql: ${wo_wchange_c} ;;
+  }
+
+  measure: average_wo_wchange_c {
+    type: average
+    hidden: yes
+    sql: ${wo_wchange_c} ;;
   }
 
   measure: total_wow {

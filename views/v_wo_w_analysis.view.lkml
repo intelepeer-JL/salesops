@@ -148,6 +148,46 @@ view: v_wo_w_analysis {
     sql:  case when ${lw_status} = "Active" then 1 else null end ;;
   }
 
+  dimension: value_count {
+    type: number
+    sql:  case when ${category}="Change in Value" then 1 else null end ;;
+  }
+
+  dimension: stalled_count {
+    type: number
+    sql:  case when ${category}="Stalled" then 1 else null end ;;
+  }
+
+  dimension: reengaged_count {
+    type: number
+    sql:  case when ${category}="Re-engaged" then 1 else null end ;;
+  }
+
+  dimension: new_count {
+    type: number
+    sql:  case when ${category}="New Funnel Add" then 1 else null end ;;
+  }
+
+  dimension: inactive_count {
+    type: number
+    sql:  case when ${category}="Inactive(Consolidated)" then 1 else null end ;;
+  }
+
+  dimension: lost_count {
+    type: number
+    sql:  case when ${category}="Closed Lost" then 1 else null end ;;
+  }
+
+  dimension: won_count {
+    type: number
+    sql:  case when ${category}="Closed Won" then 1 else null end ;;
+  }
+
+  dimension: removed_count {
+    type: number
+    sql:  case when ${category}="Removed From Previous Week" then 1 else null end ;;
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.

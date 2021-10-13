@@ -181,7 +181,7 @@ dimension: wow_val{
 
   measure: wow_avg {
     type: number
-    sql: ${wow_valuechange}/${wow_count_change} ;;
+    sql: ${wow_valuechange}/nullif(${wow_count_change},0) ;;
   }
 
 

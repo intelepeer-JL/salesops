@@ -169,9 +169,10 @@ view: v_wo_w_analysis {
     sql: ${total_tw_count}-${total_lw_count} ;;
   }
 
-measure: wow_valuechange {
+measure: WOW_Change {
   type: number
   sql: ${total_tw_active}-${total_lw_active} ;;
+  value_format: "$#;($#)"
 }
 
 dimension: wow_val{
@@ -181,7 +182,8 @@ dimension: wow_val{
 
   measure: wow_avg {
     type: number
-    sql: ${wow_valuechange}/nullif(${wow_count_change},0) ;;
+    sql: ${WOW_Change}/nullif(${wow_count_change},0) ;;
+    value_format: "$#;($#)"
   }
 
 

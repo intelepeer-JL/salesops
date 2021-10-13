@@ -138,9 +138,31 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.ValueChange ;;
   }
 
+  dimension: TW_Status_Count {
+    type: number
+    sql:  case when ${tw_status} = "Active" then 1 else null end ;;
+  }
+
+  dimension: lW_Status_Count {
+    type: number
+    sql:  case when ${lw_status} = "Active" then 1 else null end ;;
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
+
+  measure: Week_over_week_value {
+    type: sum
+    sql: ${tw_active}-${lw_active} ;;
+  }
+
+  measure: Week_over_week_count {
+    type: sum
+    sql: ${TW_Status_Count}-${lW_Status_Count} ;;
+  }
+
+
 
   measure: count {
     type: count

@@ -172,7 +172,7 @@ view: v_wo_w_analysis {
 measure: WOW_Change {
   type: number
   sql: ${total_tw_active}-${total_lw_active} ;;
-  value_format: "$#;($#)"
+  value_format: "$#,##0;($#)"
 }
 
 dimension: wow_val{

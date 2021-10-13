@@ -180,8 +180,8 @@ dimension: wow_val{
 }
 
   measure: wow_avg {
-    type: average
-    sql: ${wow_val} ;;
+    type: number
+    sql: ${wow_valuechange}/${wow_count_change} ;;
   }
 
 

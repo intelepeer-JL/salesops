@@ -162,7 +162,10 @@ view: v_wo_w_analysis {
     sql: ${TW_Status_Count}-${lW_Status_Count} ;;
   }
 
-
+measure: wow_valuechange {
+  type: number
+  sql: ${total_tw_active}-${total_lw_active} ;;
+}
 
   measure: count {
     type: count

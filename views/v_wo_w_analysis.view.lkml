@@ -54,7 +54,31 @@ view: v_wo_w_analysis {
     sql: ${tw_active}-${lw_active} ;;
   }
 
+  measure: Week_Over_Week_count {
+    type: sum
+    sql: ${TW_Status_Count}-${LW_Status_Count} ;;
+  }
 
+  dimension: TW_Status {
+    type: string
+    sql:  ${TABLE}.TW_Status ;;
+  }
+
+  dimension: LW_Status {
+    type: string
+    sql:  ${TABLE}.LW_Status ;;
+  }
+
+
+  dimension:  TW_Status_Count{
+    type: number
+    sql: case when ${TW_Status}="Active" then 1 else null end ;;
+  }
+
+  dimension:  LW_Status_Count{
+    type: number
+    sql: case when ${LW_Status}="Active" then 1 else null end ;;
+  }
 
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.

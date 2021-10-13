@@ -11,7 +11,7 @@ datagroup: salesops_default_datagroup {
 }
 
 
-
+explore: v_wo_w_analysis_grouped {}
 
 persist_with: salesops_default_datagroup
 

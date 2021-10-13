@@ -1,5 +1,3 @@
-
-
 # The name of this view in Looker is "V Wo W Analysis"
 view: v_wo_w_analysis {
   # The sql_table_name parameter indicates the underlying database table
@@ -38,48 +36,6 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.closedwon ;;
   }
 
-  dimension: categorysort {
-    type: string
-    sql:  case when ${category}="TW_Active" then "1"
-          when ${category}="LW_Active" then "2"
-          when ${category}="WoWChange" then "3"
-          when ${category}="ValueChange" then "4"
-          when ${category}="removed" then "5"
-          when ${category}="New Funnel Add" then "6"
-          else end;;
-  }
-
-  measure: Week_Over_Week {
-    type: sum
-    sql: ${tw_active}-${lw_active} ;;
-  }
-
-  measure: Week_Over_Week_count {
-    type: sum
-    sql: ${TW_Status_Count}-${LW_Status_Count} ;;
-  }
-
-  dimension: TW_Status {
-    type: string
-    sql:  ${TABLE}.TW_Status ;;
-  }
-
-  dimension: LW_Status {
-    type: string
-    sql:  ${TABLE}.LW_Status ;;
-  }
-
-
-  dimension:  TW_Status_Count{
-    type: number
-    sql: case when ${TW_Status}="Active" then 1 else null end ;;
-  }
-
-  dimension:  LW_Status_Count{
-    type: number
-    sql: case when ${LW_Status}="Active" then 1 else null end ;;
-  }
-
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
@@ -112,6 +68,11 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.LW_Amount ;;
   }
 
+  dimension: lw_status {
+    type: string
+    sql: ${TABLE}.LW_Status ;;
+  }
+
   dimension: newadd {
     type: number
     sql: ${TABLE}.newadd ;;
@@ -132,14 +93,14 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.OppOwnerID ;;
   }
 
-  dimension: rengaged {
-    type: number
-    sql: ${TABLE}.Rengaged ;;
-  }
-
   dimension: removed {
     type: number
     sql: ${TABLE}.removed ;;
+  }
+
+  dimension: rengaged {
+    type: number
+    sql: ${TABLE}.Rengaged ;;
   }
 
   dimension: stalled {
@@ -167,14 +128,14 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.TW_Amount ;;
   }
 
+  dimension: tw_status {
+    type: string
+    sql: ${TABLE}.TW_Status ;;
+  }
+
   dimension: value_change {
     type: number
     sql: ${TABLE}.ValueChange ;;
-  }
-
-  dimension: wo_wchange {
-    type: number
-    sql: ${TABLE}.WoWChange ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
@@ -189,19 +150,11 @@ view: v_wo_w_analysis {
   # These sum and average measures are hidden by default.
   # If you want them to show up in your explore, remove hidden: yes.
 
-  measure: WoW_Change {
-  type: number
-  sql: ${total_tw_active}-${total_lw_active} ;;
-  }
-
-
   measure: total_closedloss {
     type: sum
     hidden: yes
     sql: ${closedloss} ;;
   }
-
-
 
   measure: average_closedloss {
     type: average
@@ -269,6 +222,18 @@ view: v_wo_w_analysis {
     sql: ${newadd} ;;
   }
 
+  measure: total_removed {
+    type: sum
+    hidden: yes
+    sql: ${removed} ;;
+  }
+
+  measure: average_removed {
+    type: average
+    hidden: yes
+    sql: ${removed} ;;
+  }
+
   measure: total_rengaged {
     type: sum
     hidden: yes
@@ -327,13 +292,5 @@ view: v_wo_w_analysis {
     type: average
     hidden: yes
     sql: ${value_change} ;;
-  }
-
-
-
-  measure: average_wo_wchange {
-    type: average
-    hidden: yes
-    sql: ${wo_wchange} ;;
   }
 }

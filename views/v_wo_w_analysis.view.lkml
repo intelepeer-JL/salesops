@@ -152,20 +152,38 @@ view: v_wo_w_analysis {
   # measures for numeric dimensions, but you can also add measures of many different types.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
-  measure: Week_over_week_value {
+
+
+  measure: total_tw_count{
     type: sum
-    sql: ${tw_active}-${lw_active} ;;
+    sql: ${TW_Status_Count} ;;
   }
 
-  measure: Week_over_week_count {
+  measure: total_lw_count{
     type: sum
-    sql: ${TW_Status_Count}-${lW_Status_Count} ;;
+    sql: ${lW_Status_Count} ;;
+  }
+
+  measure: wow_count_change {
+    type: number
+    sql: ${total_tw_count}-${total_lw_count} ;;
   }
 
 measure: wow_valuechange {
   type: number
   sql: ${total_tw_active}-${total_lw_active} ;;
 }
+
+dimension: wow_val{
+  type: number
+  sql: ${tw_active}-${lw_active} ;;
+}
+
+  measure: wow_avg {
+    type: average
+    sql: ${wow_val} ;;
+  }
+
 
   measure: count {
     type: count

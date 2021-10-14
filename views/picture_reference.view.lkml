@@ -31,6 +31,12 @@ view: picture_reference {
     sql: ${TABLE}.RowNum ;;
   }
 
+  # dimension: looker_image {
+  #   type: string
+  #   sql: ${TABLE}.homepage_url;;
+  #   html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Flexibility-100.jpg/{{value}}" /> ;;
+  # }
+
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.

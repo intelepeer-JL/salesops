@@ -105,7 +105,6 @@ explore: Funnel_Analytics{
 
 
 
-
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
 # fields available to users for data analysis.

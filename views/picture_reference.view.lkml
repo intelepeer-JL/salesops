@@ -34,7 +34,7 @@ view: picture_reference {
   dimension: url {
     type: string
     sql: ${TABLE}.ImagePng ;;
-    html:  <img src="{{value}}" height="70" width="70" /> ;;
+    html:  <img src="{{value}}" height="100" width="100" /> ;;
   }
 
   # dimension: looker_image {

@@ -31,6 +31,12 @@ view: picture_reference {
     sql: ${TABLE}.RowNum ;;
   }
 
+  dimension: url {
+    type: string
+    sql: ${TABLE}.url ;;
+    html:  <img src="{{value}}" height="70" width="70" /> ;;
+  }
+
   # dimension: looker_image {
   #   type: string
   #   sql: ${TABLE}.homepage_url;;

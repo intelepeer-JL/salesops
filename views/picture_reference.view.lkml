@@ -33,7 +33,7 @@ view: picture_reference {
 
   dimension: url {
     type: string
-    sql: ${TABLE}.url ;;
+    sql: ${TABLE}.ImagePng ;;
     html:  <img src="{{value}}" height="70" width="70" /> ;;
   }
 

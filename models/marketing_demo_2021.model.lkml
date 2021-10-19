@@ -9,7 +9,7 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
   explore: demo_data {
     join: picture_reference {
       relationship: one_to_one
-      sql_on: ${demo_data.result} = ${picture_reference.power_key} ;;
+      sql_on: TRIM(${demo_data.result}) = ${picture_reference.power_key} ;;
     }
   }
 # explore: order_items {

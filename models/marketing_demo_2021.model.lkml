@@ -6,8 +6,8 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.
-  explore: picture_reference {
-    join: demo_data {
+  explore: demo_data {
+    join: picture_reference {
       relationship: one_to_one
       sql_on: ${demo_data.result} = ${picture_reference.power_key} ;;
     }

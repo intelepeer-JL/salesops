@@ -21,6 +21,14 @@ view: demo_data {
     sql: ${TABLE}.result ;;
   }
 
+  # embed_style:
+  # background_color: "#5980DC"
+  # show_title: true
+  # title_color: "#5980DC"
+  # show_filters_bar: false
+  # tile_background_color: "#5980DC"
+  # tile_text_color: "#5980DC"
+
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 

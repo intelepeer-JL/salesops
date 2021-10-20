@@ -9,8 +9,8 @@
 #   elements:
 #     - name: hello_world
 #       type: looker_column
-- dashboard: super_powers_dashboard_2021
-  title: SUPER POWERS DASHBOARD 2021
+- dashboard: powers_dashboard_suresh
+  title: HeroDemo
   layout: newspaper
   preferred_viewer: dashboards-next
   embed_style:

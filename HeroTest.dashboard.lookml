@@ -10,7 +10,7 @@
 #     - name: hello_world
 #       type: looker_column
 - dashboard: powers_dashboard_suresh
-  title: HeroDemo
+  title: HeroTest
   layout: newspaper
   preferred_viewer: dashboards-next
   embed_style:

@@ -45,7 +45,7 @@
       options:
         steps: 5
     y_axes: [{label: Total Powers, orientation: left, series: [{axisId: demo_data.count,
-            id: demo_data.count, name: Demo Data}], showLabels: false, showValues: true,
+            id: demo_data.count, name: Demo Data}], showLabels: false, showValues: false,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
     series_types: {}
     series_colors:

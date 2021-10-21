@@ -37,12 +37,6 @@ view: picture_reference {
     html:  <img src="{{value}}" height="100" width="100" /> ;;
   }
 
-  # dimension: urljpg {
-  #   type: string
-  #   sql: ${TABLE}.Imagejpg ;;
-  #   html:  <img src="{{value}}" height="100" width="100" /> ;;
-  # }
-
   # dimension: looker_image {
   #   type: string
   #   sql: ${TABLE}.homepage_url;;

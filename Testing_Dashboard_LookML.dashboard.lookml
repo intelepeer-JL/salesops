@@ -45,7 +45,7 @@
       options:
         steps: 5
     y_axes: [{label: Total Powers, orientation: left, series: [{axisId: demo_data.count,
-            id: demo_data.count, name: Demo Data}], showLabels: true, showValues: true,
+            id: demo_data.count, name: Demo Data}], showLabels: false, showValues: true,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
     series_types: {}
     series_colors:
@@ -55,7 +55,7 @@
       https://intelepeer.com/wp-content/uploads/2021/10/Visibility402x.png - demo_data.count: "#11efe3"
       https://intelepeer.com/wp-content/uploads/2021/10/Speed402x.png - demo_data.count: "#141564"
     series_labels: {}
-    #label_color: ["#5980DC", "#717073", "#5BBF21", "#141654", "#FF8700"]
+    label_color: []
     defaults_version: 1
     hidden_fields: []
     hidden_points_if_no: []
@@ -63,3 +63,4 @@
     col:
     width:
     height:
+#"#5980DC", "#717073", "#5BBF21", "#141654", "#FF8700"

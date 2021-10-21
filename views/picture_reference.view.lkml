@@ -40,31 +40,31 @@ view: picture_reference {
   dimension: flexibility {
     type: string
     sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Flexibility402x.png" /> ;;
+    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Flexibility402x.png/{{value}}" /> ;;
   }
 
   dimension: reliability {
     type: string
     sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Reliability402x.png" /> ;;
+    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Reliability402x.png/{{value}}" /> ;;
   }
 
   dimension: scalability {
     type: string
     sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Scalability402x.png" /> ;;
+    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Scalability402x.png/{{value}}" /> ;;
   }
 
   dimension: speed {
     type: string
     sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Speed402x.png" /> ;;
+    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Speed402x.png/{{value}}" /> ;;
   }
 
   dimension: visibility {
     type: string
     sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Visibility402x.png" /> ;;
+    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Visibility402x.png/{{value}}" /> ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average

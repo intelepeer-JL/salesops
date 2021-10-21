@@ -37,35 +37,59 @@ view: picture_reference {
     html:  <img src="{{value}}" height="100" width="100" /> ;;
   }
 
-  dimension: flexibility {
+  dimension: urla{
     type: string
-    sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Flexibility402x.png" /> ;;
+    sql: ${TABLE}.ImagePng ;;
+    html:  <img src="{{value}}" height="100" width="100" /> ;;
   }
 
-  dimension: reliability {
+  dimension: urlb{
     type: string
-    sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Reliability402x.png" /> ;;
+    sql: ${TABLE}.ImagePng ;;
+    html:  <img src="{{value}}" height="100" width="100" /> ;;
   }
 
-  dimension: scalability {
+  dimension: urlc{
     type: string
-    sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Scalability402x.png" /> ;;
+    sql: ${TABLE}.ImagePng ;;
+    html:  <img src="{{value}}" height="100" width="100" /> ;;
   }
 
-  dimension: speed {
+  dimension: urld{
     type: string
-    sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Speed402x.png" /> ;;
+    sql: ${TABLE}.ImagePng ;;
+    html:  <img src="{{value}}" height="100" width="100" /> ;;
   }
 
-  dimension: visibility {
-    type: string
-    sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Visibility402x.png" /> ;;
-  }
+  # dimension: flexibility {
+  #   type: string
+  #   sql: ${TABLE}.ImagePng;;
+  #   html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Flexibility402x.png" /> ;;
+  # }
+
+  # dimension: reliability {
+  #   type: string
+  #   sql: ${TABLE}.ImagePng;;
+  #   html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Reliability402x.png" /> ;;
+  # }
+
+  # dimension: scalability {
+  #   type: string
+  #   sql: ${TABLE}.ImagePng;;
+  #   html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Scalability402x.png" /> ;;
+  # }
+
+  # dimension: speed {
+  #   type: string
+  #   sql: ${TABLE}.ImagePng;;
+  #   html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Speed402x.png" /> ;;
+  # }
+
+  # dimension: visibility {
+  #   type: string
+  #   sql: ${TABLE}.ImagePng;;
+  #   html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Visibility402x.png" /> ;;
+  # }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.

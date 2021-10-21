@@ -40,7 +40,7 @@ view: picture_reference {
   dimension: flexibility {
     type: string
     sql: ${TABLE}.ImagePng;;
-    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Flexibility-100.jpg" /> ;;
+    html: <img src="https://intelepeer.com/wp-content/uploads/2021/10/Flexibility-100.jpg/{{value}}" /> ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average

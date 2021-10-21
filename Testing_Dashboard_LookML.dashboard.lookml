@@ -1,7 +1,7 @@
 - dashboard: testing_dashboard_lookml
   title: Testing Dashboard Lookml
   layout: newspaper
-  preferred_viewer: dashboards-next
+  preferred_viewer: dashboards
   elements:
   - title: marketing super powers color testing_Suresh
     name: marketing super powers color testing_Suresh

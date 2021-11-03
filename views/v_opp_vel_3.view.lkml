@@ -1,19 +1,19 @@
 # Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
-explore: v_opp_vel_3 {
-  hidden: no
+# explore: v_opp_vel_3 {
+#   hidden: no
 
-  join: v_opp_vel_3__opp_end {
-    view_label: "V Opp Vel 3: Oppend"
-    sql: LEFT JOIN UNNEST(${v_opp_vel_3.opp_end}) as v_opp_vel_3__opp_end ;;
-    relationship: one_to_many
-  }
+#   join: v_opp_vel_3__opp_end {
+#     view_label: "V Opp Vel 3: Oppend"
+#     sql: LEFT JOIN UNNEST(${v_opp_vel_3.opp_end}) as v_opp_vel_3__opp_end ;;
+#     relationship: one_to_many
+#   }
 
-  join: v_opp_vel_3__opp_start {
-    view_label: "V Opp Vel 3: Oppstart"
-    sql: LEFT JOIN UNNEST(${v_opp_vel_3.opp_start}) as v_opp_vel_3__opp_start ;;
-    relationship: one_to_many
-  }
-}
+#   join: v_opp_vel_3__opp_start {
+#     view_label: "V Opp Vel 3: Oppstart"
+#     sql: LEFT JOIN UNNEST(${v_opp_vel_3.opp_start}) as v_opp_vel_3__opp_start ;;
+#     relationship: one_to_many
+#   }
+# }
 
 # The name of this view in Looker is "V Opp Vel 3"
 view: v_opp_vel_3 {

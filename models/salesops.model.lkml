@@ -53,7 +53,21 @@ explore: opportunityhistory {}
 explore: opportunity_load {}
 explore: stage_group {}
 
+explore: v_opp_vel_3 {
+  hidden: no
 
+  join: v_opp_vel_3__opp_end {
+    view_label: "V Opp Vel 3: Oppend"
+    sql: LEFT JOIN UNNEST(${v_opp_vel_3.opp_end}) as v_opp_vel_3__opp_end ;;
+    relationship: one_to_many
+  }
+
+  join: v_opp_vel_3__opp_start {
+    view_label: "V Opp Vel 3: Oppstart"
+    sql: LEFT JOIN UNNEST(${v_opp_vel_3.opp_start}) as v_opp_vel_3__opp_start ;;
+    relationship: one_to_many
+  }
+}
 
 explore: Funnel_Analytics{
   view_name: opportunity_load

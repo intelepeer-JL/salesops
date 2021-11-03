@@ -1,6 +1,6 @@
 # Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
 explore: v_opp_vel_3 {
-  hidden: yes
+  hidden: no
 
   join: v_opp_vel_3__opp_end {
     view_label: "V Opp Vel 3: Oppend"

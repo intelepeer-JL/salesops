@@ -54,6 +54,7 @@ explore: opportunity_load {}
 explore: stage_group {}
 
 
+
 explore: Funnel_Analytics{
   view_name: opportunity_load
   join: user {

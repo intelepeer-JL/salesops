@@ -38,7 +38,11 @@ view: v_funnel_analytics {
   measure: avgadds {
     type: number
     sql:  ${oppcount}/13;;
+  }
 
+  measure: avgval {
+    type: number
+    sql:  ${total_amount}/13;;
   }
 
   measure: oppcount {

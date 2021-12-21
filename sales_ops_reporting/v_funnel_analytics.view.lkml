@@ -52,25 +52,12 @@ view: v_funnel_analytics {
     sql:  ${total_amount}/13;;
   }
 
-  measure: opp_count_hidden {
-    label: "opp count hidden"
-    type: count_distinct
-    hidden:  yes
-    sql: ${opp_id} ;;
-  }
-
   measure: oppcount {
     type:  count_distinct
     sql: ${opp_id} ;;
-    html: <b>{{opp_count_hidden._rendered_value}}</b><br> <b>{{oppcount._rendered_value}} </b></div> ;;
   }
 
-  measure: oppcountsum {
-    label: "total opp count"
-    type:  number
-    sql: ${TABLE}${oppcount} ;;
 
-  }
 
   measure: average_amount {
     type: average

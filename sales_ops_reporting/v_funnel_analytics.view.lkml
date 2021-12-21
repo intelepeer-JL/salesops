@@ -26,7 +26,7 @@ view: v_funnel_analytics {
     sql: ${TABLE}.AccountName ;;
     link: {
     label: "google"
-    url: "http://www.google.com?fields=v_funnel_analytics.account_filter"
+    url: "http://www.google.com&f[v_funnel_analytics.account_filter]={{v_funnel_analytics.account_filter._value}}"
   }
   }
 

@@ -66,6 +66,7 @@ view: v_funnel_analytics {
   }
 
   measure: oppcountsum {
+    label: "total opp count"
     type:  number
     sql: ${TABLE}${oppcount} ;;
 

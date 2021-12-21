@@ -28,8 +28,8 @@ view: v_funnel_analytics {
     type: string
     sql: ${TABLE}.AccountName ;;
     link: {
-    label: "Account"
-    url: "{{view.accnt_link}}"
+    label: "Account links"
+    url: "{{ view.accnt_link}}"
   }
   }
 

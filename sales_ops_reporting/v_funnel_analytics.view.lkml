@@ -65,6 +65,12 @@ view: v_funnel_analytics {
     html: <b>{{opp_count_hidden._rendered_value}}</b><br> <b>{{oppcount._rendered_value}} </b></div> ;;
   }
 
+  measure: oppcountsum {
+    type:  number
+    sql: ${TABLE}${oppcount} ;;
+
+  }
+
   measure: average_amount {
     type: average
     sql: ${amount} ;;

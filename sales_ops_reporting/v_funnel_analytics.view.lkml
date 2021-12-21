@@ -65,7 +65,7 @@ view: v_funnel_analytics {
     link: {
       label: "google"
       url: "www.google.com"
-      icon_url: "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+
     }
     # Possibly more links
   }

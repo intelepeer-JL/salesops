@@ -26,7 +26,7 @@ view: v_funnel_analytics {
     sql: ${TABLE}.AccountName ;;
     link: {
     label: "google"
-    url: "https://google.com"
+    url: "{{ view.accnt_link}}"
   }
   }
 

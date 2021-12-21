@@ -40,6 +40,7 @@ view: v_funnel_analytics {
     sql:  ${oppcount}/13;;
   }
 
+
   measure: avgval {
     type: number
     sql:  ${total_amount}/13;;
@@ -50,9 +51,9 @@ view: v_funnel_analytics {
     sql: ${opp_id} ;;
   }
 
-  measure: createdmonthcount {
-    type:  count
-   drill_fields: [created_month]
+  measure: average_amount {
+    type: average
+    sql: ${amount} ;;
   }
 
   measure: total_amount {
@@ -60,10 +61,14 @@ view: v_funnel_analytics {
     sql: ${amount} ;;
   }
 
-  measure: average_amount {
-    type: average
-    sql: ${amount} ;;
-  }
+  measure: CPaaS_Adds {
+    type: count
+    html:"{{www.google.com}}";;
+    }
+
+
+
+
 
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.

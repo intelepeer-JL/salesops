@@ -35,6 +35,16 @@ view: v_funnel_analytics {
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
+  measure: oppcount {
+    type:  count_distinct
+    sql: ${opp_id} ;;
+  }
+
+  measure: createdmonthcount {
+    type:  count_distinct
+    sql: $[${created_month}] ;;
+  }
+
   measure: total_amount {
     type: sum
     sql: ${amount} ;;

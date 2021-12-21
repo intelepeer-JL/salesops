@@ -42,7 +42,7 @@ view: v_funnel_analytics {
 
   measure: createdmonthcount {
     type:  count_distinct
-    sql: $[${created_month}] ;;
+    sql: [${created_month}] ;;
   }
 
   measure: total_amount {

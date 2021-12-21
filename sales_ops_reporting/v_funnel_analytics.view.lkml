@@ -24,6 +24,10 @@ view: v_funnel_analytics {
   dimension: account_name {
     type: string
     sql: ${TABLE}.AccountName ;;
+    link: {
+    label: "google"
+    url: "www.google.com"
+  }
   }
 
   dimension: amount {

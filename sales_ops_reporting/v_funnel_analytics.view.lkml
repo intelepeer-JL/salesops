@@ -37,7 +37,7 @@ view: v_funnel_analytics {
 
   measure: avgadds {
     type: number
-    sql:  ${oppcount}/${createdmonthcount} ;;
+    sql:  ${oppcount}/13;;
 
   }
 

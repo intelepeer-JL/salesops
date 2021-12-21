@@ -21,7 +21,7 @@ view: v_funnel_analytics {
     type: string
     sql: ${TABLE}.AccountName ;;
     link: {
-      label: "account_link"
+      label: "Account"
       url: " {{v_funnel_analytics.accnt_link._value}}"
   }
   }
@@ -276,6 +276,7 @@ view: v_funnel_analytics {
   }
 
   dimension: opp_link {
+    hidden: yes
     type: string
     sql: ${TABLE}.opp_link ;;
   }
@@ -283,6 +284,10 @@ view: v_funnel_analytics {
   dimension: opp_name {
     type: string
     sql: ${TABLE}.OppName ;;
+    link: {
+      label: "Opportunity"
+      url: " {{v_funnel_analytics.opp_link._value}}"
+    }
   }
 
   dimension: opp_owner {

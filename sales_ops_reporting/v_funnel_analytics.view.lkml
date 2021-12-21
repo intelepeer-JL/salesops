@@ -26,7 +26,7 @@ view: v_funnel_analytics {
     sql: ${TABLE}.AccountName ;;
     link: {
       label: "account_link"
-      url: " {{_v_funnel_analytics._accnt_link}}"
+      url: " {{sales_ops_reporting.v_funnel_analytics._accnt_link}}"
   }
   }
 

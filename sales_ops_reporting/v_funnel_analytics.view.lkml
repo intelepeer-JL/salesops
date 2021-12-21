@@ -54,6 +54,7 @@ view: v_funnel_analytics {
 
   measure: opp_count_hidden {
     label: "opp count hidden"
+    type: count_distinct
     hidden:  yes
     sql: ${opp_id} ;;
   }

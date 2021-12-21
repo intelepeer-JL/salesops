@@ -61,12 +61,14 @@ view: v_funnel_analytics {
     sql: ${amount} ;;
   }
 
-  measure: CPaaS_Adds {
-    type: count
-    html:"{{www.google.com}}";;
+  dimension: google_link {
+    link: {
+      label: "google"
+      url: "www.google.com"
+      icon_url: "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
     }
-
-
+    # Possibly more links
+  }
 
 
 

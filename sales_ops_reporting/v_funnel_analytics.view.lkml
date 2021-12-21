@@ -37,7 +37,7 @@ view: v_funnel_analytics {
 
   measure: avgadds {
     type: number
-    sql:  ${oppcount}/13;;
+    sql:  ${oppcount}/${createdmonthcount};;
 
   }
 
@@ -47,8 +47,8 @@ view: v_funnel_analytics {
   }
 
   measure: createdmonthcount {
-    type:  count_distinct
-    sql: [${created_month}] ;;
+    type:  count
+   drill_fields: [created_month]
   }
 
   measure: total_amount {

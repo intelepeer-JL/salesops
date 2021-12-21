@@ -11,10 +11,6 @@ view: v_funnel_analytics {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Accnt Link" in Explore.
 
-  dimension: accnt_link {
-    type: string
-    sql: ${TABLE}.accnt_link ;;
-  }
 
   dimension: account_filter {
     type: yesno
@@ -29,6 +25,12 @@ view: v_funnel_analytics {
       url: " {{sales_ops_reporting.v_funnel_analytics._accnt_link}}"
   }
   }
+
+  dimension: accnt_link {
+    type: string
+    sql: ${TABLE}.accnt_link ;;
+  }
+
 
   dimension: amount {
     type: number

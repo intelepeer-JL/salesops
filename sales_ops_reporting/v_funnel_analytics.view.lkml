@@ -67,14 +67,7 @@ view: v_funnel_analytics {
     sql: ${amount} ;;
   }
 
-  dimension: google {
-    link: {
-      label: "google"
-      url: "www.google.com"
 
-    }
-    # Possibly more links
-  }
 
 
 

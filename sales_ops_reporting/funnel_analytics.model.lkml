@@ -6,6 +6,7 @@ include: "/**/*.view.lkml"                 # include all views in this project
 
 
 explore: v_funnel_analytics {}
+explore: v_execution_dates {}
 
 
 

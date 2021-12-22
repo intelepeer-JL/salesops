@@ -31,6 +31,19 @@ view: v_funnel_analytics {
     sql: ${TABLE}.accnt_link ;;
   }
 
+  dimension: is_top_10 {
+    type: yesno
+    sql:
+      exists(
+        select *
+        from(
+          select account_name
+          from v_funnel_analytics
+          group by sum(amount)desc
+          limit 10
+          )top_10
+          where ${account_name}=top_10.account_name);;
+  }
 
   dimension: amount {
     type: number

@@ -103,14 +103,19 @@ view: v_booking_s5 {
     sql: ${TABLE}.Rep ;;
   }
 
-  dimension: role {
+  dimension: role_id {
     type: string
-    sql: ${TABLE}.Role ;;
+    sql: ${TABLE}.Role_Id ;;
   }
 
   dimension: status {
     type: string
     sql: ${TABLE}.Status ;;
+  }
+
+  dimension: team {
+    type: string
+    sql: ${TABLE}.Team ;;
   }
 
   dimension: total_booking {

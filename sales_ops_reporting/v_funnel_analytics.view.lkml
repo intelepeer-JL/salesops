@@ -26,6 +26,9 @@ view: v_funnel_analytics {
   }
   }
 
+
+
+
   dimension: accnt_link {
     type: string
     sql: ${TABLE}.accnt_link ;;

@@ -1,21 +1,13 @@
 connection: "sales_ops"
 
 include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
-include: "/**/*.view.lkml"                 # include all views in this project
+include: "/**/*.view.lkml"
+
+explore: v_booking_s5 {}
+explore: v_booking_s5_roll {}
+
+
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
-
-
-explore: v_funnel_analytics {}
-explore: v_execution_dates {}
-
-view: Funnel_Adds {
-  derived_table: {
-    sql: select
-      "funnel adds" as Funnel_Adds;;
-  }
-}
-
-
 
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.

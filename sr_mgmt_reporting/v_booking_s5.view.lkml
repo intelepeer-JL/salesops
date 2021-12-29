@@ -154,7 +154,7 @@ view: v_booking_s5 {
     sql: sum(${cpaa_s})/sum(${cpaa_sc}) ;;
   }
 
-  measure: avg_ {
+  measure: avg_2 {
     type: number
     sql: sum(${cpaa_s2})/sum(${cpaa_s2c}) ;;
   }

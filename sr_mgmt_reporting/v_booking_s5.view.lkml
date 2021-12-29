@@ -142,21 +142,21 @@ view: v_booking_s5 {
 
   measure: quota_percentage {
     type: number
-    sql: sum(${total_booking})/sum(${quota}) ;;
+    sql: sum(${total_booking})/nullif(sum(${quota}),0) ;;
   }
   measure: acg_v {
     type: number
-    sql: sum(${voice})/sum(${voicec}) ;;
+    sql: sum(${voice})/nullif(sum(${voicec}),0) ;;
   }
 
   measure: avg_1 {
     type: number
-    sql: sum(${cpaa_s})/sum(${cpaa_sc}) ;;
+    sql: sum(${cpaa_s})/nullif(sum(${cpaa_sc}),0) ;;
   }
 
   measure: avg_2 {
     type: number
-    sql: sum(${cpaa_s2})/sum(${cpaa_s2c}) ;;
+    sql: sum(${cpaa_s2})/nullif(sum(${cpaa_s2c}),0) ;;
   }
 
   measure: total_count {
@@ -166,12 +166,12 @@ view: v_booking_s5 {
 
   measure: avg_t {
     type: number
-    sql: sum(${total_booking})/${total_count}) ;;
+    sql: sum(${total_booking})/nullif(${total_count}),0) ;;
   }
 
   measure: PercentIncremental {
     type: number
-    sql: sum(${mrg_incremental})/sum(${total_booking}) ;;
+    sql: sum(${mrg_incremental})/nullif(sum(${total_booking}),0) ;;
   }
 
 

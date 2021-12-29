@@ -144,6 +144,30 @@ view: v_booking_s5 {
     type: number
     sql: sum(${total_booking})/sum(${quota}) ;;
   }
+  measure: acg_v {
+    type: number
+    sql: sum(${voice})/sum(${voicec}) ;;
+  }
+
+  measure: avg_1 {
+    type: number
+    sql: sum(${cpaa_s})/sum(${cpaa_sc}) ;;
+  }
+
+  measure: total_count {
+    type:  number
+    sql:  (sum(${cpaa_s2c})+sum(${cpaa_sc})+sum(${voicec})) ;;
+  }
+
+  measure: avg_t {
+    type: number
+    sql: sum(${total_booking})/${total_count}) ;;
+  }
+
+  measure: PercentIncremental {
+    type: number
+    sql: sum(${mrg_incremental})/sum(${total_booking}) ;;
+  }
 
 
 }

@@ -137,4 +137,13 @@ view: v_booking_s5 {
     type: count
     drill_fields: []
   }
+
+  # added dimenstions and measures that are not from google
+
+  measure: quota_percentage {
+    type: number
+    sql: sum(${total_booking})/sum(${quota}) ;;
+  }
+
+
 }

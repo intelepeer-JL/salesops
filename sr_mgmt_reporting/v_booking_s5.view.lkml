@@ -142,7 +142,7 @@ view: v_booking_s5 {
 
   measure: quota_percentage {
     type: number
-    sql: (sum(${total_booking})/nullif(sum(${quota}),0))*100 ;;
+    sql: (sum(${total_booking})/nullif(sum(${quota}),0)) ;;
   }
   measure: acg_v {
     type: number

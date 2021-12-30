@@ -161,7 +161,7 @@ view: v_booking_s5 {
 
   measure: total_count {
     type:  number
-    sql:  sum(${cpaa_s2c}+${cpaa_sc}+${voicec}) ;;
+    sql:  (${cpaa_s2c}+${cpaa_sc}+${voicec}) ;;
   }
 
 

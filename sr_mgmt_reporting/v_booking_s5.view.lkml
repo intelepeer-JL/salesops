@@ -163,7 +163,7 @@ view: v_booking_s5 {
 
   measure: t_counts {
     type: number
-    sql: ifnull(${voicec},0)+ifnull(${cpaa_sc},0)+ifnull(${cpaa_s2c},0) ;;
+    sql: sum(ifnull(${voicec},0)+ifnull(${cpaa_sc},0)+ifnull(${cpaa_s2c},0)) ;;
   }
 
   measure: PercentIncremental {

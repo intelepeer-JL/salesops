@@ -166,7 +166,7 @@ view: v_booking_s5 {
 
   measure: avg_t {
     type: number
-    sql: sum(${total_booking})/nullif(${total_count}),0) ;;
+    sql: sum(${total_booking})/nullif(sum(${total_count}),0) ;;
   }
 
   measure: PercentIncremental {

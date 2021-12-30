@@ -164,10 +164,7 @@ view: v_booking_s5 {
     sql:  sum(${cpaa_s2c}+${cpaa_sc}+${voicec}) ;;
   }
 
-  measure: avg_t {
-    type: number
-    sql: sum(${total_booking})/nullif(sum(${total_count}),0) ;;
-  }
+
 
   measure: PercentIncremental {
     type: number

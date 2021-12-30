@@ -161,6 +161,11 @@ view: v_booking_s5 {
     sql: sum(${cpaa_s2})/nullif(sum(${cpaa_s2c}),0) ;;
   }
 
+  measure: avg_t {
+    type: number
+    sql: sum(${total_booking})/nullif(sum(${t_counts}),0) ;;
+  }
+
   measure: t_counts {
     type: number
     sql: sum(ifnull(${voicec},0)+ifnull(${cpaa_sc},0)+ifnull(${cpaa_s2c},0)) ;;

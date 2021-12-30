@@ -160,7 +160,8 @@ view: v_booking_s5 {
     type: number
     sql: sum(${cpaa_s2})/nullif(sum(${cpaa_s2c}),0) ;;
   }
-  dimension: total_counts {
+
+  measure: total_counts {
     type:  number
     sql: ${voicec}+${cpaa_s2c}+${cpaa_sc} ;;
   }

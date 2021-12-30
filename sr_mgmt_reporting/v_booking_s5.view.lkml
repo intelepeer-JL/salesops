@@ -161,11 +161,10 @@ view: v_booking_s5 {
     sql: sum(${cpaa_s2})/nullif(sum(${cpaa_s2c}),0) ;;
   }
 
-  measure: total_counts {
-    type:  number
-    sql: ${voicec}+${cpaa_s2c}+${cpaa_sc} ;;
+  measure: t_counts {
+    type: number
+    sql: isnull(${voicec},0)+isnull(${cpaa_sc},0)+isnull(${cpaa_s2c},0) ;;
   }
-
 
   measure: PercentIncremental {
     type: number

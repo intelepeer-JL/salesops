@@ -163,7 +163,7 @@ view: v_booking_s5 {
 
   measure: avg_t {
     type: number
-    sql: sum(${total_booking})/nullif(sum(${t_counts}),0) ;;
+    sql: sum(${total_booking})/nullif(${t_counts},0) ;;
   }
 
   measure: t_counts {

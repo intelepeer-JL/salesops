@@ -138,11 +138,11 @@ view: v_booking_s5 {
     drill_fields: []
   }
 
-  # added dimenstions and measures that are not from google
+  # added dimenstions and measures that are not from BigQuery
 
   measure: quota_percentage {
     type: number
-    sql: sum(${total_booking})/nullif(sum(${quota}),0) ;;
+    sql: (sum(${total_booking})/nullif(sum(${quota}),0))*100 ;;
   }
   measure: acg_v {
     type: number

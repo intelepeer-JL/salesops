@@ -123,10 +123,7 @@ view: v_booking_s5 {
     sql: ${TABLE}.total_booking ;;
   }
 
-  dimension: total_count {
-    type: number
-    sql: ${TABLE}.total_count ;;
-  }
+
 
   dimension: voice {
     type: number
@@ -163,9 +160,10 @@ view: v_booking_s5 {
     type: number
     sql: sum(${cpaa_s2})/nullif(sum(${cpaa_s2c}),0) ;;
   }
-
-
-
+  dimension: total_counts {
+    type:  number
+    sql: ${voicec}+${cpaa_s2c}+${cpaa_sc} ;;
+  }
 
 
   measure: PercentIncremental {

@@ -189,12 +189,12 @@ view: v_booking_v2s5 {
     sql: sum(${voice})/nullif(sum(${voicec}),0) ;;
   }
 
-  measure: avg_1.0 {
+  measure: avg_1_0 {
     type: number
     sql: sum(${cpaa_s})/nullif(sum(${cpaa_sc}),0) ;;
   }
 
-  measure: avg_2.0 {
+  measure: avg_2_0 {
     type: number
     sql: sum(${cpaa_s2})/nullif(sum(${cpaa_s2c}),0) ;;
   }

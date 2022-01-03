@@ -4,7 +4,7 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 include: "/**/*.view.lkml"
 
 
-explore: v_booking_v2s5 {}
+
 explore: v_booking_v2s3 {}
 explore: v_booking_s5 {}
 

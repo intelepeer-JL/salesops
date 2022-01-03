@@ -5,6 +5,7 @@ include: "/**/*.view.lkml"
 
 explore: v_booking_s5 {}
 explore: v_booking_v2s5 {}
+explore: v_booking_v2s3 {}
 
 
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard

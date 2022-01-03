@@ -3,10 +3,10 @@ connection: "sales_ops"
 include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
 include: "/**/*.view.lkml"
 
-explore: v_booking_s5 {}
+
 explore: v_booking_v2s5 {}
 explore: v_booking_v2s3 {}
-
+explore: v_booking_s5 {}
 
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 

@@ -1,25 +1,5 @@
 # Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
-explore: v_booking_v2s3 {
-  hidden: yes
 
-  join: v_booking_v2s3__term {
-    view_label: "V Booking V2s3: Term"
-    sql: LEFT JOIN UNNEST(${v_booking_v2s3.term}) as v_booking_v2s3__term ;;
-    relationship: one_to_many
-  }
-
-  join: v_booking_v2s3__mugterm {
-    view_label: "V Booking V2s3: Mugterm"
-    sql: LEFT JOIN UNNEST(${v_booking_v2s3.mugterm}) as v_booking_v2s3__mugterm ;;
-    relationship: one_to_many
-  }
-
-  join: v_booking_v2s3__contract_term {
-    view_label: "V Booking V2s3: Contractterm"
-    sql: LEFT JOIN UNNEST(${v_booking_v2s3.contract_term}) as v_booking_v2s3__contract_term ;;
-    relationship: one_to_many
-  }
-}
 
 # The name of this view in Looker is "V Booking V2s3"
 view: v_booking_v2s3 {

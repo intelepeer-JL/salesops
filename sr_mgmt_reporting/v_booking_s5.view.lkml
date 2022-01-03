@@ -123,8 +123,6 @@ view: v_booking_s5 {
     sql: ${TABLE}.total_booking ;;
   }
 
-
-
   dimension: voice {
     type: number
     sql: ${TABLE}.Voice ;;
@@ -139,42 +137,4 @@ view: v_booking_s5 {
     type: count
     drill_fields: []
   }
-
-  # added dimenstions and measures that are not from BigQuery
-
-  measure: quota_percentage {
-    type: number
-    sql: (sum(${total_booking})/nullif(sum(${quota}),0)) ;;
-  }
-  measure: acg_v {
-    type: number
-    sql: sum(${voice})/nullif(sum(${voicec}),0) ;;
-  }
-
-  measure: avg_1 {
-    type: number
-    sql: sum(${cpaa_s})/nullif(sum(${cpaa_sc}),0) ;;
-  }
-
-  measure: avg_2 {
-    type: number
-    sql: sum(${cpaa_s2})/nullif(sum(${cpaa_s2c}),0) ;;
-  }
-
-  measure: avg_t {
-    type: number
-    sql: sum(${total_booking})/nullif(${t_counts},0) ;;
-  }
-
-  measure: t_counts {
-    type: number
-    sql: sum(ifnull(${voicec},0)+ifnull(${cpaa_sc},0)+ifnull(${cpaa_s2c},0)) ;;
-  }
-
-  measure: PercentIncremental {
-    type: number
-    sql: sum(${mrg_incremental})/nullif(sum(${total_booking}),0) ;;
-  }
-
-
 }

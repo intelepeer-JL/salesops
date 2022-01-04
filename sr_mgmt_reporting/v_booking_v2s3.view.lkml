@@ -35,6 +35,7 @@ view: v_booking_v2s3 {
   }
 
 dimension:  updated_term{
+type: number
 sql: Case
 When ${mugterm} is null then ${contract_term}
 else ${mugterm} end ;;

@@ -34,6 +34,12 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.Dept ;;
   }
 
+dimension:  updated_term{
+sql: Case
+When ${mugterm} is null then ${contract_term}
+else ${mugterm} end ;;
+
+}
 
   dimension: account_filter {
     type: yesno

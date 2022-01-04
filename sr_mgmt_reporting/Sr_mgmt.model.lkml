@@ -5,7 +5,9 @@ include: "/**/*.view.lkml"
 
 
 
-explore: v_booking_v2s3 {}
+explore: v_booking_v2s3 {
+  cancel_grouping_fields: [v_booking_v2s3.term,v_booking_v2s3.TCV,v_booking_v2s3.CCV]
+}
 explore: v_booking_s5 {}
 explore: v_booking_v2s5 {}
 

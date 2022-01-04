@@ -14,6 +14,8 @@ view: v_booking_v2s3 {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Accnt Link" in Explore.
 
+
+
   dimension: accnt_link {
     type: string
     sql: ${TABLE}.accnt_link ;;
@@ -93,7 +95,7 @@ view: v_booking_v2s3 {
   # If you want this field to be displayed, remove "hidden: yes".
 
   dimension: contract_term {
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.ContractTerm ;;
   }
 
@@ -156,7 +158,7 @@ view: v_booking_v2s3 {
   }
 
   dimension: mugterm {
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.MUGTerm ;;
   }
 

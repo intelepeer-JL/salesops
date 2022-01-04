@@ -71,6 +71,19 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.MRG_Amount ;;
   }
 
+  dimension: NewLogo {
+    type:  number
+    sql: ${TABLE}.newlogo ;;
+
+  }
+
+ dimension: upsellcross {
+  type: number
+  sql: ${TABLE}.UpsellCross ;;
+
+
+ }
+
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.

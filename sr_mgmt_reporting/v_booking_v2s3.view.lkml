@@ -222,7 +222,7 @@ view: v_booking_v2s3 {
 
   dimension: term {
     type: number
-    sql: ${TABLE}.term ;;
+    sql: Any_Value(${TABLE}.term) ;;
   }
 
   dimension: total_cpaa_s_mrc__c {

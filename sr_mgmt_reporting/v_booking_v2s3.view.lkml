@@ -19,6 +19,22 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.accnt_link ;;
   }
 
+  dimension: AccountOwner {
+    type: string
+    sql: ${TABLE}.AccountOwner ;;
+  }
+
+  dimension: OppOwner {
+    type: string
+    sql: ${TABLE}.OppOwner ;;
+  }
+
+  dimension: Dept {
+    type: string
+    sql: ${TABLE}.Dept ;;
+  }
+
+
   dimension: account_filter {
     type: yesno
     sql: ${TABLE}.AccountFilter ;;

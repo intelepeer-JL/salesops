@@ -11,6 +11,7 @@ explore: v_booking_v2s3 {
 explore: v_booking_s5 {}
 explore: v_booking_v2s5 {}
 explore: v_lock_stretch {}
+explore: v_booking_v2s6 {}
 
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 

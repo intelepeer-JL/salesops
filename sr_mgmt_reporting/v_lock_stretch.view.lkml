@@ -23,6 +23,12 @@ view: v_lock_stretch {
     sql: ${TABLE}.accnt_link ;;
   }
 
+  dimension: totalamount {
+    type:  number
+    sql: ${TABLE}.totalAmount ;;
+
+  }
+
   dimension: account_name {
     type: string
     sql: ${TABLE}.AccountName ;;

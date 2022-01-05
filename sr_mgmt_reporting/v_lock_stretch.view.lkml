@@ -43,6 +43,10 @@ view: v_lock_stretch {
   dimension: account_name {
     type: string
     sql: ${TABLE}.AccountName ;;
+    link: {
+      label: "Account"
+      url: " {{v_lock_stretch.accnt_link._value}}"
+    }
   }
 
   dimension: amount {
@@ -155,6 +159,10 @@ view: v_lock_stretch {
   dimension: opp_name {
     type: string
     sql: ${TABLE}.OppName ;;
+    link: {
+      label: "Account"
+      url: " {{v_lock_stretch.opp_link._value}}"
+    }
   }
 
   dimension: opp_owner {

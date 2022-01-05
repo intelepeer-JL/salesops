@@ -29,6 +29,12 @@ view: v_lock_stretch {
 
   }
 
+  dimension: amountabbrev {
+    type:  number
+    sql: ${TABLE}.totalAmount ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+  }
+
   dimension: account_name {
     type: string
     sql: ${TABLE}.AccountName ;;

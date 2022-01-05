@@ -32,7 +32,7 @@ view: v_lock_stretch {
   dimension: amountabbrev {
     type:  number
     sql: ${TABLE}.totalAmount ;;
-    value_format: "[>=1000000]$0.0,,\"M\";[>=1000]$0.0,\"K\";$0.0"
+    value_format: "[>=1000000]$0.0,,\"M\""
   }
 
   dimension: account_name {

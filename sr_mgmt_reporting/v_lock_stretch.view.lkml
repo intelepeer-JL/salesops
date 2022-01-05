@@ -25,7 +25,7 @@ view: v_lock_stretch {
 
   dimension: closemonthgroup {
     type: string
-    sql: concat(${TABLE}.accnt_link,${account_name}) ;;
+    sql: concat(format_date("%B",${close_date})," ",format_date("%Y",${close_date})) ;;
   }
 
   dimension: totalamount {

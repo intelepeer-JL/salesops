@@ -2,7 +2,7 @@
 view: v_booking_v2s6 {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `test-and-poc.salesops_sf.v_booking_v2s6`
+  sql_table_name: `salesops_sf.v_booking_v2s6`
     ;;
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -35,6 +35,11 @@ view: v_booking_v2s6 {
     sql: ${TABLE}.department ;;
   }
 
+  dimension: mgmt_plan {
+    type: number
+    sql: ${TABLE}.Mgmt_plan ;;
+  }
+
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
@@ -53,9 +58,14 @@ view: v_booking_v2s6 {
     sql: ${TABLE}.month ;;
   }
 
-  dimension: quota {
+  dimension: team {
+    type: string
+    sql: ${TABLE}.Team ;;
+  }
+
+  dimension: team_quota {
     type: number
-    sql: ${TABLE}.quota ;;
+    sql: ${TABLE}.team_quota ;;
   }
 
   measure: count {

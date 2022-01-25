@@ -67,6 +67,21 @@ view: v_booking_v2s6 {
     type: number
     sql: ${TABLE}.team_quota ;;
   }
+ measure: tot_quot {
+   type: sum
+  sql: ${TABLE}.team_quota ;;
+ }
+
+  measure: tot_mgmt {
+    type: sum
+    sql: ${TABLE}.Mgmt_plan ;;
+
+  }
+
+ measure: mgmt_eff {
+   type: number
+  sql: ${total_booking}/${team_quota} ;;
+ }
 
   measure: count {
     type: count

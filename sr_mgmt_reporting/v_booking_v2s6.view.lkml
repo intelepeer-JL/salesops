@@ -80,7 +80,9 @@ view: v_booking_v2s6 {
 
  measure: mgmt_eff {
    type: number
-  sql: ${total_booking}/${team_quota} ;;
+  value_format: "0.0%"
+  sql: (sum(${total_booking})/nullif(sum(${mgmt_plan}),0)) ;;
+
  }
 
   measure: count {

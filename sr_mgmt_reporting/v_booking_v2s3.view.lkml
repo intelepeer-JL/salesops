@@ -50,6 +50,10 @@ view: v_booking_v2s3 {
   dimension: account_name {
     type: string
     sql: ${TABLE}.AccountName ;;
+    link: {
+      label: "Account"
+      url: " {{v_booking_v2s3.accnt_link._value}}"
+    }
   }
 
   dimension: account_owner_id {
@@ -185,6 +189,10 @@ view: v_booking_v2s3 {
   dimension: opp_name {
     type: string
     sql: ${TABLE}.OppName ;;
+    link: {
+      label: "Account"
+      url: " {{v_booking_v2s3.opp_link._value}}"
+    }
   }
 
   dimension: opp_owner_id {

@@ -2,7 +2,7 @@
 view: v_booking_v2s5 {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `salesops_sf.v_booking_v2s5`
+  sql_table_name: `test-and-poc.salesops_sf.v_booking_v2s5`
     ;;
   drill_fields: [id]
   # This primary key is the unique key for this table in the underlying database.
@@ -14,6 +14,24 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.ID ;;
   }
 
+  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
+  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
+
+  dimension_group: close_month {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.CloseMonth ;;
+  }
+
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Cpaa S" in Explore.
@@ -22,14 +40,6 @@ view: v_booking_v2s5 {
     type: number
     sql: ${TABLE}.CPaaS ;;
   }
-
-  dimension: closemthgroup {
-    type: string
-    sql:concat(format_date("%B",${month_date})," ",format_date("%Y",${month_date})) ;;
-    order_by_field: month_date
-
-  }
-
 
   dimension: cpaa_s2 {
     type: number
@@ -45,19 +55,6 @@ view: v_booking_v2s5 {
     type: number
     sql: ${TABLE}.CPaaSc ;;
   }
-
-  dimension: department {
-    type: string
-    sql: ${TABLE}.department ;;
-  }
-
-  dimension: SQdepartment {
-    type: string
-    sql: ${TABLE}.SQ_department ;;
-  }
-
-  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
-  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
   dimension_group: month {
     type: time
@@ -78,19 +75,6 @@ view: v_booking_v2s5 {
     type: number
     sql: ${TABLE}.MRG_Amount ;;
   }
-
-  dimension: NewLogo {
-    type:  number
-    sql: ${TABLE}.newlogo ;;
-
-  }
-
- dimension: upsellcross {
-  type: number
-  sql: ${TABLE}.UpsellCross ;;
-
-
- }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
@@ -141,14 +125,14 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.roleid ;;
   }
 
+  dimension: sq_department {
+    type: string
+    sql: ${TABLE}.SQ_department ;;
+  }
+
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
-  }
-
-  dimension: team {
-    type: string
-    sql: ${TABLE}.Team ;;
   }
 
   dimension: total_booking {
@@ -170,6 +154,21 @@ view: v_booking_v2s5 {
     type: count
     drill_fields: [id]
   }
+
+
+  dimension: closemthgroup {
+    type: string
+    sql:concat(format_date("%B",${month_date})," ",format_date("%Y",${month_date})) ;;
+    order_by_field: month_date
+
+  }
+
+
+  dimension: team {
+    type: string
+    sql: ${TABLE}.Team ;;
+  }
+
 
   # added dimenstions and measures that are not from BigQuery
 

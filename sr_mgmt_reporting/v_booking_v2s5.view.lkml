@@ -23,6 +23,14 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.CPaaS ;;
   }
 
+  dimension: closemthgroup {
+    type: string
+    sql:concat(format_date("%B",${month_date})," ",format_date("%Y",${month_date})) ;;
+    order_by_field: month_date
+
+  }
+
+
   dimension: cpaa_s2 {
     type: number
     sql: ${TABLE}.CPaaS2 ;;

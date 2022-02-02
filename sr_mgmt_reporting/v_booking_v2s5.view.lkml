@@ -125,7 +125,7 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.roleid ;;
   }
 
-  dimension: SQDepartment {
+  dimension: sq_department {
     type: string
     sql: ${TABLE}.SQ_department ;;
   }
@@ -155,6 +155,7 @@ view: v_booking_v2s5 {
     drill_fields: [id]
   }
 
+  # added dimenstions and measures that are not from BigQuery
 
   dimension: closemthgroup {
     type: string
@@ -162,15 +163,6 @@ view: v_booking_v2s5 {
     order_by_field: month_date
 
   }
-
-
-  dimension: team {
-    type: string
-    sql: ${TABLE}.Team ;;
-  }
-
-
-  # added dimenstions and measures that are not from BigQuery
 
   measure: quota_percent {
     type: number
@@ -206,8 +198,6 @@ view: v_booking_v2s5 {
     type: number
     sql: sum(${mrg_incremental})/nullif(sum(${total_booking}),0) ;;
   }
-
-
 
 
 

@@ -125,7 +125,7 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.roleid ;;
   }
 
-  dimension: sq_department {
+  dimension: SQDepartment {
     type: string
     sql: ${TABLE}.SQ_department ;;
   }

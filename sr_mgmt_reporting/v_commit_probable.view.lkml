@@ -26,6 +26,10 @@ view: v_commit_probable {
   dimension: account_name {
     type: string
     sql: ${TABLE}.AccountName ;;
+    link: {
+      label: "Account"
+      url: " {{v_lock_stretch.accnt_link._value}}"
+    }
   }
 
   dimension: amount {

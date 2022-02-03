@@ -161,7 +161,7 @@ view: v_lock_stretch {
     type: string
     sql: ${TABLE}.OppName ;;
     link: {
-      label: "Account"
+      label: "Opportunity"
       url: " {{v_lock_stretch.opp_link._value}}"
     }
   }

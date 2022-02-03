@@ -42,6 +42,7 @@ view: v_booking_v2s4 {
   }
 
 
+
   dimension_group: month {
     type: time
     timeframes: [

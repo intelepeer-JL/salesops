@@ -32,6 +32,18 @@ view: v_commit_probable {
     }
   }
 
+  dimension: amountabbrev {
+    type:  number
+    sql: ${TABLE}.totalAmount ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+  }
+
+  dimension: closemonthgroup {
+    type: string
+    sql: concat(format_date("%B",${close_date})," ",format_date("%Y",${close_date})) ;;
+    order_by_field: close_date
+  }
+
   dimension: amount {
     type: number
     sql: ${TABLE}.Amount ;;
@@ -132,6 +144,11 @@ view: v_commit_probable {
   dimension: opp_name {
     type: string
     sql: ${TABLE}.OppName ;;
+    link: {
+      label: "Opportunity"
+      url: " {{v_lock_stretch.opp_link._value}}"
+    }
+
   }
 
   dimension: opp_owner {

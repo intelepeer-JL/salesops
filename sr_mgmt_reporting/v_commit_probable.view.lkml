@@ -28,7 +28,7 @@ view: v_commit_probable {
     sql: ${TABLE}.AccountName ;;
     link: {
       label: "Account"
-      url: " {{v_lock_stretch.accnt_link._value}}"
+      url: " {{v_commit_probable.accnt_link._value}}"
     }
   }
 
@@ -146,7 +146,7 @@ view: v_commit_probable {
     sql: ${TABLE}.OppName ;;
     link: {
       label: "Opportunity"
-      url: " {{v_lock_stretch.opp_link._value}}"
+      url: " {{v_commit_probable.opp_link._value}}"
     }
 
   }

@@ -60,7 +60,7 @@ view: v_funnel_analytics {
   measure: avgadds {
     type: number
     sql:  ${oppcount}/13;;
-    html: <p style="color: black; font-size: 50px"> {{ value }} </p> ;;
+    html: <p style="color: black; font-size: 50px"> {{rendered_value}} </p> ;;
   }
 
 

@@ -87,7 +87,7 @@ view: v_funnel_analytics {
   measure: total_amount {
     type: sum
     sql: ${amount} ;;
-    html: <p style="color: black; font-size: 50px"> {{rendered_value}} </p> ;;
+    html: <p style="color: black; font-size: 100px"> {{rendered_value}} </p> ;;
   }
 
 

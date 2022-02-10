@@ -64,8 +64,9 @@ view: v_funnel_analytics {
   }
 
   dimension: adjusted_amount {
-    type: yesno
+    type: number
     sql: ${TABLE}.adjusted_amount ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
 

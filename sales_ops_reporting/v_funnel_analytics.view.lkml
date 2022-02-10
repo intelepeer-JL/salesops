@@ -67,11 +67,13 @@ view: v_funnel_analytics {
   measure: avgval {
     type: number
     sql:  ${total_amount}/13;;
+    html: <p style="color: black; font-size: 50px"> {{rendered_value}} </p> ;;
   }
 
   measure: oppcount {
     type:  count_distinct
     sql: ${opp_id} ;;
+    html: <p style="color: black; font-size: 50px"> {{rendered_value}} </p> ;;
   }
 
 
@@ -79,11 +81,13 @@ view: v_funnel_analytics {
   measure: average_amount {
     type: average
     sql: ${amount} ;;
+    html: <p style="color: black; font-size: 50px"> {{rendered_value}} </p> ;;
   }
 
   measure: total_amount {
     type: sum
     sql: ${amount} ;;
+    html: <p style="color: black; font-size: 50px"> {{rendered_value}} </p> ;;
   }
 
 

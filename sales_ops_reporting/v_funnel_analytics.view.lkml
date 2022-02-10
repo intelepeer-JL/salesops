@@ -67,6 +67,7 @@ view: v_funnel_analytics {
   measure: avgval {
     type: number
     sql:  ${total_amount}/13;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
 
   }
 
@@ -81,12 +82,14 @@ view: v_funnel_analytics {
   measure: average_amount {
     type: average
     sql: ${amount} ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
 
   }
 
   measure: total_amount {
     type: sum
     sql: ${amount} ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
 
   }
 

@@ -63,6 +63,14 @@ view: v_funnel_analytics {
 
   }
 
+  dimension: adjusted_amount {
+    type: yesno
+    sql: ${TABLE}.adjusted_amount ;;
+  }
+
+
+
+
 
   measure: avgval {
     type: number

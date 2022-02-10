@@ -75,7 +75,7 @@ view: v_funnel_analytics {
 
   measure: avgval {
     type: number
-    sql:  ${adjusted_amount}/13;;
+    sql:  ${total_amount}/13;;
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
 
   }
@@ -88,12 +88,7 @@ view: v_funnel_analytics {
 
 
 
-  measure: average_amount {
-    type: average
-    sql: ${adjusted_amount} ;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
 
-  }
 
   measure: total_amount {
     type: sum
@@ -103,7 +98,12 @@ view: v_funnel_analytics {
   }
 
 
+  measure: average_amount {
+    type: average
+    sql: ${adjusted_amount} ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
 
+  }
 
 
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.

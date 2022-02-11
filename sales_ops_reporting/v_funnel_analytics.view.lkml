@@ -254,13 +254,11 @@ view: v_funnel_analytics {
     type: number
     sql:  ${total_amount}/13;;
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
-
   }
 
   measure: oppcount {
     type:  count_distinct
     sql: ${opp_id} ;;
-
   }
 
 
@@ -268,7 +266,6 @@ view: v_funnel_analytics {
     type: sum
     sql: ${adjusted_amount} ;;
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
-
   }
 
 
@@ -276,7 +273,6 @@ view: v_funnel_analytics {
     type: average
     sql: ${adjusted_amount} ;;
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
-
   }
 
   measure: count {
@@ -287,7 +283,6 @@ view: v_funnel_analytics {
   measure: avgadds {
     type: number
     sql:  ${oppcount}/13;;
-
   }
 
 

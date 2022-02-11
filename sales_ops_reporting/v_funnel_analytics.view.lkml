@@ -7,7 +7,10 @@ view: v_funnel_analytics {
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
-  # Here's what a typical dimension looks like in LookML.
+
+
+
+ # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Accnt Link" in Explore.
 
@@ -25,9 +28,6 @@ view: v_funnel_analytics {
       url: " {{v_funnel_analytics.accnt_link._value}}"
   }
   }
-
-
-
 
   dimension: accnt_link {
     type: string
@@ -53,90 +53,10 @@ view: v_funnel_analytics {
     sql: ${TABLE}.Amount ;;
   }
 
-  # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
-  # measures for this dimension, but you can also add measures of many different aggregates.
-  # Click on the type parameter to see all the options in the Quick Help panel on the right.
-
-  measure: avgadds {
-    type: number
-    sql:  ${oppcount}/13;;
-
-  }
-
   dimension: adjusted_amount {
     type: number
     sql: ${TABLE}.adjusted_amount ;;
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
-  }
-
-
-
-
-
-  measure: avgval {
-    type: number
-    sql:  ${total_amount}/13;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
-
-  }
-
-  measure: oppcount {
-    type:  count_distinct
-    sql: ${opp_id} ;;
-
-  }
-
-
-
-
-
-  measure: total_amount {
-    type: sum
-    sql: ${adjusted_amount} ;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
-
-  }
-
-
-  measure: average_amount {
-    type: average
-    sql: ${adjusted_amount} ;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
-
-  }
-
-
-  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
-  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
-
-  dimension_group: close_month {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.CloseMonth ;;
-  }
-
-  dimension_group: closedate {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.closedate ;;
   }
 
   dimension: closemonth13filter {
@@ -169,50 +89,6 @@ view: v_funnel_analytics {
     sql: ${TABLE}.creadtedmonth4 ;;
   }
 
-  dimension_group: created {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.CreatedDate ;;
-  }
-
-  dimension_group: created_month {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.CreatedMonth ;;
-  }
-
-  dimension_group: created_quarter {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.CreatedQuarter ;;
-  }
-
   dimension: createdmonth13filter {
     type: yesno
     sql: ${TABLE}.createdmonth13filter ;;
@@ -231,21 +107,6 @@ view: v_funnel_analytics {
   dimension: createdyear {
     type: string
     sql: ${TABLE}.createdyear ;;
-  }
-
-  dimension_group: current_execution {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.CurrentExecutionDate ;;
   }
 
   dimension: current_month_filter {
@@ -383,8 +244,147 @@ view: v_funnel_analytics {
     sql: ${TABLE}.Value_Filter ;;
   }
 
+  # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
+  # measures for this dimension, but you can also add measures of many different aggregates.
+  # Click on the type parameter to see all the options in the Quick Help panel on the right.
+
+
+
+  measure: avgval {
+    type: number
+    sql:  ${total_amount}/13;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+
+  }
+
+  measure: oppcount {
+    type:  count_distinct
+    sql: ${opp_id} ;;
+
+  }
+
+
+  measure: total_amount {
+    type: sum
+    sql: ${adjusted_amount} ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+
+  }
+
+
+  measure: average_amount {
+    type: average
+    sql: ${adjusted_amount} ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+
+  }
+
   measure: count {
     type: count
     drill_fields: [opp_name, closemonthname, createdmonthname, account_name]
   }
+
+  measure: avgadds {
+    type: number
+    sql:  ${oppcount}/13;;
+
+  }
+
+
+  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
+  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
+
+  dimension_group: close_month {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.CloseMonth ;;
+  }
+
+  dimension_group: closedate {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.closedate ;;
+  }
+
+
+
+  dimension_group: created {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.CreatedDate ;;
+  }
+
+  dimension_group: created_month {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.CreatedMonth ;;
+  }
+
+  dimension_group: created_quarter {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.CreatedQuarter ;;
+  }
+
+
+
+  dimension_group: current_execution {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.CurrentExecutionDate ;;
+  }
+
 }

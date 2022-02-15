@@ -159,6 +159,11 @@ view: v_booking_v2s5 {
 
   # added dimenstions and measures that are not from BigQuery
 
+  dimension: Quarter {
+    type:  string
+    sql: ${month_quarter} ;;
+  }
+
   dimension: closemthgroup {
     type: string
     sql:concat(format_date("%B",${month_date})," ",format_date("%Y",${month_date})) ;;

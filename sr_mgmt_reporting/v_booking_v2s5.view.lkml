@@ -161,7 +161,7 @@ view: v_booking_v2s5 {
 
   dimension: Quarter {
     type:  string
-    sql: ${month_quarter_of_year} ;;
+    sql: concat(${month_quarter_of_year},"-",${month_year}) ;;
   }
 
   dimension: closemthgroup {

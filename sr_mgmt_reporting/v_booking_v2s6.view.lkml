@@ -47,7 +47,10 @@ dimension: closemthgroup {
 
 }
 
-
+  dimension: Quarter {
+    type:  string
+    sql: concat(${month_quarter_of_year},"-",${month_year}) ;;
+  }
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
@@ -59,6 +62,7 @@ dimension: closemthgroup {
       week,
       month,
       quarter,
+      quarter_of_year,
       year
     ]
     convert_tz: no

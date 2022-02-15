@@ -66,6 +66,22 @@ dimension: closemthgroup {
     sql: ${TABLE}.month ;;
   }
 
+  dimension_group: quota_month {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.quota_month ;;
+  }
+
+
   dimension: team {
     type: string
     sql: ${TABLE}.Team ;;

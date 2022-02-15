@@ -64,6 +64,8 @@ view: v_booking_v2s5 {
       week,
       month,
       quarter,
+      fiscal_quarter,
+      quarter_of_year,
       year
     ]
     convert_tz: no

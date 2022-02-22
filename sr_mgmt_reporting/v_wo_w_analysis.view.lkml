@@ -48,6 +48,22 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.closedwon_c ;;
   }
 
+  dimension: is_top_10 {
+    type: yesno
+    sql:
+    exists(
+      select *
+      from (
+        select ${opp_name}
+        from orders
+        group by ${opp_name}
+        order by sum(${newadd}) desc
+        limit 10
+      ) top_10
+      where ${opp_name} = top_10.opp_name
+    ) ;;
+  }
+
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 

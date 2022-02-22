@@ -133,6 +133,11 @@ view: v_wo_w_analysis {
     sql: ${lw_amount} ;;
   }
 
+  measure: WoWChangeCount {
+    type: number
+    sql: ${tw_active_c}-${lw_active_c} ;;
+  }
+
   dimension: lw_status {
     type: string
     sql: ${TABLE}.LW_Status ;;

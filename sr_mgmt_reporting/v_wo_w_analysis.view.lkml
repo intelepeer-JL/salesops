@@ -48,7 +48,7 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.closedwon_c ;;
   }
 
-  dimension: is_top_10 {
+  dimension: top_5_new {
     type: yesno
     sql:
     exists(
@@ -58,9 +58,25 @@ view: v_wo_w_analysis {
         from orders
         group by ${opp_name}
         order by sum(${newadd}) desc
-        limit 10
-      ) top_10
-      where ${opp_name} = top_10.opp_name
+        limit 5
+      ) top_5
+      where ${opp_name} = top_5.opp_name
+    ) ;;
+  }
+
+  dimension: top_5_lost {
+    type: yesno
+    sql:
+    exists(
+      select *
+      from (
+        select ${opp_name}
+        from orders
+        group by ${opp_name}
+        order by sum(${closedloss}) desc
+        limit 5
+      ) top_5
+      where ${opp_name} = top_5.opp_name
     ) ;;
   }
 

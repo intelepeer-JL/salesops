@@ -33,6 +33,8 @@ explore: v_booking_v2s5 {}
 explore: v_booking_v2s6 {}
 explore: v_commit_probable {}
 explore: v_committed_probable_summary {}
+explore: v_wo_w_analysis {}
+explore: v_weekly_add {}
 
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 

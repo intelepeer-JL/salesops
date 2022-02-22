@@ -12,7 +12,7 @@ datagroup: salesops_default_datagroup {
 }
 
 
-explore: v_wo_w_analysis_grouped {}
+
 
 persist_with: salesops_default_datagroup
 
@@ -37,7 +37,7 @@ explore: stage_sequence_sfdc {}
 explore: v_current_funnel {}
 # >>>>>>> branch 'master' of git@github.com:intelepeer-JL/salesops.git
 explore: v_booking {}
-explore: v_wo_w_analysis {}
+
 explore: v_cpaa_s_adds {}
 explore: v_opp_vel {
   join: user {

@@ -257,7 +257,7 @@ view: v_wo_w_analysis {
   dimension: value_change {
     type: number
     sql: ${TABLE}.ValueChange ;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00;[<=-1000]($0.00),\"K\""
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00;[<=-1000]$0.00,\"K\""
   }
 
   dimension: value_change_c {

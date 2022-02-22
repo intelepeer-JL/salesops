@@ -29,6 +29,7 @@ view: v_wo_w_analysis {
   dimension: closedloss {
     type: number
     sql: ${TABLE}.closedloss ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: closedloss_c {
@@ -39,6 +40,7 @@ view: v_wo_w_analysis {
   dimension: closedwon {
     type: number
     sql: ${TABLE}.closedwon ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: closedwon_c {
@@ -71,6 +73,7 @@ view: v_wo_w_analysis {
   dimension: inactive {
     type: number
     sql: ${TABLE}.inactive ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: inactive_c {
@@ -101,6 +104,7 @@ view: v_wo_w_analysis {
   dimension: lw_active {
     type: number
     sql: ${TABLE}.LW_Active ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: lw_active_c {
@@ -111,6 +115,7 @@ view: v_wo_w_analysis {
   dimension: lw_amount {
     type: number
     sql: ${TABLE}.LW_Amount ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
@@ -120,6 +125,7 @@ view: v_wo_w_analysis {
   measure: total_lw_amount {
     type: sum
     sql: ${lw_amount} ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   measure: average_lw_amount {
@@ -135,6 +141,7 @@ view: v_wo_w_analysis {
   dimension: newadd {
     type: number
     sql: ${TABLE}.newadd ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: newadd_c {
@@ -165,6 +172,7 @@ view: v_wo_w_analysis {
   dimension: removed {
     type: number
     sql: ${TABLE}.removed ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: removed_c {
@@ -175,6 +183,7 @@ view: v_wo_w_analysis {
   dimension: rengaged {
     type: number
     sql: ${TABLE}.Rengaged ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: rengaged_c {
@@ -190,6 +199,7 @@ view: v_wo_w_analysis {
   dimension: stalled {
     type: number
     sql: ${TABLE}.Stalled ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: stalled_c {
@@ -225,6 +235,7 @@ view: v_wo_w_analysis {
   dimension: tw_active {
     type: number
     sql: ${TABLE}.TW_Active ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: tw_active_c {
@@ -235,6 +246,7 @@ view: v_wo_w_analysis {
   dimension: tw_amount {
     type: number
     sql: ${TABLE}.TW_Amount ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: tw_status {
@@ -245,6 +257,7 @@ view: v_wo_w_analysis {
   dimension: value_change {
     type: number
     sql: ${TABLE}.ValueChange ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: value_change_c {

@@ -90,7 +90,7 @@ view: v_booking_v2s3 {
   # If you want this field to be displayed, remove "hidden: yes".
 
   dimension: contract_term {
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.ContractTerm ;;
   }
 
@@ -160,7 +160,7 @@ view: v_booking_v2s3 {
   }
 
   dimension: mugterm {
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.MUGTerm ;;
   }
 
@@ -259,49 +259,7 @@ view: v_booking_v2s3 {
     type: count
     drill_fields: [opp_name, account_name]
   }
-}
 
-# The name of this view in Looker is "V Booking V2s3 Term"
-view: v_booking_v2s3__term {
-  # No primary key is defined for this view. In order to join this view in an Explore,
-  # define primary_key: yes on a dimension that has no repeated values.
 
-  # Here's what a typical dimension looks like in LookML.
-  # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "V Booking V2s3 Term" in Explore.
 
-  dimension: v_booking_v2s3__term {
-    type: string
-    sql: v_booking_v2s3__term ;;
-  }
-}
-
-# The name of this view in Looker is "V Booking V2s3 Mugterm"
-view: v_booking_v2s3__mugterm {
-  # No primary key is defined for this view. In order to join this view in an Explore,
-  # define primary_key: yes on a dimension that has no repeated values.
-
-  # Here's what a typical dimension looks like in LookML.
-  # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "V Booking V2s3 Mugterm" in Explore.
-
-  dimension: v_booking_v2s3__mugterm {
-    type: string
-    sql: v_booking_v2s3__mugterm ;;
-  }
-}
-
-# The name of this view in Looker is "V Booking V2s3 Contract Term"
-view: v_booking_v2s3__contract_term {
-  # No primary key is defined for this view. In order to join this view in an Explore,
-  # define primary_key: yes on a dimension that has no repeated values.
-
-  # Here's what a typical dimension looks like in LookML.
-  # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "V Booking V2s3 Contract Term" in Explore.
-
-  dimension: v_booking_v2s3__contract_term {
-    type: string
-    sql: v_booking_v2s3__contract_term ;;
-  }
 }

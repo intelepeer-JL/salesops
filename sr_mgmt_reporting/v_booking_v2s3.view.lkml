@@ -41,9 +41,7 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.accnt_link ;;
   }
 
-measure: CCV{
-  sql: ${term}*${mrg_amount} ;;
-}
+
 
   dimension: account_id {
     type: string

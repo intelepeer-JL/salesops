@@ -41,7 +41,10 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.accnt_link ;;
   }
 
-
+  dimension: SAP_ID {
+    type: string
+    sql: ${TABLE}.SAP_ID__c ;;
+  }
 
   dimension: account_id {
     type: string

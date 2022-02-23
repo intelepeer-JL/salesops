@@ -1,5 +1,3 @@
-# Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
-
 
 
 # The name of this view in Looker is "V Booking V2s3"
@@ -70,8 +68,21 @@ view: v_booking_v2s3 {
     sql: ${arr} ;;
   }
 
-  dimension: close_date {
-    type: string
+  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
+  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
+
+  dimension_group: close {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
     sql: ${TABLE}.CloseDate ;;
   }
 
@@ -86,6 +97,11 @@ view: v_booking_v2s3 {
   dimension: cpaa_s_opp_type {
     type: string
     sql: ${TABLE}.CPaaS_Opp_Type ;;
+  }
+
+  dimension: cpaa_sbuild {
+    type: string
+    sql: ${TABLE}.CPaaSbuild ;;
   }
 
   dimension: cpaas_products__c {
@@ -127,9 +143,6 @@ view: v_booking_v2s3 {
     type: number
     sql: ${TABLE}.MRR ;;
   }
-
-  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
-  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
   dimension_group: mug_aug_amount_last_updated__c {
     type: time

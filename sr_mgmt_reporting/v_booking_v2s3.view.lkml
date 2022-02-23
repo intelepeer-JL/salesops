@@ -116,6 +116,11 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.CPaaS_Opp_Type ;;
   }
 
+  dimension: IB_OB {
+    type: string
+    sql: ${TABLE}.IB_OB ;;
+  }
+
   dimension: cpaa_sbuild {
     type: string
     sql: ${TABLE}.CPaaSbuild ;;

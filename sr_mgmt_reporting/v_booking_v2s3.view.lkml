@@ -26,6 +26,11 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.AccountOwner ;;
   }
 
+  dimension: contractCPAAS {
+    type: string
+    sql: ${TABLE}.CPaaSbuild ;;
+  }
+
   dimension: OppOwner {
     type: string
     sql: ${TABLE}.OppOwner ;;

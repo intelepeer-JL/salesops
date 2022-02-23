@@ -26,8 +26,10 @@ explore: v_booking_v2s3 {
     v_booking_v2s3.arr,
     v_booking_v2s3.TCV,
     v_booking_v2s3.CCV
-    ]
+  ]
 }
+
+
 explore: v_booking_s5 {}
 explore: v_booking_v2s5 {}
 explore: v_booking_v2s6 {}

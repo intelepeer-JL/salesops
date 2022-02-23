@@ -1,11 +1,12 @@
 # Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
 
 
+
 # The name of this view in Looker is "V Booking V2s3"
 view: v_booking_v2s3 {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `test-and-poc.salesops_sf.v_booking_v2s3`
+  sql_table_name: `salesops_sf.v_booking_v2s3`
     ;;
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -15,36 +16,19 @@ view: v_booking_v2s3 {
   # This dimension will be called "Accnt Link" in Explore.
 
 
+  dimension: CCV {
+    type:  number
+    sql: ${term}*${mrg_amount} ;;
+  }
+
+  dimension: TCV {
+    type:  number
+    sql: ${term}*${mrr} ;;
+  }
 
   dimension: accnt_link {
     type: string
     sql: ${TABLE}.accnt_link ;;
-  }
-
-  dimension: AccountOwner {
-    type: string
-    sql: ${TABLE}.AccountOwner ;;
-  }
-
-  dimension: contractCPAAS {
-    type: string
-    sql: ${TABLE}.CPaaSbuild ;;
-  }
-
-  dimension: OppOwner {
-    type: string
-    sql: ${TABLE}.OppOwner ;;
-  }
-
-  dimension: Dept {
-    type: string
-    sql: ${TABLE}.Dept ;;
-  }
-
-
-  dimension: account_filter {
-    type: yesno
-    sql: ${TABLE}.AccountFilter ;;
   }
 
   dimension: account_id {
@@ -55,10 +39,11 @@ view: v_booking_v2s3 {
   dimension: account_name {
     type: string
     sql: ${TABLE}.AccountName ;;
-    link: {
-      label: "Account"
-      url: " {{v_booking_v2s3.accnt_link._value}}"
-    }
+  }
+
+  dimension: account_owner {
+    type: string
+    sql: ${TABLE}.AccountOwner ;;
   }
 
   dimension: account_owner_id {
@@ -69,16 +54,6 @@ view: v_booking_v2s3 {
   dimension: arr {
     type: number
     sql: ${TABLE}.ARR ;;
-  }
-
-  dimension: CCV {
-    type:  number
-    sql: ${term}*${mrg_amount} ;;
-  }
-
-  dimension: TCV {
-    type:  number
-    sql: ${term}*${mrr} ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
@@ -104,7 +79,7 @@ view: v_booking_v2s3 {
   # If you want this field to be displayed, remove "hidden: yes".
 
   dimension: contract_term {
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.ContractTerm ;;
   }
 
@@ -116,6 +91,11 @@ view: v_booking_v2s3 {
   dimension: cpaas_products__c {
     type: string
     sql: ${TABLE}.CPAAS_Products__c ;;
+  }
+
+  dimension: Dept {
+    type: string
+    sql: ${TABLE}.Dept ;;
   }
 
   dimension: expected_mrg_arg_amount__c {
@@ -167,13 +147,18 @@ view: v_booking_v2s3 {
   }
 
   dimension: mugterm {
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.MUGTerm ;;
   }
 
   dimension: net_mug_aug_change__c {
     type: number
     sql: ${TABLE}.Net_MUG_AUG_Change__c ;;
+  }
+
+  dimension: new_logo {
+    type: number
+    sql: ${TABLE}.New_Logo ;;
   }
 
   dimension: opp_filter {
@@ -194,10 +179,11 @@ view: v_booking_v2s3 {
   dimension: opp_name {
     type: string
     sql: ${TABLE}.OppName ;;
-    link: {
-      label: "Account"
-      url: " {{v_booking_v2s3.opp_link._value}}"
-    }
+  }
+
+  dimension: OppOwner {
+    type: string
+    sql: ${TABLE}.OppOwner ;;
   }
 
   dimension: opp_owner_id {
@@ -236,13 +222,18 @@ view: v_booking_v2s3 {
   }
 
   dimension: term {
-    type: number
-    sql: Any_Value(${TABLE}.term) ;;
+    hidden: yes
+    sql: ${TABLE}.term ;;
   }
 
   dimension: total_cpaa_s_mrc__c {
     type: number
     sql: ${TABLE}.Total_CPaaS_MRC__c ;;
+  }
+
+  dimension: upsell_cross {
+    type: number
+    sql: ${TABLE}.UpsellCross ;;
   }
 
   dimension: value_filter {

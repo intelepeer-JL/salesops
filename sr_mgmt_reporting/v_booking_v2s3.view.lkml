@@ -41,11 +41,9 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.accnt_link ;;
   }
 
-  dimension: CCV {
-   type:  number
-   sql:(select value from  UNNEST(${v_booking_v2s3.term}))*${mrg_amount} ;;
-
-  }
+measure: CCV{
+  sql: ${term}*${mrg_amount} ;;
+}
 
   dimension: account_id {
     type: string

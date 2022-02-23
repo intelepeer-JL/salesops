@@ -293,7 +293,7 @@ view: v_booking_v2s3__term {
   # This dimension will be called "V Booking V2s3 Term" in Explore.
 
   dimension: v_booking_v2s3__term {
-    type: string
+    type: number
     sql: v_booking_v2s3__term ;;
   }
 }

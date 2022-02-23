@@ -5,30 +5,6 @@ include: "/**/*.view.lkml"
 
 
 
-explore: v_booking_v2s3 {
-  cancel_grouping_fields:
-  [v_booking_v2s3.term,
-    v_booking_v2s3.account_name,
-    v_booking_v2s3.Dept,
-    v_booking_v2s3.OppOwner,
-    v_booking_v2s3.cpaa_s_opp_type,
-    v_booking_v2s3.opp_type,
-    v_booking_v2s3.sales_partner,
-    v_booking_v2s3.sub_agent,
-    v_booking_v2s3.close_date,
-    v_booking_v2s3.stage_group,
-    v_booking_v2s3.mrg_amount,
-    v_booking_v2s3.mrg_incremental,
-    v_booking_v2s3.product,
-    v_booking_v2s3.cpaas_products__c,
-    v_booking_v2s3.mrpf,
-    v_booking_v2s3.mrr,
-    v_booking_v2s3.arr,
-    v_booking_v2s3.TCV,
-    v_booking_v2s3.CCV,
-    v_booking_v2s3.mugterm
-  ]
-}
 
 
 explore: v_booking_s5 {}

@@ -69,7 +69,23 @@ view: v_booking_v2s3 {
   dimension: arr {
     type: number
     sql: ${TABLE}.ARR ;;
+
   }
+
+  dimension: closemthgroup {
+    type: string
+    sql:concat(format_date("%B",${close_date})," ",format_date("%Y",${close_date})) ;;
+    order_by_field: close_month
+
+  }
+
+  dimension: Quarter {
+    type:  string
+    sql: concat(${close_quarter},"-",${close_year}) ;;
+  }
+
+
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.

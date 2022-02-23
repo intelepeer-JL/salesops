@@ -235,6 +235,7 @@ view: v_booking_v2s3 {
   }
 
   dimension: term {
+    type: string
     hidden: no
     sql: ${TABLE}.term ;;
   }

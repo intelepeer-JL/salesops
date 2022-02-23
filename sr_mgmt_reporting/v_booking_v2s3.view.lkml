@@ -19,6 +19,8 @@ explore: v_booking_v2s3 {
     sql: LEFT JOIN UNNEST(${v_booking_v2s3.contract_term}) as v_booking_v2s3__contract_term ;;
     relationship: one_to_many
   }
+
+
 }
 
 # The name of this view in Looker is "V Booking V2s3"
@@ -37,6 +39,12 @@ view: v_booking_v2s3 {
   dimension: accnt_link {
     type: string
     sql: ${TABLE}.accnt_link ;;
+  }
+
+  dimension: CCV {
+   type:  number
+   sql:(select value from  UNNEST(${v_booking_v2s3.term}))*${mrg_amount} ;;
+
   }
 
   dimension: account_id {

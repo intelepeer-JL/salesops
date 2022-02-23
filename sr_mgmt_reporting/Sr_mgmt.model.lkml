@@ -25,7 +25,8 @@ explore: v_booking_v2s3 {
     v_booking_v2s3.mrr,
     v_booking_v2s3.arr,
     v_booking_v2s3.TCV,
-    v_booking_v2s3.CCV
+    v_booking_v2s3.CCV,
+    v_booking_v2s3.mugterm
   ]
 }
 

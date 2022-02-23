@@ -301,7 +301,14 @@ view: v_wo_w_analysis {
     type: number
     sql: ${TABLE}.ValueChange_c ;;
   }
+  parameter: max_rank {
+    type: number
+  }
 
+  dimension: rank_limit {
+    type: number
+    sql: {% parameter max_rank %} ;;
+  }
   measure: count {
     type: count
     drill_fields: [opp_name, account_name]

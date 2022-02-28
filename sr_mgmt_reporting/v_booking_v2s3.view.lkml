@@ -36,6 +36,11 @@ view: v_booking_v2s3 {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Accnt Link" in Explore.
 
+  dimension: Type_Of_Sale {
+    type: string
+    sql: ${TABLE}.Type_Of_Sale ;;
+  }
+
   dimension: accnt_link {
     type: string
     sql: ${TABLE}.accnt_link ;;

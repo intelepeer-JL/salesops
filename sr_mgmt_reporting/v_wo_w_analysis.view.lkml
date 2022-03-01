@@ -85,7 +85,6 @@ view: v_wo_w_analysis {
 
 
 
-
   dimension_group: created {
     type: time
     timeframes: [

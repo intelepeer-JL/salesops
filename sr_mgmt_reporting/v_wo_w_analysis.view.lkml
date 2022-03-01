@@ -168,7 +168,7 @@ view: v_wo_w_analysis {
   }
 
   measure: WoWChangeCount {
-    type: number
+    type: sum
     sql: ${tw_active_c}-${lw_active_c} ;;
   }
 

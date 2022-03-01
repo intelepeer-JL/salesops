@@ -48,7 +48,7 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.closedwon_c ;;
   }
 
-  dimension: top_5_new {
+  measure: top_5_new {
     type: yesno
     sql:
     exists(

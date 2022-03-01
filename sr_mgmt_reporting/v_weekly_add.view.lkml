@@ -21,20 +21,10 @@ view: v_weekly_add {
   dimension: arr {
     type: number
     sql: ${TABLE}.ARR ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
-  dimension: test {
-    case: {
-      when: {
-        label: "arr"
-        sql: 1=1 ;;
-      }
-      when: {
-        label: "cpaa_s_mrc_arr"
-        sql: 1=1 ;;
-      }
-    }
-  }
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
@@ -146,6 +136,7 @@ view: v_weekly_add {
   dimension: total_cpaa_s_mrc {
     type: number
     sql: ${TABLE}.Total_CPaaS_MRC ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   dimension: tw {

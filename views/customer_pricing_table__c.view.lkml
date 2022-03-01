@@ -231,4 +231,13 @@ view: customer_pricing_table__c {
     hidden: yes
     sql: ${standard_price__c} ;;
   }
+
+  parameter: max_rank {
+    type: number
+  }
+
+  dimension: rank_limit {
+    type: number
+    sql: {% parameter max_rank %} ;;
+  }
 }

@@ -152,6 +152,26 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.Voicec ;;
   }
 
+  dimension: NewLogo {
+    type: number
+    sql: ${TABLE}.NewLogo ;;
+  }
+
+  dimension: New_Logoc {
+    type: number
+    sql: ${TABLE}.New_Logoc ;;
+  }
+
+  dimension: Expansion {
+    type: number
+    sql: ${TABLE}.Expansion ;;
+  }
+
+  dimension: Expansionc {
+    type: number
+    sql: ${TABLE}.Expansionc ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id]

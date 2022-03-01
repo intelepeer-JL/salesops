@@ -1,4 +1,27 @@
+# Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
+explore: v_booking_v2s3 {
+  hidden: no
 
+  join: v_booking_v2s3__term {
+    view_label: "V Booking V2s3: Term"
+    sql: LEFT JOIN UNNEST(${v_booking_v2s3.term}) as v_booking_v2s3__term ;;
+    relationship: one_to_many
+  }
+
+  join: v_booking_v2s3__mugterm {
+    view_label: "V Booking V2s3: Mugterm"
+    sql: LEFT JOIN UNNEST(${v_booking_v2s3.mugterm}) as v_booking_v2s3__mugterm ;;
+    relationship: one_to_many
+  }
+
+  join: v_booking_v2s3__contract_term {
+    view_label: "V Booking V2s3: Contractterm"
+    sql: LEFT JOIN UNNEST(${v_booking_v2s3.contract_term}) as v_booking_v2s3__contract_term ;;
+    relationship: one_to_many
+  }
+
+
+}
 
 # The name of this view in Looker is "V Booking V2s3"
 view: v_booking_v2s3 {
@@ -13,20 +36,19 @@ view: v_booking_v2s3 {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Accnt Link" in Explore.
 
-
-  dimension: CCV {
-    type:  number
-    sql: ${term}*${mrg_amount} ;;
-  }
-
-  dimension: TCV {
-    type:  number
-    sql: ${term}*${mrr} ;;
+  dimension: Type_Of_Sale {
+    type: string
+    sql: ${TABLE}.Type_Of_Sale ;;
   }
 
   dimension: accnt_link {
     type: string
     sql: ${TABLE}.accnt_link ;;
+  }
+
+  dimension: SAP_ID {
+    type: string
+    sql: ${TABLE}.SAP_ID__c ;;
   }
 
   dimension: account_id {
@@ -52,7 +74,23 @@ view: v_booking_v2s3 {
   dimension: arr {
     type: number
     sql: ${TABLE}.ARR ;;
+
   }
+
+  dimension: closemthgroup {
+    type: string
+    sql:concat(format_date("%B",${close_date})," ",format_date("%Y",${close_date})) ;;
+    order_by_field: close_month
+
+  }
+
+  dimension: Quarter {
+    type:  string
+    sql: concat(${close_quarter},"-",${close_year}) ;;
+  }
+
+
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
@@ -99,6 +137,11 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.CPaaS_Opp_Type ;;
   }
 
+  dimension: IB_OB {
+    type: string
+    sql: ${TABLE}.IB_OB ;;
+  }
+
   dimension: cpaa_sbuild {
     type: string
     sql: ${TABLE}.CPaaSbuild ;;
@@ -109,7 +152,7 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.CPAAS_Products__c ;;
   }
 
-  dimension: Dept {
+  dimension: dept {
     type: string
     sql: ${TABLE}.Dept ;;
   }
@@ -194,7 +237,7 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.OppName ;;
   }
 
-  dimension: OppOwner {
+  dimension: opp_owner {
     type: string
     sql: ${TABLE}.OppOwner ;;
   }
@@ -235,8 +278,8 @@ view: v_booking_v2s3 {
   }
 
   dimension: term {
-    type: string
-    hidden: no
+    hidden: yes
+    type: number
     sql: ${TABLE}.term ;;
   }
 
@@ -271,7 +314,7 @@ view: v_booking_v2s3__term {
   # This dimension will be called "V Booking V2s3 Term" in Explore.
 
   dimension: v_booking_v2s3__term {
-    type: string
+    type: number
     sql: v_booking_v2s3__term ;;
   }
 }

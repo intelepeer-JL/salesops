@@ -43,7 +43,7 @@ view: v_booking_v2s6 {
 dimension: closemthgroup {
   type: string
   sql:concat(format_date("%B",${quota_month_date})," ",format_date("%Y",${quota_month_date})) ;;
-  order_by_field: month_date
+  order_by_field: quota_month_date
 
 }
 

@@ -134,7 +134,7 @@ view: v_booking_v2s5 {
 
   dimension: status {
     type: string
-    sql: ${TABLE}.status ;;
+    sql: ${TABLE}.Rep_status ;;
   }
 
   dimension: total_booking {

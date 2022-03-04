@@ -20,6 +20,15 @@ explore: v_booking_v2s3 {
     relationship: one_to_many
   }
 
+  join: v_booking_v2s3__term2 {
+    view_label: "V Booking V2s3: Term2"
+    sql: LEFT JOIN UNNEST(${v_booking_v2s3.term2}) as v_booking_v2s3__term2 ;;
+    relationship: one_to_many
+  }
+
+
+
+
 
 }
 
@@ -130,6 +139,11 @@ view: v_booking_v2s3 {
   dimension: contract_term {
     hidden: yes
     sql: ${TABLE}.ContractTerm ;;
+  }
+
+  dimension: opp_term {
+    hidden: yes
+    sql: ${TABLE}.Opp_Term ;;
   }
 
   dimension: cpaa_s_opp_type {
@@ -283,6 +297,12 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.term ;;
   }
 
+  dimension: term2 {
+    hidden: yes
+    type: number
+    sql: ${TABLE}.term2 ;;
+  }
+
   dimension: total_cpaa_s_mrc__c {
     type: number
     sql: ${TABLE}.Total_CPaaS_MRC__c ;;
@@ -346,5 +366,41 @@ view: v_booking_v2s3__contract_term {
   dimension: v_booking_v2s3__contract_term {
     type: string
     sql: v_booking_v2s3__contract_term ;;
+  }
+
+
+}
+
+
+# The name of this view in Looker is "V Booking V2s3 Opp Term"
+view: v_booking_v2s3__opp_term {
+  # No primary key is defined for this view. In order to join this view in an Explore,
+  # define primary_key: yes on a dimension that has no repeated values.
+
+  # Here's what a typical dimension looks like in LookML.
+  # A dimension is a groupable field that can be used to filter query results.
+  # This dimension will be called "V Booking V2s3 Opp Term" in Explore.
+
+  dimension: v_booking_v2s3__opp_term {
+    type: string
+    sql: v_booking_v2s3__opp_term ;;
+  }
+
+
+}
+
+
+# The name of this view in Looker is "V Booking V2s3 Term2"
+view: v_booking_v2s3__term2 {
+  # No primary key is defined for this view. In order to join this view in an Explore,
+  # define primary_key: yes on a dimension that has no repeated values.
+
+  # Here's what a typical dimension looks like in LookML.
+  # A dimension is a groupable field that can be used to filter query results.
+  # This dimension will be called "V Booking V2s3 Term2" in Explore.
+
+  dimension: v_booking_v2s3__term2 {
+    type: number
+    sql: v_booking_v2s3__term2 ;;
   }
 }

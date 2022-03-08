@@ -84,9 +84,23 @@ view: v_booking_team_s5 {
     sql: ${TABLE}.MRG_Amount ;;
   }
 
+  dimension: closemonthgroup {
+    type: string
+    sql: concat(format_date("%B",${month_date})," ",format_date("%Y",${month_date})) ;;
+    order_by_field: month_date
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
+
+
+
+  measure: quota_percent {
+    type: number
+    value_format: "0.00%"
+    sql: (sum(${total_booking})/nullif(sum(${quota}),0)) ;;
+    }
 
   measure: total_mrg_amount {
     type: sum

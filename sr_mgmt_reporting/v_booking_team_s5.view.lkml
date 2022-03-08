@@ -32,19 +32,19 @@ view: v_booking_team_s5 {
   dimension: committed {
     type: number
     sql: ${TABLE}.Committed ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: cpaa_s {
     type: number
     sql: ${TABLE}.CPaaS ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: cpaa_s2 {
     type: number
     sql: ${TABLE}.CPaaS2 ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: cpaa_s2c {
@@ -60,7 +60,7 @@ view: v_booking_team_s5 {
   dimension: expansion {
     type: number
     sql: ${TABLE}.Expansion ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: expansionc {
@@ -86,7 +86,7 @@ view: v_booking_team_s5 {
   dimension: mrg_amount {
     type: number
     sql: ${TABLE}.MRG_Amount ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: closemonthgroup {
@@ -116,25 +116,25 @@ view: v_booking_team_s5 {
   measure: total_mrg_amount {
     type: sum
     sql: ${mrg_amount} ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   measure: average_mrg_amount {
     type: average
     sql: ${mrg_amount} ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: mrg_incremental {
     type: number
     sql: ${TABLE}.MRG_Incremental ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: mrpf {
     type: number
     sql: ${TABLE}.MRPF ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: mrpfcount {
@@ -145,7 +145,7 @@ view: v_booking_team_s5 {
   dimension: new_logo {
     type: number
     sql: ${TABLE}.NewLogo ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: new_logoc {
@@ -161,13 +161,13 @@ view: v_booking_team_s5 {
   dimension: probable {
     type: number
     sql: ${TABLE}.Probable ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: quota {
     type: number
     sql: ${TABLE}.quota ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: rep {
@@ -198,13 +198,13 @@ view: v_booking_team_s5 {
   dimension: total_booking {
     type: number
     sql: ${TABLE}.total_booking ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#,;($#,)"
   }
 
   dimension: upside {
     type: number
     sql: ${TABLE}.Upside ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: user_id {
@@ -215,7 +215,7 @@ view: v_booking_team_s5 {
   dimension: voice {
     type: number
     sql: ${TABLE}.Voice ;;
-    value_format:"$#.00;($#.00)"
+    value_format:"$#;($#)"
   }
 
   dimension: voicec {

@@ -6,7 +6,7 @@ include: "/**/*.view.lkml"
 
 
 
-
+explore: v_booking_team_s5 {}
 explore: v_booking_v2s5 {}
 explore: v_booking_v2s6 {}
 explore: v_commit_probable {}

@@ -102,6 +102,11 @@ view: v_booking_team_s5 {
     sql: (sum(${total_booking})/nullif(sum(${quota}),0)) ;;
     }
 
+  measure: win_committed {
+    type: number
+    sql: ${total_booking}+${committed} ;;
+  }
+
   measure: total_mrg_amount {
     type: sum
     sql: ${mrg_amount} ;;

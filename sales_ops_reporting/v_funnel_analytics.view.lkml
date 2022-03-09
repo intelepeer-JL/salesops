@@ -20,6 +20,11 @@ view: v_funnel_analytics {
     sql: ${TABLE}.AccountFilter ;;
   }
 
+  dimension: CorecastCategoryName {
+    type: string
+    sql: ${TABLE}.ForecastCategoryName ;;
+  }
+
   dimension: account_name {
     type: string
     sql: ${TABLE}.AccountName ;;
@@ -28,6 +33,29 @@ view: v_funnel_analytics {
       url: " {{v_funnel_analytics.accnt_link._value}}"
   }
   }
+
+  dimension: Pipeline {
+    type: number
+    sql: ${TABLE}.Pipeline ;;
+  }
+
+  dimension: Committed {
+    type: number
+    sql: ${TABLE}.Committed ;;
+  }
+
+  dimension: Upside {
+    type: number
+    sql: ${TABLE}.Upside ;;
+  }
+
+  dimension: Probable {
+    type: number
+    sql: ${TABLE}.Probable ;;
+  }
+
+
+
 
   dimension: accnt_link {
     type: string

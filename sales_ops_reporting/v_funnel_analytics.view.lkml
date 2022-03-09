@@ -34,7 +34,7 @@ view: v_funnel_analytics {
     sql: ${TABLE}.accnt_link ;;
   }
 
-  dimension: closemthgroup {
+  dimension: createdmonthgroup {
     type: string
     sql:concat(format_date("%B",${created_date})," ",format_date("%Y",${created_date})) ;;
     order_by_field: created_date

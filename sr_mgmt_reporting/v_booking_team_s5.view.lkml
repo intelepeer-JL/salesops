@@ -181,6 +181,12 @@ view: v_booking_team_s5 {
     value_format:"#,##0;($#,##0)"
   }
 
+  measure: win_rate {
+    type: number
+    sql: if(${role}="Channel Sales East",.22,.55) ;;
+  }
+
+
   measure: average_mrg_amount {
     type: average
     sql: ${mrg_amount} ;;

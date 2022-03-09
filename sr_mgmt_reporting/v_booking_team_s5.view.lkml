@@ -159,6 +159,14 @@ view: v_booking_team_s5 {
     value_format:"#,##0;($#,##0)"
   }
 
+  measure: CPU {
+    type: number
+    sql: ${probable}+${committed}+${upside} ;;
+    value_format:"#,##0;($#,##0)"
+  }
+
+
+
   measure: total_mrg_amount {
     type: sum
     sql: ${mrg_amount} ;;

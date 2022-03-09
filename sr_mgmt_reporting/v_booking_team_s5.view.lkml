@@ -47,6 +47,12 @@ view: v_booking_team_s5 {
     value_format:"#,##0;($#,##0)"
   }
 
+  dimension: Pipe {
+    type: number
+    sql: ${TABLE}.Pipe ;;
+    value_format:"#,##0;($#,##0)"
+  }
+
   dimension: lost {
     type: number
     sql: ${TABLE}.lost ;;

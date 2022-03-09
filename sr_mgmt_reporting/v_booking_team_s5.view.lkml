@@ -41,6 +41,40 @@ view: v_booking_team_s5 {
     value_format:"#,##0;($#,##0)"
   }
 
+  dimension: won {
+    type: number
+    sql: ${TABLE}.won ;;
+    value_format:"#,##0;($#,##0)"
+  }
+
+  dimension: lost {
+    type: number
+    sql: ${TABLE}.lost ;;
+    value_format:"#,##0;($#,##0)"
+  }
+
+  dimension: total_val {
+    type: number
+    sql: ${TABLE}.total_val ;;
+    value_format:"#,##0;($#,##0)"
+  }
+
+  dimension: wonc {
+    type: number
+    sql: ${TABLE}.wonc ;;
+  }
+
+  dimension: lostc {
+    type: number
+    sql: ${TABLE}.lostc ;;
+
+  }
+
+  dimension: totalcount {
+    type: number
+    sql: ${TABLE}.totalcount ;;
+  }
+
   dimension: cpaa_s2 {
     type: number
     sql: ${TABLE}.CPaaS2 ;;
@@ -106,6 +140,18 @@ view: v_booking_team_s5 {
     value_format: "0.00%"
     sql: (sum(${total_booking})/nullif(sum(${quota}),0)) ;;
     }
+
+  measure: win_percent_arr {
+    type: number
+    value_format: "0.00%"
+    sql: (sum(${won})/nullif(sum(${total_val}),0)) ;;
+  }
+
+  measure: win_percent_count {
+    type: number
+    value_format: "0.00%"
+    sql: (sum(${wonc})/nullif(sum(${totalcount}),0)) ;;
+  }
 
   measure: win_committed {
     type: number

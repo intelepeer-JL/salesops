@@ -166,7 +166,7 @@ view: v_booking_team_s5 {
 
   measure: CPU {
     type: number
-    sql: sum(${probable}+${committed}+${upside}) ;;
+    sql: sum(${probable})+sum(${committed})+sum(${upside}) ;;
     value_format:"#,##0;($#,##0)"
   }
 

@@ -163,7 +163,7 @@ view: v_booking_team_s5 {
 
   dimension: CPU {
     type: number
-    sql: s${probable}+${committed}+${upside} ;;
+    sql: ${probable}+${committed}+${upside} ;;
     value_format:"#,##0;($#,##0)"
   }
 

@@ -135,10 +135,7 @@ view: v_booking_team_s5 {
 
 
 
-  measure: pipeline {
-    type:  number
-    sql:  ;;
-  }
+
 
   measure: quota_percent {
     type: number

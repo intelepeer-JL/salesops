@@ -135,6 +135,11 @@ view: v_booking_team_s5 {
 
 
 
+  measure: pipeline {
+    type:  number
+    sql:  ;;
+  }
+
   measure: quota_percent {
     type: number
     value_format: "0.00%"
@@ -161,7 +166,7 @@ view: v_booking_team_s5 {
 
   measure: CPU {
     type: number
-    sql: ${probable}+${committed}+${upside} ;;
+    sql: sum(${probable}+${committed}+${upside}) ;;
     value_format:"#,##0;($#,##0)"
   }
 

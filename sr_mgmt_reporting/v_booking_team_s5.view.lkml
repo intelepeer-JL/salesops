@@ -140,9 +140,6 @@ view: v_booking_team_s5 {
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
 
-
-
-
   measure: quota_percent {
     type: number
     value_format: "0.00%"
@@ -161,19 +158,22 @@ view: v_booking_team_s5 {
     sql: (sum(${wonc})/nullif(sum(${totalcount}),0)) ;;
   }
 
+  measure: funnel_to_quota {
+    type: number
+    value_format: "0.00%"
+    sql: (sum(${Pipe})/nullif(sum(${quota}),0)) ;;
+  }
+
   measure: win_committed {
     type: number
     sql: ${total_booking}+${committed} ;;
     value_format:"#,##0;($#,##0)"
   }
 
-  dimension: CPU {
+  measure: quota_win {
     type: number
-    sql: ${probable}+${committed}+${upside} ;;
-    value_format:"#,##0;($#,##0)"
+    sql: (sum(${Pipe})*win_percent_arr ;;
   }
-
-
 
   measure: total_mrg_amount {
     type: sum

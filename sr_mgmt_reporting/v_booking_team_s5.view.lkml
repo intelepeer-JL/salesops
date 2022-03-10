@@ -203,7 +203,7 @@ view: v_booking_team_s5 {
 
   measure: forecast_diff {
     type: number
-    sql:if(is_null(sum(${quota})-sum(${Pipe})*${win_rate}),0,(sum(${quota})-sum(${Pipe})*${win_rate})) ;;
+    sql:(sum(${quota})-sum(${Pipe})*${win_rate}) ;;
   }
 
   measure: average_mrg_amount {
@@ -231,7 +231,7 @@ view: v_booking_team_s5 {
 
   measure: total_pipe {
     type: sum
-    sql: ${Pipe} ;;
+    sql: COALESCE(${Pipe},0) ;;
   }
 
   dimension: new_logo {

@@ -78,15 +78,6 @@ view: v_s_f_analytics {
     sql: ${TABLE}.OppOwner ;;
   }
 
-  dimension: pipeline {
-    type: number
-    sql: ${TABLE}.Pipeline ;;
-  }
-
-  dimension: probable {
-    type: number
-    sql: ${TABLE}.Probable ;;
-  }
 
   dimension: quota {
     type: number
@@ -142,4 +133,68 @@ view: v_s_f_analytics {
     type: count
     drill_fields: []
   }
+
+  # created elements #
+
+  measure: win_rate {
+    type: number
+    sql: if(${role}="Channel Sales East",.18,
+          if(${role}="Channel Sales West",.22,
+          if(${role} = "Midmarket Core Account Management",.44,
+          if(${role} = "Midmarket Base Account Management",.27,
+          if(${role} = "Key Account Management",.27,.25)))));;
+  }
+
+  measure: team_win_rate {
+    type: number
+    sql: if(${sq_department} = "Account Management", .31,
+      if(${sq_department} = "Channel Sales",.22,.25));;
+  }
+
+  dimension: Pipe {
+    type: number
+    sql: ${TABLE}.Active_Funnel ;;
+  }
+
+  measure: forecast_book {
+    type: number
+    sql:COALESCE( sum(${Pipe})*${win_rate} ,0)  ;;
+  }
+
+  measure: team_forecast_book {
+    type: number
+    sql:COALESCE(sum(${Pipe})*${team_win_rate} ,0)  ;;
+  }
+
+  measure: forecast_diff {
+    type: number
+    sql:(sum(${quota})-sum(${Pipe})*${win_rate}) ;;
+  }
+
+  measure: team_forecast_diff {
+    type: number
+    sql:(sum(${quota})-sum(${Pipe})*${team_win_rate}) ;;
+  }
+
+  dimension: closemonthgroup {
+    type: string
+    sql: concat(format_date("%B",${month_date})," ",format_date("%Y",${month_date})) ;;
+    order_by_field: month_date
+  }
+
+  #not being used #
+
+  dimension: pipeline {
+    type: number
+    hidden: yes
+    sql: ${TABLE}.Pipeline ;;
+  }
+
+  dimension: probable {
+    type: number
+    hidden: yes
+    sql: ${TABLE}.Probable ;;
+  }
+
+
 }

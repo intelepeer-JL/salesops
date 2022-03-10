@@ -201,9 +201,19 @@ view: v_booking_team_s5 {
     sql:COALESCE( sum(${Pipe})*${win_rate} ,0)  ;;
   }
 
+  measure: team_forecast_book {
+    type: number
+    sql:COALESCE(sum(${Pipe})*${team_win_rate} ,0)  ;;
+  }
+
   measure: forecast_diff {
     type: number
     sql:(sum(${quota})-sum(${Pipe})*${win_rate}) ;;
+  }
+
+  measure: team_forecast_diff {
+    type: number
+    sql:(sum(${quota})-sum(${Pipe})*${team_win_rate}) ;;
   }
 
   measure: average_mrg_amount {

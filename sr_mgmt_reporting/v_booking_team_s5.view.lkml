@@ -255,6 +255,11 @@ view: v_booking_team_s5 {
     sql: ${TABLE}.New_Logoc ;;
   }
 
+  dimension: oppval {
+    type: number
+    sql: ${TABLE}.oppval ;;
+  }
+
   dimension: oppowner_id {
     type: string
     sql: ${TABLE}.OppownerId ;;

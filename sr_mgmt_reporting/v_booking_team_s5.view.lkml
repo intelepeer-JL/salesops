@@ -203,7 +203,7 @@ view: v_booking_team_s5 {
 
   measure: forecast_diff {
     type: number
-    sql:if(ifnull(sum(${quota})-sum(${Pipe})*${win_rate}),${total_quota},(sum(${quota})-sum(${Pipe})*${win_rate})) ;;
+    sql:if(ifnull(sum(${quota})-sum(${Pipe})*${win_rate}),0,(sum(${quota})-sum(${Pipe})*${win_rate})) ;;
   }
 
   measure: average_mrg_amount {

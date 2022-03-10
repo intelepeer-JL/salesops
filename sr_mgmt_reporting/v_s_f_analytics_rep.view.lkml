@@ -190,7 +190,22 @@ view: v_s_f_analytics_rep {
     sql: sum(${active_days})/nullif(sum(${open_c}),0) ;;
   }
 
-
+  measure: avgclose_ty {
+    type: number
+    sql: sum(${close_days_ty})/nullif(sum(${closed_c_ty}),0) ;;
+  }
+  measure: avglost_ty {
+    type: number
+    sql: sum(${lost_days_ty})/nullif(sum(${lost_c_ty}),0) ;;
+  }
+  measure: avgwon_ty {
+    type: number
+    sql: sum(${won_days_ty})/nullif(sum(${won_c_ty}),0) ;;
+  }
+  measure: avgactive_ty {
+    type: number
+    sql: sum(${active_days_ty})/nullif(sum(${open_c_ty}),0) ;;
+  }
 
 
 

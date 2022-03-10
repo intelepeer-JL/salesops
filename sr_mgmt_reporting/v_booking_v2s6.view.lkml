@@ -35,27 +35,16 @@ view: v_booking_v2s6 {
     sql: ${TABLE}.department ;;
   }
 
-  dimension: mgmt_plan {
+  dimension: gross {
     type: number
+    sql: ${TABLE}.Gross ;;
+  }
+
+  dimension: mgmt_plan {
+    type: string
     sql: ${TABLE}.Mgmt_plan ;;
   }
 
-  dimension:gross_plan {
-    type: number
-    sql: ${TABLE}.GROSS ;;
-  }
-
-dimension: closemthgroup {
-  type: string
-  sql:concat(format_date("%B",${quota_month_date})," ",format_date("%Y",${quota_month_date})) ;;
-  order_by_field: quota_month_date
-
-}
-
-  dimension: Quarter {
-    type:  string
-    sql: concat(${month_quarter_of_year},"-",${month_year}) ;;
-  }
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
@@ -67,7 +56,6 @@ dimension: closemthgroup {
       week,
       month,
       quarter,
-      quarter_of_year,
       year
     ]
     convert_tz: no
@@ -90,40 +78,41 @@ dimension: closemthgroup {
     sql: ${TABLE}.quota_month ;;
   }
 
-
-  dimension: team {
+  dimension: sq_department {
     type: string
-    sql: ${TABLE}.Team ;;
+    sql: ${TABLE}.SQ_department ;;
   }
 
   dimension: team_quota {
     type: number
     sql: ${TABLE}.team_quota ;;
   }
- measure: tot_quot {
-   type: sum
-  sql: ${TABLE}.team_quota ;;
- }
 
-  measure: tot_mgmt {
-    type: sum
-    sql: ${TABLE}.Mgmt_plan ;;
+  dimension: closemthgroup {
+    type: string
+    sql:concat(format_date("%B",${quota_month_date})," ",format_date("%Y",${quota_month_date})) ;;
+    order_by_field: quota_month_date
 
   }
+  dimension: Quarter {
+    type:  string
+    sql: concat(${quota_month_quarter},"-",${quota_month_year}) ;;
+  }
 
- measure: mgmt_eff {
-   type: number
-  value_format: "0.0%"
-  sql: ((${total_booking})/nullif((${mgmt_plan}),0)) ;;
+  measure: mgmt_eff {
+    type: number
+    value_format: "0.0%"
+    sql: ((${total_booking})/nullif((${mgmt_plan}),0)) ;;
 
- }
+  }
 
   measure: mgmt_gross_eff {
     type: number
     value_format: "0.0%"
-    sql: ((${total_booking})/nullif((${gross_plan}),0)) ;;
+    sql: ((${total_booking})/nullif((${gross}),0)) ;;
 
   }
+
 
   measure: count {
     type: count

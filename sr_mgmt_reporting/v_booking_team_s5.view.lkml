@@ -49,7 +49,7 @@ view: v_booking_team_s5 {
 
   dimension: Pipe {
     type: number
-    sql: ${TABLE}.Pipe ;;
+    sql: COALESCE(${TABLE}.Pipe,0) ;;
     value_format:"#,##0;($#,##0)"
   }
 

@@ -201,6 +201,11 @@ view: v_booking_team_s5 {
     sql:sum(${Pipe})*${win_rate}   ;;
   }
 
+  measure: Shortfall {
+    type: number
+    sql: ${quota}-${forecast_book};;
+  }
+
   measure: average_mrg_amount {
     type: average
     sql: ${mrg_amount} ;;

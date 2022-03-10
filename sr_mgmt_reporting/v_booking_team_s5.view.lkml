@@ -203,9 +203,7 @@ view: v_booking_team_s5 {
 
   measure: Shortfall {
     type: number
-    sql: sum(${total_quota}-${forecast_book})
-    value_format:"#,##0;($#,##0)"
-    ;;
+    sql: sum(${total_quota}-${forecast_book});;
   }
 
   measure: average_mrg_amount {

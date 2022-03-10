@@ -25,25 +25,23 @@ view: v_s_f_analytics_rep {
     sql: ${active_days} ;;
   }
 
-  measure: average_active_days {
-    type: average
-    sql: ${active_days} ;;
+  dimension: open_c_ty {
+    type: number
+    sql: ${TABLE}.open_c_ty ;;
   }
+
+
+  dimension: open_c {
+    type: number
+    sql: ${TABLE}.open_c ;;
+  }
+
 
   dimension: active_days_ty {
     type: number
     sql: ${TABLE}.Active_days_ty ;;
   }
 
-  dimension: close_avg_days {
-    type: number
-    sql: ${TABLE}.close_avg_days ;;
-  }
-
-  dimension: close_avg_days_ty {
-    type: number
-    sql: ${TABLE}.close_avg_days_ty ;;
-  }
 
   dimension: close_days {
     type: number
@@ -53,16 +51,6 @@ view: v_s_f_analytics_rep {
   dimension: close_days_ty {
     type: number
     sql: ${TABLE}.close_days_ty ;;
-  }
-
-  dimension: closed_avg {
-    type: number
-    sql: ${TABLE}.closed_avg ;;
-  }
-
-  dimension: closed_avg_ty {
-    type: number
-    sql: ${TABLE}.closed_avg_ty ;;
   }
 
   dimension: closed_c {
@@ -100,20 +88,6 @@ view: v_s_f_analytics_rep {
     sql: ${TABLE}.lost_avg ;;
   }
 
-  dimension: lost_avg_days {
-    type: number
-    sql: ${TABLE}.lost_avg_days ;;
-  }
-
-  dimension: lost_avg_days_ty {
-    type: number
-    sql: ${TABLE}.lost_avg_days_ty ;;
-  }
-
-  dimension: lost_avg_ty {
-    type: number
-    sql: ${TABLE}.lost_avg_ty ;;
-  }
 
   dimension: lost_c {
     type: number
@@ -165,25 +139,7 @@ view: v_s_f_analytics_rep {
     sql: ${TABLE}.won ;;
   }
 
-  dimension: won_avg {
-    type: number
-    sql: ${TABLE}.won_avg ;;
-  }
 
-  dimension: won_avg_days {
-    type: number
-    sql: ${TABLE}.won_avg_days ;;
-  }
-
-  dimension: won_avg_days_ty {
-    type: number
-    sql: ${TABLE}.won_avg_days_ty ;;
-  }
-
-  dimension: won_avg_ty {
-    type: number
-    sql: ${TABLE}.won_avg_ty ;;
-  }
 
   dimension: won_c {
     type: number
@@ -210,10 +166,36 @@ view: v_s_f_analytics_rep {
     sql: ${TABLE}.won_ty ;;
   }
 
+
+
+
+
+
+  #avg days past year#
+
   measure: avgclose {
     type: number
     sql: sum(${close_days})/nullif(sum(${closed_c}),0) ;;
   }
+  measure: avglost {
+    type: number
+    sql: sum(${lost_days})/nullif(sum(${lost_c}),0) ;;
+  }
+  measure: avgwon {
+    type: number
+    sql: sum(${won_days})/nullif(sum(${won_c}),0) ;;
+  }
+  measure: avgactive {
+    type: number
+    sql: sum(${active_days})/nullif(sum(${open_c}),0) ;;
+  }
+
+
+
+
+
+
+
 
   measure: count {
     type: count

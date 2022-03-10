@@ -118,6 +118,13 @@ dimension: closemthgroup {
 
  }
 
+  measure: mgmt_gross_eff {
+    type: number
+    value_format: "0.0%"
+    sql: ((${total_booking})/nullif((${gross_plan}),0)) ;;
+
+  }
+
   measure: count {
     type: count
     drill_fields: []

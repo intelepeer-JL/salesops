@@ -212,7 +212,7 @@ view: v_s_f_analytics_rep {
 
   measure: avgclose {
     type: number
-    sql: ${close_days}/nullif(${closed_c},0) ;;
+    sql: sum(${close_days})/nullif(sum(${closed_c}),0) ;;
   }
 
   measure: count {

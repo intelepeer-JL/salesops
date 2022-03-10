@@ -201,6 +201,11 @@ view: v_booking_team_s5 {
     sql:sum(${Pipe})*${win_rate}   ;;
   }
 
+  measure: forecast_diff {
+    type: number
+    sql:(sum(${Pipe})*${win_rate})-sum(${quota})   ;;
+  }
+
   measure: average_mrg_amount {
     type: average
     sql: ${mrg_amount} ;;

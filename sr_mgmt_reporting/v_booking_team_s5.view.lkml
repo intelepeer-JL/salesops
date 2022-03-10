@@ -198,7 +198,7 @@ view: v_booking_team_s5 {
 
   measure: forecast_book {
     type: number
-    sql:nullif( sum(${Pipe})*${win_rate} ,0)  ;;
+    sql:COALESCE( sum(${Pipe})*${win_rate} ,0)  ;;
   }
 
   measure: forecast_diff {

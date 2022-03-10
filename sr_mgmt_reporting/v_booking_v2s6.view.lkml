@@ -40,6 +40,11 @@ view: v_booking_v2s6 {
     sql: ${TABLE}.Mgmt_plan ;;
   }
 
+  dimension:gross_plan {
+    type: number
+    sql: ${TABLE}.GROSS ;;
+  }
+
 dimension: closemthgroup {
   type: string
   sql:concat(format_date("%B",${quota_month_date})," ",format_date("%Y",${quota_month_date})) ;;

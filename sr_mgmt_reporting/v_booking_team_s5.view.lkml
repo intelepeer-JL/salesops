@@ -203,7 +203,7 @@ view: v_booking_team_s5 {
 
   measure: Shortfall {
     type: number
-    sql: ${quota}-${forecast_book}
+    sql: sum(${quota})-${forecast_book}
     value_format:"#,##0;($#,##0)"
     ;;
   }

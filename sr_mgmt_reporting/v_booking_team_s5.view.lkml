@@ -196,6 +196,11 @@ view: v_booking_team_s5 {
     if(${sq_department} = "Channel Sales",.22,.25));;
   }
 
+  measure: forecast_book {
+    type: number
+    sql:sum(${Pipe})*${win_rate}   ;;
+  }
+
   measure: average_mrg_amount {
     type: average
     sql: ${mrg_amount} ;;

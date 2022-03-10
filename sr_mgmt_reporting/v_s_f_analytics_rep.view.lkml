@@ -210,6 +210,11 @@ view: v_s_f_analytics_rep {
     sql: ${TABLE}.won_ty ;;
   }
 
+  measure: avgclose {
+    type: number
+    sql: ${close_days}/nullif(${closed_c},0) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []

@@ -225,6 +225,11 @@ view: v_booking_team_s5 {
     sql: ${TABLE}.MRPFCount ;;
   }
 
+  measure: total_pipe {
+    type: sum
+    sql: ${Pipe} ;;
+  }
+
   dimension: new_logo {
     type: number
     sql: ${TABLE}.NewLogo ;;

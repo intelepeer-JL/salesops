@@ -203,7 +203,7 @@ view: v_booking_team_s5 {
 
   measure: Shortfall {
     type: number
-    sql: sum(${quota})-${forecast_book}
+    sql: ${total_quota}-${forecast_book}
     value_format:"#,##0;($#,##0)"
     ;;
   }
@@ -251,6 +251,11 @@ view: v_booking_team_s5 {
     type: number
     sql: ${TABLE}.Probable ;;
     value_format:"#,##0;($#,##0)"
+  }
+
+  measure: total_quota {
+    type: sum
+    sql: ${quota} ;;
   }
 
   dimension: quota {

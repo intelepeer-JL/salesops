@@ -69,6 +69,12 @@ view: v_funnel_analytics {
 
   }
 
+  dimension: closemonthgroup {
+    type: string
+    sql:concat(format_date("%B",${closedate_date})," ",format_date("%Y",${closedate_date})) ;;
+    order_by_field: close_month_date
+
+  }
 
   dimension: is_top_10 {
     type: yesno

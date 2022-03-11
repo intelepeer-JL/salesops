@@ -3,7 +3,7 @@ connection: "sales_ops"
 include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
 include: "/**/*.view.lkml"
 
-
+explore: v_s_f_analytics_quarter {}
 explore: v_booking_v2s6 {}
 explore: v_s_f_analytics {}
 explore: v_s_f_analytics_rep {}

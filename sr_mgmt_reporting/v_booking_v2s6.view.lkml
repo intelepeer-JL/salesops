@@ -109,7 +109,7 @@ view: v_booking_v2s6 {
   measure: mgmt_gross_eff {
     type: number
     value_format: "0.0%"
-    sql: (sum(${total_booking})/nullif(sum(${gross}),0)) ;;
+    sql: ((${total_booking})/nullif(sum(${gross}),0)) ;;
 
   }
 

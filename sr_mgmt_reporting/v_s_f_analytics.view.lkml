@@ -142,13 +142,13 @@ view: v_s_f_analytics {
     sql: if(${role}="Channel Sales East",.18,
           if(${role}="Channel Sales West",.22,
           if(${role} = "Midmarket Core Account Management",.44,
-          if(${role} = "Midmarket Base Account Management",.27,
-          if(${role} = "Key Account Management",.27,.25)))));;
+          if(${role} = "Midmarket Base Account Management",.44,
+          if(${role} = "Key Account Management",.44,.25)))));;
   }
 
   measure: team_win_rate {
     type: number
-    sql: if(${sq_department} = "Account Management", .31,
+    sql: if(${sq_department} = "Account Management", .44,
       if(${sq_department} = "Channel Sales",.22,.25));;
   }
 

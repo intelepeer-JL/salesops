@@ -82,6 +82,7 @@ view: v_s_f_analytics {
   dimension: quota {
     type: number
     sql: ${TABLE}.quota ;;
+    value_format: "$#,##0"
   }
 
   dimension: rep {
@@ -154,26 +155,31 @@ view: v_s_f_analytics {
   dimension: Pipe {
     type: number
     sql: ${TABLE}.Active_Funnel ;;
+    value_format: "$#,##0"
   }
 
   measure: forecast_book {
     type: number
     sql:COALESCE( sum(${Pipe})*${win_rate} ,0)  ;;
+    value_format: "$#,##0"
   }
 
   measure: team_forecast_book {
     type: number
     sql:COALESCE(sum(${Pipe})*${team_win_rate} ,0)  ;;
+    value_format: "$#,##0"
   }
 
   measure: forecast_diff {
     type: number
     sql:(sum(${quota})-sum(${Pipe})*${win_rate}) ;;
+    value_format: "$#,##0"
   }
 
   measure: team_forecast_diff {
     type: number
     sql:(sum(${quota})-sum(${Pipe})*${team_win_rate}) ;;
+    value_format: "$#,##0"
   }
 
   dimension: closemonthgroup {

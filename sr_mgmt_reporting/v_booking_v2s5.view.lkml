@@ -151,6 +151,7 @@ view: v_booking_v2s5 {
   dimension: voice {
     type: number
     sql: ${TABLE}.Voice ;;
+    value_format: "$#,##0"
   }
 
   dimension: voicec {

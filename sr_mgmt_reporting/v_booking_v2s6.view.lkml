@@ -88,6 +88,33 @@ view: v_booking_v2s6 {
     sql: ${TABLE}.team_quota ;;
   }
 
+  dimension: closemthgroup {
+    type: string
+    sql:concat(format_date("%B",${quota_month_date})," ",format_date("%Y",${quota_month_date})) ;;
+    order_by_field: quota_month_date
+
+  }
+  dimension: Quarter {
+    type:  string
+    sql: concat(${quota_month_quarter},"-",${quota_month_year}) ;;
+  }
+
+  measure: mgmt_eff {
+    type: number
+    value_format: "0.0%"
+    sql: ((${total_booking})/nullif((${mgmt_plan}),0)) ;;
+
+  }
+
+  measure: mgmt_gross_eff {
+    type: number
+    value_format: "0.0%"
+    sql: ((${total_booking})/nullif((${gross}),0)) ;;
+
+  }
+
+
+
   measure: count {
     type: count
     drill_fields: []

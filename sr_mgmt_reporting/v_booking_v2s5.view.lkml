@@ -145,7 +145,7 @@ view: v_booking_v2s5 {
   dimension: total_booking {
     type: number
     sql: ${TABLE}.total_booking ;;
-    value_format: "$0"
+    value_format: "$#,##0"
   }
 
   dimension: voice {

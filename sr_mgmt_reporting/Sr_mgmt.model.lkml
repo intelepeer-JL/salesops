@@ -9,7 +9,6 @@ explore: v_s_f_analytics {}
 explore: v_s_f_analytics_rep {}
 explore: v_booking_team_s5 {}
 explore: v_booking_v2s5 {}
-explore: v_booking_v2s6 {}
 explore: v_commit_probable {}
 explore: v_committed_probable_summary {}
 explore: v_wo_w_analysis {}

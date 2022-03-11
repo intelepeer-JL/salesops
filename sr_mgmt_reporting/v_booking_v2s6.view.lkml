@@ -41,7 +41,7 @@ view: v_booking_v2s6 {
   }
 
   dimension: mgmt_plan {
-    type: string
+    type: number
     sql: ${TABLE}.Mgmt_plan ;;
   }
 

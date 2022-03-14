@@ -113,6 +113,13 @@ view: v_booking_v2s6 {
 
   }
 
+  measure: quota_eff_2 {
+    type: number
+    value_format: "0.0%"
+    sql: ((${total_booking})/nullif(sum(${team_quota}),0)) ;;
+
+  }
+
 
 
   measure: count {

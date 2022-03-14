@@ -172,7 +172,7 @@ view: v_s_f_analytics {
 
   measure: forecast_diff {
     type: number
-    sql:(sum(${quota})-sum(${Pipe})*${win_rate}) ;;
+    sql:if((sum(${quota})-sum(${Pipe})*${win_rate}) < 0 ,0 ,(sum(${quota})-sum(${Pipe})*${win_rate}) ;;
     value_format: "$#,##0"
   }
 

@@ -144,12 +144,14 @@ view: v_s_f_analytics {
           if(${role} = "Midmarket Core Account Management",.44,
           if(${role} = "Midmarket Base Account Management",.44,
           if(${role} = "Key Account Management",.44,.25)))));;
+    value_format: "0\%"
   }
 
   measure: team_win_rate {
     type: number
     sql: if(${sq_department} = "Account Management", .44,
       if(${sq_department} = "Channel Sales",.22,.25));;
+    value_format: "0\%"
   }
 
   dimension: Pipe {

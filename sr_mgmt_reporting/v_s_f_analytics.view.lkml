@@ -172,13 +172,13 @@ view: v_s_f_analytics {
 
   measure: forecast_diff {
     type: number
-    sql:if((sum(${Booking_to_Quota})-sum(${Pipe})*${win_rate}) < 0 ,0 ,(sum(${Booking_to_Quota})-sum(${Pipe})*${win_rate})) ;;
+    sql:if((${Booking_to_Quota}-sum(${Pipe})*${win_rate}) < 0 ,0 ,(${Booking_to_Quota}-sum(${Pipe})*${win_rate})) ;;
     value_format: "$#,##0"
   }
 
   measure: team_forecast_diff {
     type: number
-    sql:if((sum(${Booking_to_Quota})-sum(${Pipe})*${team_win_rate})<0,0,(sum(${Booking_to_Quota})-sum(${Pipe})*${team_win_rate})) ;;
+    sql:if((${Booking_to_Quota}-sum(${Pipe})*${team_win_rate})<0,0,(${Booking_to_Quota}-sum(${Pipe})*${team_win_rate})) ;;
     value_format: "$#,##0"
   }
 

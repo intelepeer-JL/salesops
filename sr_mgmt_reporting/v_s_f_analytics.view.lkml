@@ -178,7 +178,7 @@ view: v_s_f_analytics {
 
   measure: team_forecast_diff {
     type: number
-    sql:(sum(${quota})-sum(${Pipe})*${team_win_rate}) ;;
+    sql:if((sum(${quota})-sum(${Pipe})*${team_win_rate})<0,0,(sum(${quota})-sum(${Pipe})*${team_win_rate}) ;;
     value_format: "$#,##0"
   }
 

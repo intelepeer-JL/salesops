@@ -184,7 +184,7 @@ view: v_s_f_analytics {
 
   measure: Booking_to_Quota {
     type: number
-    sql: ${quota}-${won_val} ;;
+    sql: sum(${quota})-sum(${won_val}) ;;
   }
 
 

@@ -125,9 +125,9 @@ view: v_s_f_analytics {
     sql: ${TABLE}.UserID ;;
   }
 
-  dimension: won {
+  dimension: won_val {
     type: number
-    sql: ${TABLE}.won ;;
+    sql: ${TABLE}.won_val ;;
   }
 
   measure: count {

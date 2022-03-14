@@ -101,6 +101,10 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.RM_MRPF ;;
   }
 
+  dimension: RMwidthMRPF {
+    type: number
+    sql:COALESCE${TABLE}.RM,0)+COALESCE${TABLE}.MRPF,0) ;;
+  }
 
 
 

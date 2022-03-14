@@ -65,6 +65,10 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.RM_Check ;;
   }
 
+  dimension: DataTimeStamp {
+    type: string
+    sql: ${TABLE}.DataTimeStamp ;;
+  }
 
   dimension: account_id {
     type: string

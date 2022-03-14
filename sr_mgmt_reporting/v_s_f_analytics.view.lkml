@@ -172,15 +172,17 @@ view: v_s_f_analytics {
 
   measure: forecast_diff {
     type: number
-    sql:if((sum(${quota})-sum(${Pipe})*${win_rate}) < 0 ,0 ,(sum(${quota})-sum(${Pipe})*${win_rate}) ;;
+    sql:if((sum(${quota})-sum(${Pipe})*${win_rate}) < 0 ,0 ,(sum(${quota})-sum(${Pipe})*${win_rate})) ;;
     value_format: "$#,##0"
   }
 
   measure: team_forecast_diff {
     type: number
-    sql:if((sum(${quota})-sum(${Pipe})*${team_win_rate})<0,0,(sum(${quota})-sum(${Pipe})*${team_win_rate}) ;;
+    sql:if((sum(${quota})-sum(${Pipe})*${team_win_rate})<0,0,(sum(${quota})-sum(${Pipe})*${team_win_rate})) ;;
     value_format: "$#,##0"
   }
+
+
 
   dimension: closemonthgroup {
     type: string

@@ -60,6 +60,12 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.SAP_ID__c ;;
   }
 
+  dimension: RM_Check {
+    type: string
+    sql: ${TABLE}.RM_Check ;;
+  }
+
+
   dimension: account_id {
     type: string
     sql: ${TABLE}.AccountId ;;
@@ -83,8 +89,20 @@ view: v_booking_v2s3 {
   dimension: arr {
     type: number
     sql: ${TABLE}.ARR ;;
-
   }
+
+  dimension: RM {
+    type: number
+    sql: ${TABLE}.RM ;;
+  }
+
+  dimension: RM_MRPF {
+    type: number
+    sql: ${TABLE}.RM_MRPF ;;
+  }
+
+
+
 
   dimension: closemthgroup {
     type: string

@@ -18,7 +18,7 @@ view: v_weekly_add {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Arr" in Explore.
 
-  dimension: arr {
+  dimension: ARR{
     type: number
     sql: ${TABLE}.ARR ;;
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
@@ -32,13 +32,13 @@ view: v_weekly_add {
 
   measure: total_arr {
     type: sum
-    sql: ${arr} ;;
+    sql: ${ARR} ;;
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
   measure: average_arr {
     type: average
-    sql: ${arr} ;;
+    sql: ${ARR} ;;
   }
 
   dimension: campaign_driven {

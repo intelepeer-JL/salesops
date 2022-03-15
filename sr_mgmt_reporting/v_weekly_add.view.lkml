@@ -20,7 +20,7 @@ view: v_weekly_add {
 
   dimension: ARR{
     type: number
-    sql: ${TABLE}.ARR ;;
+    sql: ${TABLE}.arr ;;
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 

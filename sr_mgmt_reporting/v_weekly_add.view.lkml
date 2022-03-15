@@ -36,6 +36,12 @@ view: v_weekly_add {
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
+  measure: total_cpaas {
+    type: sum
+    sql: ${TABLE}.CPaaS_MRC_ARR ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+  }
+
   measure: average_arr {
     type: average
     sql: ${ARR} ;;

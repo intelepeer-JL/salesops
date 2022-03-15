@@ -266,6 +266,11 @@ view: v_funnel_analytics {
     sql: ${TABLE}.Sub_Agent ;;
   }
 
+  dimension: open_c {
+    type: number
+    sql: ${TABLE}.open_c ;;
+  }
+
   dimension: team {
     type: string
     sql: ${TABLE}.Team ;;

@@ -24,12 +24,6 @@ view: v_weekly_add {
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
-  dimension: total_dept_arr {
-    type: number
-    sql: ${TABLE}.total_arr ;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
-  }
-
 
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average

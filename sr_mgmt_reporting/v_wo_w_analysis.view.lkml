@@ -21,6 +21,16 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.category ;;
   }
 
+  dimension: winloss_comments {
+    type: string
+    sql: ${TABLE}.winloss_comments ;;
+  }
+
+  dimension: winloss_data {
+    type: string
+    sql: ${TABLE}.winloss_data ;;
+  }
+
   dimension: close_date {
     type: string
     sql: ${TABLE}.CloseDate ;;

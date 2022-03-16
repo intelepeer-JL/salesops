@@ -109,6 +109,20 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.Created ;;
   }
 
+  dimension_group: close_date {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.CloseDate ;;
+  }
+
   dimension: department {
     type: string
     sql: ${TABLE}.Department ;;

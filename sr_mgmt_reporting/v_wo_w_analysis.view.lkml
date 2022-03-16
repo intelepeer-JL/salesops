@@ -143,6 +143,21 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.lastweek ;;
   }
 
+  dimension_group: closedate {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.CloseDate ;;
+  }
+
   dimension: lw_active {
     type: number
     sql: ${TABLE}.LW_Active ;;

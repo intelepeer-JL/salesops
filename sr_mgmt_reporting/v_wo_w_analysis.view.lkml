@@ -143,7 +143,7 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.lastweek ;;
   }
 
-  dimension_group: closedate {
+  dimension_group: Close_Date {
     type: time
     timeframes: [
       raw,

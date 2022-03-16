@@ -31,10 +31,6 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.winloss_data ;;
   }
 
-  dimension: close_date {
-    type: string
-    sql: ${TABLE}.CloseDate ;;
-  }
 
   dimension: closedloss {
     type: number
@@ -109,7 +105,7 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.Created ;;
   }
 
-  dimension_group: close_date {
+  dimension_group: closedate {
     type: time
     timeframes: [
       raw,

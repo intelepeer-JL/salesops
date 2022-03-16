@@ -157,7 +157,7 @@ view: v_wo_w_analysis {
     datatype: date
     sql: ${TABLE}.CloseDate ;;
   }
-
+#j
   dimension: lw_active {
     type: number
     sql: ${TABLE}.LW_Active ;;

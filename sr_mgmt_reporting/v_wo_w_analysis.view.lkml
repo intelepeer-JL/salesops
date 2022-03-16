@@ -108,8 +108,6 @@ view: v_wo_w_analysis {
   dimension_group: closedate {
     type: time
     timeframes: [
-      raw,
-      time,
       date,
       week,
       month,

@@ -105,17 +105,7 @@ view: v_wo_w_analysis {
     sql: ${TABLE}.Created ;;
   }
 
-  dimension_group: closedate {
-    type: time
-    timeframes: [
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.CloseDate ;;
-  }
+
 
   dimension: department {
     type: string

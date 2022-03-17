@@ -98,7 +98,7 @@ view: v_funnel_analytics {
   dimension: adjusted_amount {
     type: number
     sql: ${TABLE}.adjusted_amount ;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+    value_format: "[>=1000000]$0.0,,\"M\";[>=1000]$0.0,\"K\";$0.0"
   }
 
   dimension: closemonth13filter {
@@ -300,7 +300,7 @@ view: v_funnel_analytics {
   measure: avgval {
     type: number
     sql:  ${total_amount}/13;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+    value_format: "[>=1000000]$0.0,,\"M\";[>=1000]$0.0,\"K\";$0.0"
   }
 
   measure: oppcount {
@@ -312,14 +312,14 @@ view: v_funnel_analytics {
   measure: total_amount {
     type: sum
     sql: ${adjusted_amount} ;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+    value_format: "[>=1000000]$0.0,,\"M\";[>=1000]$0.0,\"K\";$0.0"
   }
 
 
   measure: average_amount {
     type: average
     sql: ${adjusted_amount} ;;
-    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+    value_format: "[>=1000000]$0.0,,\"M\";[>=1000]$0.0,\"K\";$0.0"
   }
 
   measure: count {

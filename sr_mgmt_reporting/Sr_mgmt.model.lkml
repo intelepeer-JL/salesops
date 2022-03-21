@@ -13,6 +13,7 @@ explore: v_commit_probable {}
 explore: v_committed_probable_summary {}
 explore: v_wo_w_analysis {}
 explore: v_weekly_add {}
+explore: v_forecast_s2 {}
 
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 

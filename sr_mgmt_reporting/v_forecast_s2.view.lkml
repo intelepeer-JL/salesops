@@ -68,7 +68,7 @@ view: v_forecast_s2 {
     type: number
     sql: sum(${won})/sum(${totalval})
     ;;
-    value_format: "%"
+
   }
 
   measure: funnel_achieve {

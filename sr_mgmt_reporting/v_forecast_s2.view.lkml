@@ -52,7 +52,7 @@ view: v_forecast_s2 {
 
   dimension: Quarter {
     type:  string
-    sql: concat(${quarter_month},"-",${quarter_year}) ;;
+    sql: concat(${quarter_quarter_of_year},"-",${quarter_year}) ;;
   }
 
   dimension: net {
@@ -91,6 +91,8 @@ view: v_forecast_s2 {
       week,
       month,
       quarter,
+      fiscal_quarter,
+      quarter_of_year,
       year
     ]
     convert_tz: no

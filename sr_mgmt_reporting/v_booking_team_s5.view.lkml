@@ -192,8 +192,8 @@ view: v_booking_team_s5 {
 
   measure: team_win_rate {
     type: number
-    sql: if(${sq_department} = "Account Management", .31,
-    if(${sq_department} = "Channel Sales",.22,.25));;
+    sql: if(${sq_department} = "Account Management", .45,
+    if(${sq_department} = "Channel Sales",.137,.25));;
   }
 
   measure: forecast_book {

@@ -1,3 +1,5 @@
+
+
 # The name of this view in Looker is "V Booking Team S5"
 view: v_booking_team_s5 {
   # The sql_table_name parameter indicates the underlying database table
@@ -9,6 +11,9 @@ view: v_booking_team_s5 {
 
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
+
+
+
 
   dimension_group: close_month {
     type: time

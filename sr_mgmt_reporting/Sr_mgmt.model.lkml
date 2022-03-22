@@ -9,13 +9,15 @@ explore: v_s_f_analytics_quarter {}
 explore: v_booking_v2s6 {}
 explore: v_s_f_analytics {}
 explore: v_s_f_analytics_rep {}
+
 explore: v_booking_team_s5 {
   join: v_rep_win_rate {
     relationship: many_to_one
     sql_on: ${v_booking_team_s5.oppowner_id}=${v_rep_win_rate.owner_id} ;;
-}
+  }
 
 }
+
 
 
 explore: v_booking_v2s5 {}

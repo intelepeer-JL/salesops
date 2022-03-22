@@ -7,13 +7,7 @@ include: "/**/*.view.lkml"
 explore: v_rep_win_rate {}
 explore: v_s_f_analytics_quarter {}
 explore: v_booking_v2s6 {}
-explore: v_s_f_analytics {
-  join: v_rep_win_rate {
-    relationship: one_to_many
-    sql_on: ${v_s_f_analytics.rep_id}=${v_rep_win_rate.owner_id} ;;
-  }
-
-}
+explore: v_s_f_analytics {}
 
 explore: v_s_f_analytics_rep {}
 

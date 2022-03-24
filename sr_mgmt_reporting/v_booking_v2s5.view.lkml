@@ -36,6 +36,17 @@ view: v_booking_v2s5 {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Cpaa S" in Explore.
 
+  dimension: Inbound {
+    type: number
+    sql: ${TABLE}.Inbound ;;
+  }
+
+  dimension: Outbound {
+    type: number
+    sql: ${TABLE}.Outbound ;;
+  }
+
+
   dimension: cpaa_s {
     type: number
     sql: ${TABLE}.CPaaS ;;

@@ -46,6 +46,16 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.Outbound ;;
   }
 
+  dimension: Inbound_c {
+    type: number
+    sql: ${TABLE}.Inbound_c ;;
+  }
+
+  dimension: Outbound_c {
+    type: number
+    sql: ${TABLE}.Outbound_c ;;
+  }
+
 
   dimension: cpaa_s {
     type: number

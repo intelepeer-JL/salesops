@@ -39,11 +39,13 @@ view: v_booking_v2s5 {
   dimension: Inbound {
     type: number
     sql: ${TABLE}.Inbound ;;
+    value_format: "$#,##0"
   }
 
   dimension: Outbound {
     type: number
     sql: ${TABLE}.Outbound ;;
+    value_format: "$#,##0"
   }
 
   dimension: Inbound_c {

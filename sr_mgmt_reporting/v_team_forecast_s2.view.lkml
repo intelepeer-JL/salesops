@@ -33,6 +33,18 @@ view: v_team_forecast_s2 {
     value_format: "$#,##0"
   }
 
+  measure: QuotaEff {
+    type: number
+    value_format: "0.00%"
+    sql: (sum(${won})/nullif(sum(${quota}),0)) ;;
+  }
+
+  measure: CWQuotaEff {
+    type: number
+    value_format: "0.00%"
+    sql: (sum(${cw})/nullif(sum(${quota}),0)) ;;
+  }
+
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 

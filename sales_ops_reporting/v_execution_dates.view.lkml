@@ -21,6 +21,16 @@ view: v_execution_dates {
     sql: ${TABLE}.updatedtitle ;;
   }
 
+  dimension:  mtd{
+    type: string
+    sql: ${TABLE}.currentmonth ;;
+  }
+
+  dimension:  ytd{
+    type: string
+    sql: ${TABLE}.currentyear ;;
+  }
+
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 

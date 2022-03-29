@@ -266,31 +266,31 @@ view: v_booking_v2s5 {
 
   measure: avg_tot {
     type: number
-    sql: sum(${total_booking})/nullif(${tot_counts},0) ;;
+    sql: sum(${total_booking})/nullif(sum(${tot_counts}),0) ;;
     value_format: "$#,##0"
   }
 
   measure: avg_NL {
     type: number
-    sql: sum(${NewLogo})/nullif(${New_Logoc},0) ;;
+    sql: sum(${NewLogo})/nullif(sum(${New_Logoc}),0) ;;
     value_format: "$#,##0"
   }
 
   measure: avg_EXP {
     type: number
-    sql: sum(${Expansion})/nullif(${Expansionc},0) ;;
+    sql: sum(${Expansion})/nullif(sum(${Expansionc}),0) ;;
     value_format: "$#,##0"
   }
 
   measure: avg_IB {
     type: number
-    sql: sum(${Inbound})/nullif(${Inbound_c},0) ;;
+    sql: sum(${Inbound})/nullif(sum(${Inbound_c}),0) ;;
     value_format: "$#,##0"
   }
 
   measure: avg_OB {
     type: number
-    sql: sum(${Outbound})/nullif(${Outbound_c},0) ;;
+    sql: sum(${Outbound})/nullif(sum(${Outbound_c}),0) ;;
     value_format: "$#,##0"
   }
 

@@ -266,7 +266,7 @@ view: v_booking_v2s5 {
 
   measure: avg_tot {
     type: number
-    sql: sum(${total_booking})/nullif(sum(${tot_counts}),0) ;;
+    sql: sum(${total_booking})/nullif((${tot_counts}),0) ;;
     value_format: "$#,##0"
   }
 

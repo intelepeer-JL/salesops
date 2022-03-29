@@ -22,6 +22,10 @@ view: v_booking_v2s5 {
     timeframes: [
       raw,
       date,
+      month_name,
+      fiscal_month_num,
+      fiscal_quarter,
+      fiscal_year,
       week,
       month,
       quarter,

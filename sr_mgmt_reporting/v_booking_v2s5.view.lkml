@@ -66,11 +66,13 @@ view: v_booking_v2s5 {
   dimension: cpaa_s {
     type: number
     sql: ${TABLE}.CPaaS ;;
+    value_format: "$#,##0"
   }
 
   dimension: cpaa_s2 {
     type: number
     sql: ${TABLE}.CPaaS2 ;;
+    value_format: "$#,##0"
   }
 
   dimension: cpaa_s2c {
@@ -103,6 +105,7 @@ view: v_booking_v2s5 {
   dimension: mrg_amount {
     type: number
     sql: ${TABLE}.MRG_Amount ;;
+    value_format: "$#,##0"
   }
 
   dimension: Role {
@@ -117,21 +120,25 @@ view: v_booking_v2s5 {
   measure: total_mrg_amount {
     type: sum
     sql: ${mrg_amount} ;;
+    value_format: "$#,##0"
   }
 
   measure: average_mrg_amount {
     type: average
     sql: ${mrg_amount} ;;
+    value_format: "$#,##0"
   }
 
   dimension: mrg_incremental {
     type: number
     sql: ${TABLE}.MRG_Incremental ;;
+    value_format: "$#,##0"
   }
 
   dimension: mrpf {
     type: number
     sql: ${TABLE}.MRPF ;;
+    value_format: "$#,##0"
   }
 
   dimension: mrpfcount {
@@ -147,6 +154,7 @@ view: v_booking_v2s5 {
   dimension: quota {
     type: number
     sql: ${TABLE}.quota ;;
+    value_format: "$#,##0"
   }
 
   dimension: rep {
@@ -189,6 +197,7 @@ view: v_booking_v2s5 {
   dimension: NewLogo {
     type: number
     sql: ${TABLE}.NewLogo ;;
+    value_format: "$#,##0"
   }
 
   dimension: New_Logoc {
@@ -199,6 +208,7 @@ view: v_booking_v2s5 {
   dimension: Expansion {
     type: number
     sql: ${TABLE}.Expansion ;;
+    value_format: "$#,##0"
   }
 
   dimension: Expansionc {
@@ -233,21 +243,55 @@ view: v_booking_v2s5 {
   measure: avg_v {
     type: number
     sql: sum(${voice})/nullif(sum(${voicec}),0) ;;
+    value_format: "$#,##0"
   }
 
   measure: avg_1_0 {
     type: number
     sql: sum(${cpaa_s})/nullif(sum(${cpaa_sc}),0) ;;
+    value_format: "$#,##0"
   }
 
   measure: avg_2_0 {
     type: number
     sql: sum(${cpaa_s2})/nullif(sum(${cpaa_s2c}),0) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: avg_MRPF {
+    type: number
+    sql: sum(${mrpf})/nullif(sum(${mrpfcount}),0) ;;
+    value_format: "$#,##0"
   }
 
   measure: avg_tot {
     type: number
     sql: sum(${total_booking})/nullif(${tot_counts},0) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: avg_NL {
+    type: number
+    sql: sum(${NewLogo})/nullif(${New_Logoc},0) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: avg_EXP {
+    type: number
+    sql: sum(${Expansion})/nullif(${Expansionc},0) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: avg_IB {
+    type: number
+    sql: sum(${Inbound})/nullif(${Inbound_c},0) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: avg_OB {
+    type: number
+    sql: sum(${Outbound})/nullif(${Outbound_c},0) ;;
+    value_format: "$#,##0"
   }
 
   measure: tot_counts {

@@ -33,6 +33,42 @@ view: v_team_forecast_s3 {
     value_format: "$#,##0"
   }
 
+  measure: Actual_to_qupta {
+    type:  number
+    value_format: "0.00%"
+    sql: sum(${won})/nullif(sum(${quota}),0) ;;
+  }
+
+  measure: cw_to_qupta {
+    type:  number
+    value_format: "0.00%"
+    sql: sum(${cw})/nullif(sum(${quota}),0) ;;
+  }
+
+  measure: Actual_to_gross {
+    type:  number
+    value_format: "0.00%"
+    sql: sum(${won})/nullif(sum(${gross}),0) ;;
+  }
+
+  measure: Actual_to_Net {
+    type:  number
+    value_format: "0.00%"
+    sql: sum(${won})/nullif(sum(${net}),0) ;;
+  }
+
+  measure: cw_to_gross {
+    type:  number
+    value_format: "0.00%"
+    sql: sum(${cw})/nullif(sum(${gross}),0) ;;
+  }
+
+  measure: cw_to_net {
+    type:  number
+    value_format: "0.00%"
+    sql: sum(${cw})/nullif(sum(${net}),0) ;;
+  }
+
   dimension: cpaa_s_1 {
     type: number
     sql: ${TABLE}.CPaaS_1 ;;

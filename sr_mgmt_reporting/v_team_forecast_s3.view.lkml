@@ -116,6 +116,13 @@ view: v_team_forecast_s3 {
     sql: ${TABLE}.month ;;
   }
 
+  dimension: closemthgroup {
+    type: string
+    sql:concat(format_date("%B",${month_date})," ",format_date("%Y",${month_date})) ;;
+    order_by_field: month_date
+
+  }
+
   dimension: net {
     type: number
     sql: ${TABLE}.Net ;;

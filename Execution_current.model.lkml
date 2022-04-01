@@ -5,23 +5,11 @@ include: "/**/*.view.lkml"                 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
 
-explore: v_funnel_analytics {}
+
 explore: v_execution_dates {}
 
-view: Funnel_Adds {
-  derived_table: {
-    sql: select
-      "funnel adds" as Funnel_Adds;;
-  }
-}
 
 
-datagroup: internal_reporting_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "5 minute"
-}
-
-persist_with: internal_reporting_default_datagroup
 
 
 

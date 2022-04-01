@@ -6,9 +6,12 @@ include: "/**/*.view.lkml"                 # include all views in this project
 
 
 
-explore: v_execution_dates {}
+explore: v_execution_current {}
 
-
+datagroup: internal_reporting_default_datagroup {
+  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  max_cache_age: "2 minutes"
+}
 
 
 

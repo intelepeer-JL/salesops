@@ -23,6 +23,11 @@ view: v_execution_current {
       sql: ${TABLE}.updatedtitle ;;
     }
 
+  dimension:  current_title{
+    type: string
+    sql: ${TABLE}.currenttitle ;;
+  }
+
     dimension:  mtd{
       type: string
       sql: ${TABLE}.currentmonth ;;

@@ -14,6 +14,7 @@ view: v_booking_v2s6 {
   dimension: booking {
     type: number
     sql: ${TABLE}.booking ;;
+    value_format: "$#,##0"
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
@@ -23,11 +24,13 @@ view: v_booking_v2s6 {
   measure: total_booking {
     type: sum
     sql: ${booking} ;;
+    value_format: "$#,##0"
   }
 
   measure: average_booking {
     type: average
     sql: ${booking} ;;
+    value_format: "$#,##0"
   }
 
   dimension: department {
@@ -38,11 +41,13 @@ view: v_booking_v2s6 {
   dimension: gross {
     type: number
     sql: ${TABLE}.Gross ;;
+    value_format: "$#,##0"
   }
 
   dimension: mgmt_plan {
     type: number
     sql: ${TABLE}.Mgmt_plan ;;
+    value_format: "$#,##0"
   }
 
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
@@ -86,6 +91,7 @@ view: v_booking_v2s6 {
   dimension: team_quota {
     type: number
     sql: ${TABLE}.team_quota ;;
+    value_format: "$#,##0"
   }
 
   dimension: closemthgroup {

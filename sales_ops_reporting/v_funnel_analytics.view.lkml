@@ -34,6 +34,15 @@ view: v_funnel_analytics {
   }
   }
 
+  parameter: max_rank {
+    type: number
+  }
+
+  dimension: rank_limit {
+    type: number
+    sql: {% parameter max_rank %} ;;
+  }
+
   dimension: Pipeline {
     type: number
     sql: ${TABLE}.Pipeline ;;

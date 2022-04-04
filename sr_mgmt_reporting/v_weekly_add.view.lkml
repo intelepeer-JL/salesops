@@ -24,6 +24,12 @@ view: v_weekly_add {
     value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
   }
 
+  dimension: total_val{
+    type: number
+    sql: ${TABLE}.total_val ;;
+    value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+  }
+
   dimension: createdmthgroup {
     type: string
     sql:concat(format_date("%B",${created_month_date})," ",format_date("%Y",${created_month_date})) ;;

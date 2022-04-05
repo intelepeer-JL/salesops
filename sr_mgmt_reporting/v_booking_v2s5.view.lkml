@@ -108,6 +108,11 @@ view: v_booking_v2s5 {
     value_format: "$#,##0"
   }
 
+  dimension: AvgOppAge {
+    type: number
+    sql: ${TABLE}.AvgOppAge ;;
+  }
+
   dimension: Role {
     type: string
     sql: ${TABLE}.Role ;;

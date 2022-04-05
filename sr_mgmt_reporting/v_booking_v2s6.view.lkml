@@ -120,7 +120,7 @@ view: v_booking_v2s6 {
   measure: mgmt_eff {
     type: number
     value_format: "0.0%"
-    sql: ((${total_booking})/nullif((${mgmt_plan}),0)) ;;
+    sql: ((${total_booking})/nullif(sum(${mgmt_plan}),0)) ;;
 
   }
 

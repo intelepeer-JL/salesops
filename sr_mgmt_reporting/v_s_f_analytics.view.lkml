@@ -160,14 +160,25 @@ view: v_s_f_analytics {
     value_format: "$#,##0"
   }
 
-  dimension: rep_win_rate {
+  dimension: rep_win_rate90 {
     type: number
-    sql: ${TABLE}.winrate ;;
+    sql: ${TABLE}.winrate90 ;;
   }
 
-  measure: forecast_book_rep {
+  measure: forecast_book_rep90 {
     type: number
-    sql:COALESCE( sum(${Pipe})*${rep_win_rate} ,0)  ;;
+    sql:COALESCE( sum(${Pipe})*${rep_win_rate90} ,0)  ;;
+    value_format: "$#,##0"
+  }
+
+  dimension: rep_win_rate60 {
+    type: number
+    sql: ${TABLE}.winrate60 ;;
+  }
+
+  measure: forecast_book_rep60 {
+    type: number
+    sql:COALESCE( sum(${Pipe})*${rep_win_rate60} ,0)  ;;
     value_format: "$#,##0"
   }
 

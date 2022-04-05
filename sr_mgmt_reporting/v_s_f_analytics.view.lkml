@@ -167,7 +167,7 @@ view: v_s_f_analytics {
 
   measure: forecast_book_rep90 {
     type: number
-    sql:COALESCE( sum(${Pipe})*${rep_win_rate90} ,0)  ;;
+    sql:COALESCE( sum(${Pipe})*${rep_win_rate90} ,0) ;;
     value_format: "$#,##0"
   }
 

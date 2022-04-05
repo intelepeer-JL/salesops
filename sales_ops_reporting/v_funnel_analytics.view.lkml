@@ -20,6 +20,16 @@ view: v_funnel_analytics {
     sql: ${TABLE}.AccountFilter ;;
   }
 
+  dimension: Win_Loss_Data__c {
+    type: yesno
+    sql: ${TABLE}.Win_Loss_Data__c ;;
+  }
+
+  dimension: Win_Loss_Comments__c {
+    type: yesno
+    sql: ${TABLE}.Win_Loss_Comments__c ;;
+  }
+
   dimension: CorecastCategoryName {
     type: string
     sql: ${TABLE}.ForecastCategoryName ;;

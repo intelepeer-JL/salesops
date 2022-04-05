@@ -44,6 +44,18 @@ view: v_booking_v2s6 {
     value_format: "$#,##0"
   }
 
+  dimension: New_Logo {
+    type: number
+    sql: ${TABLE}.New_Logo ;;
+    value_format: "$#,##0"
+  }
+
+  dimension: Expansion {
+    type: number
+    sql: ${TABLE}.Expansion ;;
+    value_format: "$#,##0"
+  }
+
   dimension: mgmt_plan {
     type: number
     sql: ${TABLE}.Mgmt_plan ;;

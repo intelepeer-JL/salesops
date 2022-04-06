@@ -245,10 +245,7 @@ view: v_booking_v2s5 {
     sql: (sum(${total_booking})/nullif(sum(${quota}),0)) ;;
   }
 
-  measure: avgopp {
-    type: number
-    sql: sum(${AvgOppAge})/(sum(${Inbound_c})+sum(${Outbound_c})) ;;
-  }
+
 
   measure: avg_v {
     type: number

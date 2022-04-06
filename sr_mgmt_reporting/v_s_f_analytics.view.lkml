@@ -85,6 +85,12 @@ view: v_s_f_analytics {
     value_format: "$#,##0"
   }
 
+  dimension: open_val {
+    type: number
+    sql: ${TABLE}.open_val ;;
+    value_format: "$#,##0"
+  }
+
   dimension: rep {
     type: string
     sql: ${TABLE}.Rep ;;
@@ -156,31 +162,10 @@ view: v_s_f_analytics {
 
   dimension: Pipe {
     type: number
-    sql: ${TABLE}.Active_Funnel ;;
+    sql: ${TABLE}.open_val ;;
     value_format: "$#,##0"
   }
 
-  dimension: rep_win_rate90 {
-    type: number
-    sql: ${TABLE}.winrate90 ;;
-  }
-
-  measure: forecast_book_rep90 {
-    type: number
-    sql:COALESCE( sum(${Pipe})*${rep_win_rate90} ,0) ;;
-    value_format: "$#,##0"
-  }
-
-  dimension: rep_win_rate60 {
-    type: number
-    sql: ${TABLE}.winrate60 ;;
-  }
-
-  measure: forecast_book_rep60 {
-    type: number
-    sql:COALESCE( sum(${Pipe})*${rep_win_rate60} ,0)  ;;
-    value_format: "$#,##0"
-  }
 
 
   measure: forecast_book {
@@ -233,6 +218,72 @@ view: v_s_f_analytics {
     hidden: yes
     sql: ${TABLE}.Probable ;;
   }
+
+
+
+# for figures as related to the past 90 rolling days
+
+  dimension: won_90 {
+    type: number
+    sql: ${TABLE}.won_90 ;;
+  }
+
+  dimension: Lost_90 {
+    type: number
+    sql: ${TABLE}.Lost_90 ;;
+  }
+
+  dimension: closedval_90 {
+    type: number
+    sql: ${TABLE}.closedval_90 ;;
+  }
+
+  measure: winrate90 {
+    type:  number
+    sql:  sum(${won_90})/nullif(sum(${closedval_90}),0) ;;
+  }
+
+  measure: forecast_book_90 {
+    type: number
+    sql:COALESCE( sum(${Pipe})*${winrate90} ,0) ;;
+    value_format: "$#,##0"
+  }
+
+
+# for figures as related to the past 60 rolling days
+
+  dimension: won_60 {
+    type: number
+    sql: ${TABLE}.won_60 ;;
+  }
+
+  dimension: lost_60 {
+    type: number
+    sql: ${TABLE}.lost_60 ;;
+  }
+
+  dimension: closedval_60 {
+    type: number
+    sql: ${TABLE}.closedval_60 ;;
+  }
+
+  measure: winrate60 {
+    type:  number
+    sql:  sum(${won_60})/nullif(sum(${closedval_60}),0) ;;
+  }
+
+  measure: forecast_book_60 {
+    type: number
+    sql:COALESCE( sum(${Pipe})*${winrate60} ,0) ;;
+    value_format: "$#,##0"
+  }
+
+
+
+
+
+
+
 
 
 }

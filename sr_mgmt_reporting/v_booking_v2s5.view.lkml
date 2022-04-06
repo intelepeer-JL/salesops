@@ -244,6 +244,12 @@ view: v_booking_v2s5 {
     value_format: "0.00%"
     sql: (sum(${total_booking})/nullif(sum(${quota}),0)) ;;
   }
+
+  measure: avgopp {
+    type: number
+    sql: sum(${total_booking})/(sum(${Inbound_c})+sum(${Outbound_c})) ;;
+  }
+
   measure: avg_v {
     type: number
     sql: sum(${voice})/nullif(sum(${voicec}),0) ;;

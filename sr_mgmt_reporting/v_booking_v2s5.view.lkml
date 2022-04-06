@@ -113,6 +113,16 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.AvgOppAge ;;
   }
 
+  dimension: AvgOppAgerole {
+    type: number
+    sql: ${TABLE}.AvgOppAge ;;
+  }
+
+  dimension: AvgOppAgedept {
+    type: number
+    sql: ${TABLE}.AvgOppAge ;;
+  }
+
   dimension: Role {
     type: string
     sql: ${TABLE}.Role ;;

@@ -118,6 +118,7 @@ view: v_forecast_results_s3 {
 
 
 
+
 #End of Rolling 90 section
 #########################################################################################################################
 
@@ -362,6 +363,12 @@ view: v_forecast_results_s3 {
   measure: forecastq2 {
     type:  number
     sql: sum(${q2_active})*${90winrate} ;;
+  }
+
+  measure: forecast_diff {
+    type: number
+    sql:if(sum(${q2_quota})-sum(${q2_active})*${90winrate}) < 0 ,0 ,(sum(${q2_quota})-sum(${q2_active})*${90winrate})) ;;
+    value_format: "$#,##0"
   }
 
 # Q2 data section end

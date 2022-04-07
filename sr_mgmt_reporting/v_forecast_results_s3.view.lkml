@@ -128,6 +128,7 @@ view: v_forecast_results_s3 {
 
   measure: monthly_win {
     type: number
+    value_format: "$#,##0"
     sql: (sum(${won_90})/${90avgday})*30 ;;
   }
 
@@ -146,6 +147,7 @@ view: v_forecast_results_s3 {
 
   dimension: add_60 {
     type: number
+    value_format: "$#,##0"
     sql: ${TABLE}.add_60 ;;
   }
 
@@ -261,6 +263,7 @@ view: v_forecast_results_s3 {
 
   measure: forecasttm_r {
     type:  number
+    value_format: "$#,##0"
     sql: sum(${tm_active})*${90winrate} ;;
   }
 
@@ -307,11 +310,13 @@ view: v_forecast_results_s3 {
 
   measure: forecastnm_r {
     type:  number
+    value_format: "$#,##0"
     sql: sum(${nm_active})*${90winrate} ;;
   }
 
   measure: forecastnm_c {
     type:  number
+    value_format: "$#,##0"
     sql: sum(${nm_active})*${90winratec} ;;
   }
 
@@ -415,11 +420,13 @@ view: v_forecast_results_s3 {
 
   measure: forecastq2_r {
     type:  number
+    value_format: "$#,##0"
     sql: sum(${q2_active})*${90winrate} ;;
   }
 
   measure: forecastq2_c {
     type:  number
+    value_format: "$#,##0"
     sql: sum(${q2_active})*${90winratec} ;;
   }
 

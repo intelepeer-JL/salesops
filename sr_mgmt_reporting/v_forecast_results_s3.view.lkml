@@ -31,6 +31,11 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.Department ;;
   }
 
+  dimension: Role {
+    type: string
+    sql: ${TABLE}.Role ;;
+  }
+
   dimension: opp_owner {
     type: string
     sql: ${TABLE}.OppOwner ;;

@@ -108,11 +108,13 @@ view: v_forecast_results_s3 {
 
   measure: 90winrate {
     type: number
+    value_format: "0\%"
     sql: sum(${won_90})/nullif(sum(${closedval_90}),0) ;;
   }
 
   measure: 90winratec {
     type: number
+    value_format: "0\%"
     sql: sum(${won_90_c})/nullif(sum(${closed_90_c}),0) ;;
   }
 

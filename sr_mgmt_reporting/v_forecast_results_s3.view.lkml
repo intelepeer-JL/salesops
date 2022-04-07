@@ -11,26 +11,13 @@ view: v_forecast_results_s3 {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Add 60" in Explore.
 
-  dimension: add_60 {
-    type: number
-    sql: ${TABLE}.add_60 ;;
-  }
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
-  measure: total_add_60 {
-    type: sum
-    value_format: "$#,##0"
-    sql: ${add_60} ;;
-  }
 
-  measure: average_add_60 {
-    type: average
-    value_format: "$#,##0"
-    sql: ${add_60} ;;
-  }
 
   dimension: add_60_c {
     type: number
@@ -114,17 +101,38 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.Won_90_c ;;
   }
 
+  measure: 90winrate {
+    type: number
+    sql: sum(${won_90})/nullif(sum(${closedval_90}),0) ;;
+  }
+
+  dimension: won_age_90 {
+    type: number
+    sql: ${TABLE}.won_age_90 ;;
+  }
+
+  measure: 90avgday {
+    type: number
+    sql: sum(${won_age_90})/nullif(sum(${won_90_c}),0) ;;
+  }
+
+
 
 #End of Rolling 90 section
 #########################################################################################################################
 
 # Rolling 60 data section
 
+
   dimension: close_age_60 {
     type: number
     sql: ${TABLE}.close_age_60 ;;
   }
 
+  dimension: add_60 {
+    type: number
+    sql: ${TABLE}.add_60 ;;
+  }
 
   dimension: closed_60_c {
     type: number
@@ -170,9 +178,17 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.won_age_60 ;;
   }
 
-  dimension: won_age_90 {
-    type: number
-    sql: ${TABLE}.won_age_90 ;;
+
+  measure: total_add_60 {
+    type: sum
+    value_format: "$#,##0"
+    sql: ${add_60} ;;
+  }
+
+  measure: average_add_60 {
+    type: average
+    value_format: "$#,##0"
+    sql: ${add_60} ;;
   }
 
 
@@ -180,6 +196,8 @@ view: v_forecast_results_s3 {
 #########################################################################################################################
 
 
+
+# Last Month data section
 
   dimension: lm_created {
     type: number
@@ -192,136 +210,10 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.LM_Created_c ;;
   }
 
-# Last Month data section
+# Last Month data end
+#########################################################################################################################
 
-  dimension: nm_active {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.NM_Active ;;
-  }
-
-  dimension: nm_active_c {
-    type: number
-    sql: ${TABLE}.NM_Active_c ;;
-  }
-
-  dimension: nm_quota {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.NM_Quota ;;
-  }
-
-  dimension: q1_active {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q1_Active ;;
-  }
-
-  dimension: q1_active_c {
-    type: number
-    sql: ${TABLE}.Q1_Active_c ;;
-  }
-
-  dimension: q1_created {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q1_Created ;;
-  }
-
-  dimension: q1_created_c {
-    type: number
-    sql: ${TABLE}.Q1_Created_c ;;
-  }
-
-  dimension: q1_quota {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q1_Quota ;;
-  }
-
-  dimension: q2_active {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q2_Active ;;
-  }
-
-  dimension: q2_active_c {
-    type: number
-    sql: ${TABLE}.Q2_Active_c ;;
-  }
-
-  dimension: q2_created {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q2_Created ;;
-  }
-
-  dimension: q2_created_c {
-    type: number
-    sql: ${TABLE}.Q2_Created_c ;;
-  }
-
-  dimension: q2_quota {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q2_Quota ;;
-  }
-
-  dimension: q3_active {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q3_Active ;;
-  }
-
-  dimension: q3_active_c {
-    type: number
-    sql: ${TABLE}.Q3_Active_c ;;
-  }
-
-  dimension: q3_created {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q3_Created ;;
-  }
-
-  dimension: q3_created_c {
-    type: number
-    sql: ${TABLE}.Q3_Created_c ;;
-  }
-
-  dimension: q3_quota {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q3_Quota ;;
-  }
-
-  dimension: q4_active {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q4_Active ;;
-  }
-
-  dimension: q4_active_c {
-    type: number
-    sql: ${TABLE}.Q4_Active_c ;;
-  }
-
-  dimension: q4_created {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q4_Created ;;
-  }
-
-  dimension: q4_created_c {
-    type: number
-    sql: ${TABLE}.Q4_Created_c ;;
-  }
-
-  dimension: q4_quota {
-    type: number
-    value_format: "$#,##0"
-    sql: ${TABLE}.Q4_Quota ;;
-  }
+# This Month data section start
 
   dimension: tm_active {
     type: number
@@ -351,6 +243,45 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.TM_Quota ;;
   }
 
+  measure: forecasttm {
+    type:  number
+    sql: sum(${tm_active})*${90winrate} ;;
+  }
+
+# This Month data end
+#########################################################################################################################
+
+# Next Month data section start
+
+  dimension: nm_active {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.NM_Active ;;
+  }
+
+  dimension: nm_active_c {
+    type: number
+    sql: ${TABLE}.NM_Active_c ;;
+  }
+
+  dimension: nm_quota {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.NM_Quota ;;
+  }
+
+  measure: forecastnm {
+    type:  number
+    sql: sum(${nm_active})*${90winrate} ;;
+  }
+
+
+# Next Month data section end
+#########################################################################################################################
+
+
+# This year data section start
+
   dimension: ty_created {
     type: number
     value_format: "$#,##0"
@@ -362,6 +293,145 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.TY_Created_c ;;
   }
 
+# this year data section end
+#########################################################################################################################
+
+
+# This Q1 section start
+  dimension: q1_active {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q1_Active ;;
+  }
+
+  dimension: q1_active_c {
+    type: number
+    sql: ${TABLE}.Q1_Active_c ;;
+  }
+
+  dimension: q1_created {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q1_Created ;;
+  }
+
+  dimension: q1_created_c {
+    type: number
+    sql: ${TABLE}.Q1_Created_c ;;
+  }
+
+  dimension: q1_quota {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q1_Quota ;;
+  }
+
+# Q1 data section end
+#########################################################################################################################
+
+# Q2 section start
+
+  dimension: q2_active {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q2_Active ;;
+  }
+
+  dimension: q2_active_c {
+    type: number
+    sql: ${TABLE}.Q2_Active_c ;;
+  }
+
+  dimension: q2_created {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q2_Created ;;
+  }
+
+  dimension: q2_created_c {
+    type: number
+    sql: ${TABLE}.Q2_Created_c ;;
+  }
+
+  dimension: q2_quota {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q2_Quota ;;
+  }
+
+  measure: forecastq2 {
+    type:  number
+    sql: sum(${q2_active})*${90winrate} ;;
+  }
+
+# Q2 data section end
+#########################################################################################################################
+
+# Q3 section start
+
+  dimension: q3_active {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q3_Active ;;
+  }
+
+  dimension: q3_active_c {
+    type: number
+    sql: ${TABLE}.Q3_Active_c ;;
+  }
+
+  dimension: q3_created {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q3_Created ;;
+  }
+
+  dimension: q3_created_c {
+    type: number
+    sql: ${TABLE}.Q3_Created_c ;;
+  }
+
+  dimension: q3_quota {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q3_Quota ;;
+  }
+
+# Q3 data section end
+#########################################################################################################################
+
+# Q4 section start
+
+  dimension: q4_active {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q4_Active ;;
+  }
+
+  dimension: q4_active_c {
+    type: number
+    sql: ${TABLE}.Q4_Active_c ;;
+  }
+
+  dimension: q4_created {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q4_Created ;;
+  }
+
+  dimension: q4_created_c {
+    type: number
+    sql: ${TABLE}.Q4_Created_c ;;
+  }
+
+  dimension: q4_quota {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Q4_Quota ;;
+  }
+
+# Q4 data section end
+#########################################################################################################################
 
 
 

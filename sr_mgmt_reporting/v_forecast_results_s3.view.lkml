@@ -452,13 +452,13 @@ view: v_forecast_results_s3 {
   measure: q2coverage_r {
     type:  number
     value_format: "0\%"
-    sql: ${forecastq2_r}/ifnull(${q2_quota},0);;
+    sql: ${forecastq2_r}/ifnull(sum(${q2_quota}),0);;
   }
 
   measure: q2coverage_c {
     type:  number
     value_format: "0\%"
-    sql: ${forecastq2_c}/ifnull(${q2_quota},0);;
+    sql: ${forecastq2_c}/ifnull(sum(${q2_quota}),0);;
   }
 
 

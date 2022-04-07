@@ -449,6 +449,18 @@ view: v_forecast_results_s3 {
     sql: if(${forecast_diffq2_r}<0, (-1*${forecast_diffq2_r})/nullif(${monthly_win},0),0) ;;
   }
 
+  measure: q2coverage_r {
+    type:  number
+    value_format: "0\%"
+    sql: ${forecastq2_r}/ifnull(${q2_quota},0);;
+  }
+
+  measure: q2coverage_c {
+    type:  number
+    value_format: "0\%"
+    sql: ${forecastq2_c}/ifnull(${q2_quota},0);;
+  }
+
 
 
 

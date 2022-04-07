@@ -249,10 +249,30 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.TM_Quota ;;
   }
 
-  measure: forecasttm {
+
+  measure: forecasttm_r {
     type:  number
     sql: sum(${tm_active})*${90winrate} ;;
   }
+
+  measure: forecasttm_c {
+    type:  number
+    sql: sum(${tm_active})*${90winratec} ;;
+  }
+
+  measure: forecast_difftm_r {
+    type: number
+    sql:if(sum(${tm_quota})-sum(${tm_active})*${90winrate}) < 0 ,0 ,(sum(${tm_quota})-sum(${tm_active})*${90winrate})) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: forecast_difftm_c {
+    type: number
+    sql:if(sum(${tm_quota})-sum(${tm_active})*${90winratec}) < 0 ,0 ,(sum(${tm_quota})-sum(${tm_active})*${90winratec})) ;;
+    value_format: "$#,##0"
+  }
+
+
 
 # This Month data end
 #########################################################################################################################
@@ -276,10 +296,28 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.NM_Quota ;;
   }
 
-  measure: forecastnm {
+  measure: forecastnm_r {
     type:  number
     sql: sum(${nm_active})*${90winrate} ;;
   }
+
+  measure: forecastnm_c {
+    type:  number
+    sql: sum(${nm_active})*${90winratec} ;;
+  }
+
+  measure: forecast_diffnm_r {
+    type: number
+    sql:if(sum(${nm_quota})-sum(${nm_active})*${90winrate}) < 0 ,0 ,(sum(${nm_quota})-sum(${nm_active})*${90winrate})) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: forecast_diffnm_c {
+    type: number
+    sql:if(sum(${nm_quota})-sum(${nm_active})*${90winratec}) < 0 ,0 ,(sum(${nm_quota})-sum(${nm_active})*${90winratec})) ;;
+    value_format: "$#,##0"
+  }
+
 
 
 # Next Month data section end
@@ -365,14 +403,25 @@ view: v_forecast_results_s3 {
     sql: ${TABLE}.Q2_Quota ;;
   }
 
-  measure: forecastq2 {
+  measure: forecastq2_r {
     type:  number
     sql: sum(${q2_active})*${90winrate} ;;
   }
 
-  measure: forecast_diff {
+  measure: forecastq2_c {
+    type:  number
+    sql: sum(${q2_active})*${90winratec} ;;
+  }
+
+  measure: forecast_diffq2_r {
     type: number
     sql:if(sum(${q2_quota})-sum(${q2_active})*${90winrate}) < 0 ,0 ,(sum(${q2_quota})-sum(${q2_active})*${90winrate})) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: forecast_diffq2_c {
+    type: number
+    sql:if(sum(${q2_quota})-sum(${q2_active})*${90winratec}) < 0 ,0 ,(sum(${q2_quota})-sum(${q2_active})*${90winratec})) ;;
     value_format: "$#,##0"
   }
 

@@ -419,7 +419,7 @@ view: v_forecast_results_s3 {
 
   measure: forecast_diffq2_r {
     type: number
-    sql:if(sum(${q2_quota}) - (${forecastq2_r})<0,sum(${q2_quota}) - (${forecastq2_r}),0,) ;;
+    sql:if(sum(${q2_quota}) - (${forecastq2_r})<0,sum(${q2_quota}) - (${forecastq2_r}),0) ;;
     value_format: "$#,##0"
   }
 

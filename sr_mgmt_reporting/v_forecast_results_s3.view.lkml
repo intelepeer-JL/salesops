@@ -266,7 +266,7 @@ view: v_forecast_results_s3 {
 
   measure: forecast_difftm_r {
     type: number
-    sql:if(sum(${tm_quota})-sum(${tm_active})*${90winrate}) < 0 ,0 ,(sum(${tm_quota})-sum(${tm_active})*${90winrate})) ;;
+    sql:if(sum(${tm_quota})-sum(${tm_active})*${90winrate}) < 0 ,0 ,(sum(${tm_quota})-(sum(${tm_active})*${90winrate}))) ;;
     value_format: "$#,##0"
   }
 

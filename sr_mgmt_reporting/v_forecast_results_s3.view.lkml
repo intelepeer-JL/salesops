@@ -444,6 +444,11 @@ view: v_forecast_results_s3 {
     value_format: "$#,##0"
   }
 
+  measure: q2covermonths_r {
+    type: number
+    sql: if(${forecast_diffq2_r}<0, (-1*${forecast_diffq2_r})/nullif(${monthly_win},0),0) ;;
+  }
+
 
 
 

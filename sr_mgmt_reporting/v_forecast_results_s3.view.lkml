@@ -106,6 +106,11 @@ view: v_forecast_results_s3 {
     sql: sum(${won_90})/nullif(sum(${closedval_90}),0) ;;
   }
 
+  measure: 90winratec {
+    type: number
+    sql: sum(${won_90_c})/nullif(sum(${closed_90_c}),0) ;;
+  }
+
   dimension: won_age_90 {
     type: number
     sql: ${TABLE}.won_age_90 ;;

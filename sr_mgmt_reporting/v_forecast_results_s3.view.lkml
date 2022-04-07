@@ -423,11 +423,7 @@ view: v_forecast_results_s3 {
     value_format: "$#,##0"
   }
 
-  measure: forecast_diffq2_c {
-    type: number
-    sql:if(sum(${q2_quota})-sum(${q2_active})*${90winratec}) < 0 ,0 ,(sum(${q2_quota})-sum(${q2_active})*${90winratec})) ;;
-    value_format: "$#,##0"
-  }
+
 
 # Q2 data section end
 #########################################################################################################################

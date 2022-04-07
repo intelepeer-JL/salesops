@@ -121,6 +121,10 @@ view: v_forecast_results_s3 {
     sql: sum(${won_age_90})/nullif(sum(${won_90_c}),0) ;;
   }
 
+  measure: monthly_win {
+    type: number
+    sql: (sum(${won_90})/${90avgday})*30 ;;
+  }
 
 
 

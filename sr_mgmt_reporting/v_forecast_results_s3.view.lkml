@@ -266,13 +266,13 @@ view: v_forecast_results_s3 {
 
   measure: forecast_difftm_r {
     type: number
-    sql:if(sum(${tm_quota})-sum(${tm_active})*${90winrate}) < 0 ,0 ,(sum(${tm_quota})-(sum(${tm_active})*${90winrate}))) ;;
+    sql:if((${forecasttm_r}) - sum(${tm_quota})  <0,(${forecasttm_r}) - sum(${tm_quota}),0) ;;
     value_format: "$#,##0"
   }
 
   measure: forecast_difftm_c {
     type: number
-    sql:if(sum(${tm_quota})-fore) < 0 ,0 ,(sum(${tm_quota})-sum(${tm_active})*${90winratec})) ;;
+    sql:if((${forecasttm_c}) - sum(${tm_quota})  <0,(${forecasttm_c}) - sum(${tm_quota}),0) ;;
     value_format: "$#,##0"
   }
 
@@ -310,15 +310,16 @@ view: v_forecast_results_s3 {
     sql: sum(${nm_active})*${90winratec} ;;
   }
 
+
   measure: forecast_diffnm_r {
     type: number
-    sql:if(sum(${nm_quota})-sum(${nm_active})*${90winrate}) < 0 ,0 ,(sum(${nm_quota})-sum(${nm_active})*${90winrate})) ;;
+    sql:if((${forecastnm_r}) - sum(${nm_quota})  <0,(${forecastnm_r}) - sum(${nm_quota}),0) ;;
     value_format: "$#,##0"
   }
 
   measure: forecast_diffnm_c {
     type: number
-    sql:if(sum(${nm_quota})-sum(${nm_active})*${90winratec}) < 0 ,0 ,(sum(${nm_quota})-sum(${nm_active})*${90winratec})) ;;
+    sql:if((${forecastnm_c}) - sum(${nm_quota})  <0,(${forecastnm_c}) - sum(${nm_quota}),0) ;;
     value_format: "$#,##0"
   }
 
@@ -422,6 +423,13 @@ view: v_forecast_results_s3 {
     sql:if((${forecastq2_r}) - sum(${q2_quota})  <0,(${forecastq2_r}) - sum(${q2_quota}),0) ;;
     value_format: "$#,##0"
   }
+
+  measure: forecast_diffq2_c {
+    type: number
+    sql:if((${forecastq2_c}) - sum(${q2_quota})  <0,(${forecastq2_c}) - sum(${q2_quota}),0) ;;
+    value_format: "$#,##0"
+  }
+
 
 
 

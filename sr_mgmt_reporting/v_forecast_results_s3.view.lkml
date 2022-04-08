@@ -483,6 +483,11 @@ view: v_forecast_results_s3 {
     sql: ${forecastq2_c}/ifnull(sum(${q2_quota}),0);;
   }
 
+  measure: need_Count_r {
+    type: number
+    sql: ${funnel_need_r}/ifnull(${avgdeal},0) ;;
+  }
+
 
 
 

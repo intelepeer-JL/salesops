@@ -142,6 +142,8 @@ view: v_forecast_results_s3 {
 
 
 
+
+
 #End of Rolling 90 section
 #########################################################################################################################
 
@@ -447,6 +449,18 @@ view: v_forecast_results_s3 {
   measure: forecast_diffq2_c {
     type: number
     sql:if((${forecastq2_c}) - sum(${q2_quota})  <0,(${forecastq2_c}) - sum(${q2_quota}),0) ;;
+    value_format: "$#,##0"
+  }
+
+  measure: funnel_need_r {
+    type: number
+    sql: (-1*${forecast_diffq2_r})/${90winrate} ;;
+    value_format: "$#,##0"
+  }
+
+  measure: funnel_need_c {
+    type: number
+    sql: (-1*${forecast_diffq2_c})/${90winrate} ;;
     value_format: "$#,##0"
   }
 

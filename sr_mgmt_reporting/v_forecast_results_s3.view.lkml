@@ -474,18 +474,18 @@ view: v_forecast_results_s3 {
   measure: q2coverage_r {
     type:  number
     value_format: "0\%"
-    sql: ${forecastq2_r}/ifnull(sum(${q2_quota}),0);;
+    sql: ${forecastq2_r}/nullif(sum(${q2_quota}),0);;
   }
 
   measure: q2coverage_c {
     type:  number
     value_format: "0\%"
-    sql: ${forecastq2_c}/ifnull(sum(${q2_quota}),0);;
+    sql: ${forecastq2_c}/nullif(sum(${q2_quota}),0);;
   }
 
   measure: need_Count_r {
     type: number
-    sql: ${funnel_need_r}/ifnull(${avgdeal},0) ;;
+    sql: ${funnel_need_r}/nullif(${avgdeal},0) ;;
   }
 
 

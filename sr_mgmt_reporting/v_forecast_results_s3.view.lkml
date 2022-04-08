@@ -140,6 +140,11 @@ view: v_forecast_results_s3 {
     sql: (sum(${won_90})/nullif(sum(${won_90_c}),0) ;;
   }
 
+  measure: avgbook {
+    type: number
+    sql: sum(${won_90})/nullif(sum(${won_90_c}),0) ;;
+  }
+
 
 
 
@@ -479,6 +484,12 @@ view: v_forecast_results_s3 {
     type:  number
     value_format: "0\%"
     sql: ${forecastq2_c}/ifnull(sum(${q2_quota}),0);;
+  }
+
+  measure: add_opps_c {
+    type: number
+    sql: ${funnel_need_r}/ifnull(${avgbook},0) ;;
+
   }
 
 

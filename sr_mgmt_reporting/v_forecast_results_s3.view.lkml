@@ -488,6 +488,11 @@ view: v_forecast_results_s3 {
     sql: ${funnel_need_r}/nullif(${avgdeal},0) ;;
   }
 
+  measure: need_Count_c {
+    type: number
+    sql: ${funnel_need_c}/nullif(${avgdeal},0) ;;
+  }
+
 
 
 

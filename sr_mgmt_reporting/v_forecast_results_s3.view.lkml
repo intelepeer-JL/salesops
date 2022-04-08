@@ -454,13 +454,13 @@ view: v_forecast_results_s3 {
 
   measure: funnel_need_r {
     type: number
-    sql: (-1*${forecast_diffq2_r})/${90winrate} ;;
+    sql: (-1*${forecast_diffq2_r})/nullif(${90winrate},0) ;;
     value_format: "$#,##0"
   }
 
   measure: funnel_need_c {
     type: number
-    sql: (-1*${forecast_diffq2_c})/${90winrate} ;;
+    sql: (-1*${forecast_diffq2_c})/nullif(${90winrate},0) ;;
     value_format: "$#,##0"
   }
 

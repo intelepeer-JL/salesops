@@ -128,15 +128,7 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.Role ;;
   }
 
-  dimension: currentmonth {
-    case: {
-      when: {
-        sql: date_trunc('month',getdate()) = ${month_month} ;;
-        label: "Yes"
-      }
-      else: "no"
-    }
-  }
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.

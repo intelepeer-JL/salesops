@@ -142,12 +142,207 @@ view: v_forecast_results_s3 {
 
 
 
-
-
-
-
 #End of Rolling 90 section
+
 #########################################################################################################################
+#########################################################################################################################
+#########################################################################################################################
+
+
+# Rolling 183 data section
+
+  dimension: add_183 {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.add_183 ;;
+  }
+
+  dimension: add_183_c {
+    type: number
+    sql: ${TABLE}.add_183_c ;;
+  }
+
+  dimension: close_age_183 {
+    type: number
+    sql: ${TABLE}.close_age_183 ;;
+  }
+
+  dimension: closed_183_c {
+    type: number
+    sql: ${TABLE}.closed_183_c ;;
+  }
+
+  dimension: closedval_183 {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.closedval_183 ;;
+  }
+
+  dimension: lost_183 {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Lost_183 ;;
+  }
+
+  dimension: lost_183_c {
+    type: number
+    sql: ${TABLE}.Lost_183_c ;;
+  }
+
+  dimension: lost_age_183 {
+    type: number
+    sql: ${TABLE}.lost_age_183 ;;
+  }
+
+  dimension: won_183 {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Won_183 ;;
+  }
+
+  dimension: won_183_c {
+    type: number
+    sql: ${TABLE}.Won_183_c ;;
+  }
+
+  measure: 183winrate {
+    type: number
+    value_format: "0\%"
+    sql: sum(${won_90})/nullif(sum(${closedval_90}),0) ;;
+  }
+
+  measure: 183winratec {
+    type: number
+    value_format: "0\%"
+    sql: sum(${won_183_c})/nullif(sum(${closed_183_c}),0) ;;
+  }
+
+  dimension: won_age_183 {
+    type: number
+    sql: ${TABLE}.won_age_183 ;;
+  }
+
+  measure: 183avgday {
+    type: number
+    sql: sum(${won_age_183})/nullif(sum(${won_183_c}),0) ;;
+  }
+
+  measure: monthly_win_183 {
+    type: number
+    value_format: "$#,##0"
+    sql: (sum(${won_183})/${183avgday})*30 ;;
+  }
+
+  measure: avgdeal_183 {
+    type: number
+    value_format: "$#,##0"
+    sql: (sum(${won_183}))/nullif(sum(${won_183_c}),0) ;;
+  }
+
+
+
+#End of Rolling 183 section
+#########################################################################################################################
+#########################################################################################################################
+#########################################################################################################################
+
+# Rolling 365 data section
+
+  dimension: add_365 {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.add_365 ;;
+  }
+
+  dimension: add_365_c {
+    type: number
+    sql: ${TABLE}.add_365_c ;;
+  }
+
+  dimension: close_age_365 {
+    type: number
+    sql: ${TABLE}.close_age_365 ;;
+  }
+
+  dimension: closed_365_c {
+    type: number
+    sql: ${TABLE}.closed_365_c ;;
+  }
+
+  dimension: closedval_365 {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.closedval_365 ;;
+  }
+
+  dimension: lost_365 {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Lost_365 ;;
+  }
+
+  dimension: lost_365_c {
+    type: number
+    sql: ${TABLE}.Lost_365_c ;;
+  }
+
+  dimension: lost_age_365 {
+    type: number
+    sql: ${TABLE}.lost_age_365 ;;
+  }
+
+  dimension: won_365 {
+    type: number
+    value_format: "$#,##0"
+    sql: ${TABLE}.Won_365 ;;
+  }
+
+  dimension: won_365_c {
+    type: number
+    sql: ${TABLE}.Won_365_c ;;
+  }
+
+  measure: 365winrate {
+    type: number
+    value_format: "0\%"
+    sql: sum(${won_365})/nullif(sum(${closedval_365}),0) ;;
+  }
+
+  measure: 365winratec {
+    type: number
+    value_format: "0\%"
+    sql: sum(${won_365_c})/nullif(sum(${closed_365_c}),0) ;;
+  }
+
+  dimension: won_age_365 {
+    type: number
+    sql: ${TABLE}.won_age_183 ;;
+  }
+
+  measure: 365avgday {
+    type: number
+    sql: sum(${won_age_365})/nullif(sum(${won_365_c}),0) ;;
+  }
+
+  measure: monthly_win_365 {
+    type: number
+    value_format: "$#,##0"
+    sql: (sum(${won_365})/${365avgday})*30 ;;
+  }
+
+  measure: avgdeal_365 {
+    type: number
+    value_format: "$#,##0"
+    sql: (sum(${won_183}))/nullif(sum(${won_183_c}),0) ;;
+  }
+
+
+
+#End of Rolling 365 section
+#########################################################################################################################
+#########################################################################################################################
+#########################################################################################################################
+
 
 # Rolling 60 data section
 

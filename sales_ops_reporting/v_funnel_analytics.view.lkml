@@ -21,12 +21,12 @@ view: v_funnel_analytics {
   }
 
   dimension: Win_Loss_Data__c {
-    type: yesno
+    type: string
     sql: ${TABLE}.Win_Loss_Data__c ;;
   }
 
   dimension: Win_Loss_Comments__c {
-    type: yesno
+    type: string
     sql: ${TABLE}.Win_Loss_Comments__c ;;
   }
 

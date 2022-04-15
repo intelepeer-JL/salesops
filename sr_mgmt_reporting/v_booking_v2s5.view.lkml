@@ -113,10 +113,22 @@ view: v_booking_v2s5 {
     sql: ${TABLE}.AvgOppAge ;;
   }
 
+  dimension: AvgOppAgerole {
+    type: number
+    sql: ${TABLE}.AvgOppAge ;;
+  }
+
+  dimension: AvgOppAgedept {
+    type: number
+    sql: ${TABLE}.AvgOppAge ;;
+  }
+
   dimension: Role {
     type: string
     sql: ${TABLE}.Role ;;
   }
+
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
@@ -244,6 +256,9 @@ view: v_booking_v2s5 {
     value_format: "0.00%"
     sql: (sum(${total_booking})/nullif(sum(${quota}),0)) ;;
   }
+
+
+
   measure: avg_v {
     type: number
     sql: sum(${voice})/nullif(sum(${voicec}),0) ;;

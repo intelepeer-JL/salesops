@@ -206,6 +206,11 @@ view: v_booking_v2s3 {
     sql: ${TABLE}.Dept ;;
   }
 
+  dimension: role {
+    type: string
+    sql: ${TABLE}.Role ;;
+  }
+
   dimension: expected_mrg_arg_amount__c {
     type: string
     sql: ${TABLE}.Expected_MRG_ARG_Amount__c ;;

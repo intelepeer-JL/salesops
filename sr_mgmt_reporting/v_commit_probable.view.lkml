@@ -205,4 +205,15 @@ view: v_commit_probable {
     type: count
     drill_fields: [id, opp_name, stage_name, forecast_category_name, account_name]
   }
+
+  parameter: max_rank {
+    type: number
+  }
+
+  dimension: rank_limit {
+    type: number
+    sql: {% parameter max_rank %} ;;
+  }
+
+
 }

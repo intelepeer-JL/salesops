@@ -29,6 +29,10 @@ explore: v_weekly_add {}
 explore: v_forecast_s2 {}
 explore: v_team_forecast_s2 {}
 explore: v_team_forecast_s3 {}
+explore: v_forecast_results_s3 {}
+explore: v_q1_active {}
+explore: v_forecast_details {}
+explore: v_current_quota {}
 
 
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
